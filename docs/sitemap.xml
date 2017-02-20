@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kosukegit.github.io/2017/02/hello-world/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/2017/02/hello-world/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/2017/02/hello-world2/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/2017/02/hello-world2/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/categories/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/tags/hello/</loc>
-    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kosukegit.github.io/tags/hello2/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/hello/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/hello2/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/post/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kosukegit.github.io/categories/test/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/post/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/tags/test/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/test/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukegit.github.io/tags/world/</loc>
+    <loc>https://kosukegit.github.io/KosukeBlog/categories/test/</loc>
+    <lastmod>2017-02-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/world/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
