@@ -16,7 +16,6 @@ baseurl = "https://KosukeGit.github.io"
 languageCode = "ja-jp"
 defaultContentLanguage = "ja-jp"
 title = "My Blog"
-theme = "hugo-tranquilpeak-theme"
 disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
 paginate = 7
