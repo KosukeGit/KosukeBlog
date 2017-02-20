@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/2017/02/test-huga/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukegit.github.io/KosukeBlog/2017/02/hello-world/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
   </url>
@@ -41,6 +46,18 @@
   
   <url>
     <loc>https://kosukegit.github.io/KosukeBlog/categories/hoge/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/huga/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/categories/huga/</loc>
     <lastmod>2017-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
