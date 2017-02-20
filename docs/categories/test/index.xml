@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on My Blog</title>
+    <link>https://kosukegit.github.io/categories/test/index.xml</link>
+    <description>Recent content in Test on My Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <atom:link href="https://kosukegit.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hello World!</title>
+      <link>https://kosukegit.github.io/2017/02/hello-world/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukegit.github.io/2017/02/hello-world/</guid>
+      <description>
+
+&lt;h1 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift:test.swift&#34;&gt;let hello: String = &amp;quot;Hello World!&amp;quot;
+
+print(hello)  // Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hello&lt;/p&gt;
+
+&lt;p&gt;World&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ハローワールド！&lt;/p&gt;
+
+&lt;h3 id=&#34;hello&#34;&gt;hello&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;m so very hogehoge! I wanna hugahuga.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thank you :)&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello World!2</title>
+      <link>https://kosukegit.github.io/2017/02/hello-world2/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukegit.github.io/2017/02/hello-world2/</guid>
+      <description>
+
+&lt;h1 id=&#34;hello-wolrd-2&#34;&gt;Hello Wolrd&amp;hellip;2!!!!!&lt;/h1&gt;
+
+&lt;h2 id=&#34;two&#34;&gt;two&lt;/h2&gt;
+
+&lt;p&gt;aaaaa&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;one&lt;/li&gt;
+&lt;li&gt;two&lt;/li&gt;
+&lt;li&gt;three
+
+&lt;ol&gt;
+&lt;li&gt;one&lt;/li&gt;
+&lt;li&gt;two&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;four&lt;/li&gt;
+&lt;li&gt;five&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hogehoge&lt;/li&gt;
+&lt;li&gt;hugahuga&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
