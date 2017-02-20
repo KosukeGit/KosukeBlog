@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/2017/02/test-fuga/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukegit.github.io/KosukeBlog/2017/02/test-hoge/</loc>
     <lastmod>2017-02-20T00:00:00+00:00</lastmod>
   </url>
@@ -23,6 +28,18 @@
   
   <url>
     <loc>https://kosukegit.github.io/KosukeBlog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/fuga/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/categories/fuga/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -11,5 +11,5 @@ rm -rf docs
 hugo -d docs
 
 git add .
-git commit -m "COMMENT: ($COMMENT)"
+git commit -m "$COMMENT"
 git push origin master
