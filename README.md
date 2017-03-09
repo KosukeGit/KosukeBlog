@@ -1,1 +1,1 @@
-# My Blog
+# My Blog- HUGO + Github Pages で作成- Theme: hugo-tranquilpeak-theme<br>### 更新手順1. 記事を content/post に追加する2. ターミナルで ./deploy.sh コメント

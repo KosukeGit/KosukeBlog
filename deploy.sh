@@ -2,7 +2,7 @@
 
 COMMENT=$1
 
-if [ -z ${COMMENT} ]; then # commentのサイズが0であれば真
+if [ -z ${COMMENT} ]; then  # commentのサイズが0であれば真
   echo "Usage: ./deploy.sh [comment statement(required)]"
   exit
 fi
