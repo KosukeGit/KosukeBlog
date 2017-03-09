@@ -4,10 +4,13 @@ title = ""
 slug = ""
 description = ""
 
-tag = []
+tags = []
 categories = []
 archives = ""
-keywords = []
+keywords = [
+	"Kosuke Blog",
+	"こうすけブログ"
+]
 
 autoThumbnailImage = false
 thumbnailImagePosition = "left"
