@@ -117,7 +117,7 @@ publishdir = "docs"
   clearReading = true
 
   # カテゴリーの頭文字をaから順番にソートする
-  hierarchicalCategories = true
+  hierarchicalCategories = false
 
   description = "Kosuke's Blog"
 
