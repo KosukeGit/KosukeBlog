@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fugafuga on Kosuke Tech Blog</title>
+    <link>https://kosukegit.github.io/KosukeBlog/archives/fugafuga/index.xml</link>
+    <description>Recent content in Fugafuga on Kosuke Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kosukegit.github.io/KosukeBlog/archives/fugafuga/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test fuga</title>
+      <link>https://kosukegit.github.io/KosukeBlog/2017/02/test-fuga/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukegit.github.io/KosukeBlog/2017/02/test-fuga/</guid>
+      <description>
+
+&lt;h1 id=&#34;tesr-fuga&#34;&gt;Tesr fuga!!!!!&lt;/h1&gt;
+
+&lt;p&gt;fuga&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

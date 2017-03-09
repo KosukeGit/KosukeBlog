@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image on Kosuke Tech Blog</title>
+    <link>https://kosukegit.github.io/KosukeBlog/tags/image/index.xml</link>
+    <description>Recent content in Image on Kosuke Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kosukegit.github.io/KosukeBlog/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>画像テスト</title>
+      <link>https://kosukegit.github.io/KosukeBlog/2017/03/test-image/</link>
+      <pubDate>Fri, 03 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukegit.github.io/KosukeBlog/2017/03/test-image/</guid>
+      <description>
+
+
+
+
+&lt;div class=&#34;figure &#34; &gt;
+  
+    &lt;img class=&#34;fig-img&#34; src=&#34;https://KosukeGit.github.io/KosukeBlog/images/blog/2017-03-03/testImage.jpg&#34; &gt;
+  
+  
+&lt;/div&gt;
+
+
+&lt;h1 id=&#34;test-image&#34;&gt;Test IMAGE!!&lt;/h1&gt;
+
+&lt;p&gt;image&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;alert test&lt;/p&gt;
+
+&lt;div class=&#34;alert info no-icon &#34;&gt;
+  &lt;p&gt;Here is a danger alert without icon&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;info&lt;/li&gt;
+&lt;li&gt;success&lt;/li&gt;
+&lt;li&gt;warning&lt;/li&gt;
+&lt;li&gt;danger&lt;/li&gt;
+&lt;li&gt;no-icon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;alert warning &#34;&gt;
+  &lt;p&gt;Here is a danger alert without icon&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;span class=&#34;highlight-text danger&#34;&gt;
+your highlighted text
+&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;red&lt;/li&gt;
+&lt;li&gt;green&lt;/li&gt;
+&lt;li&gt;blue&lt;/li&gt;
+&lt;li&gt;purple&lt;/li&gt;
+&lt;li&gt;orange&lt;/li&gt;
+&lt;li&gt;yellow&lt;/li&gt;
+&lt;li&gt;cyan&lt;/li&gt;
+&lt;li&gt;primary&lt;/li&gt;
+&lt;li&gt;success&lt;/li&gt;
+&lt;li&gt;warning&lt;/li&gt;
+&lt;li&gt;danger&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;span class=&#34;highlight-text success&#34;&gt;
+your highlighted text
+&lt;/span&gt;
+
+&lt;p&gt;finished!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

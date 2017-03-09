@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/2017/03/test-image/</loc>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukegit.github.io/KosukeBlog/2017/02/test-fuga/</loc>
     <lastmod>2017-02-20T00:00:00+00:00</lastmod>
   </url>
@@ -27,6 +32,17 @@
   </url>
   
   <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/archives/2017-03-03/</loc>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kosukegit.github.io/KosukeBlog/categories/</loc>
     <priority>0</priority>
   </url>
@@ -39,6 +55,12 @@
   
   <url>
     <loc>https://kosukegit.github.io/KosukeBlog/categories/fuga/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/archives/fugafuga/</loc>
     <lastmod>2017-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -80,14 +102,26 @@
   </url>
   
   <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/tags/image/</loc>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukegit.github.io/KosukeBlog/categories/image/</loc>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kosukegit.github.io/KosukeBlog/</loc>
-    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukegit.github.io/KosukeBlog/post/</loc>
-    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,7 +132,7 @@
   
   <url>
     <loc>https://kosukegit.github.io/KosukeBlog/tags/test/</loc>
-    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

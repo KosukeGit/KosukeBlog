@@ -1,0 +1,181 @@
+## GLOBAL ##
+- id: "global.home"
+  translation: "Home"
+
+- id: "global.categories"
+  translation: "Categories"
+
+- id: "global.category"
+  translation: "Category"
+
+- id: "global.tags"
+  translation: "Tags"
+
+- id: "global.tag"
+  translation: "Tag"
+
+- id: "global.archives"
+  translation: "Archives"
+
+- id: "global.search"
+  translation: "Search"
+
+- id: "global.about"
+  translation: "About"
+
+- id: "global.author_picture"
+  translation: "Author's picture"
+
+- id: "global.github"
+  translation: "GitHub"
+
+- id: "global.stackoverflow"
+  translation: "Stack Overflow"
+
+- id: "global.twitter"
+  translation: "Twitter"
+
+- id: "global.facebook"
+  translation: "Facebook"
+
+- id: "global.google_plus"
+  translation: "Google Plus"
+
+- id: "global.linkedin"
+  translation: "LinkedIn"
+
+- id: "global.mail"
+  translation: "Mail"
+
+- id: "global.rss"
+  translation: "RSS"
+
+- id: "global.share_on_google_plus"
+  translation: "Google Plusで共有"
+
+- id: "global.share_on_facebook"
+  translation: "Facebookで共有"
+
+- id: "global.share_on_twitter"
+  translation: "Twitterで共有"
+
+- id: "global.search_category"
+  translation: "Search category"
+
+- id: "global.search_tag"
+  translation: "Search tag"
+
+- id: "global.search_date"
+  translation: "Search date (YYYY/MM/DD)"
+
+## GLOBAL.POST_FOUND ##
+- id: "global.post_found.zero"
+  translation: "見つかりませんでした。"
+
+- id: "global.post_found.one"
+  translation: "1件見つかりました。"
+
+- id: "global.post_found.other"
+  translation: "{n} 件見つかりました。"
+
+## GLOBAL.CATEGORIES_FOUND ##
+- id: "global.categories_found.zero"
+  translation: "見つかりませんでした。"
+
+- id: "global.categories_found.one"
+  translation: "1件のカテゴリーが見つかりました。"
+
+- id: "global.categories_found.other"
+  translation: "{n} 件のカテゴリーが見つかりました。"
+
+## GLOBAL.TAGS_FOUND ##
+- id: "globa.tags_found.zero"
+  translation: "見つかりませんでした。"
+
+- id: "globa.tags_found.one"
+  translation: "1件のタグが見つかりました。"
+
+- id: "globa.tags_found.other"
+  translation: "{n} 件のタグが見つかりました。"
+
+## PAGINATION ##
+- id: "pagination.page"
+  translation: "page {{ .Paginator.PageNumber }}"
+
+- id: "pagination.of"
+  translation: "of {{ .Paginator.TotalPages }}"
+
+- id: "pagination.newer_posts"
+  translation: "新しい投稿"
+
+- id: "pagination.older_posts"
+  translation: "古い投稿"
+
+- id: "pagination.previous"
+  translation: "前"
+
+- id: "pagination.next"
+  translation: "次"
+
+## POST ##
+- id: "post.no_title"
+  translation: "タイトルなし"
+
+- id: "post.categorized_in"
+  translation: "in"
+
+- id: "post.tagged_in"
+  translation: "タグ"
+
+- id: "post.toc"
+  translation: "目次"
+
+- id: "post.read_more"
+  translation: "続きを読む"
+
+- id: "post.go_to_website"
+  translation: "ウェブサイトへ"
+
+- id: "post.comment_and_share"
+  translation: "コメント・シェア"
+
+## FOOTER ##
+- id: "footer.all_rights_reserved"
+  translation: "All Rights Reserved"
+
+## DATE ##
+- id: "date.month.january"
+  translation: "January"
+
+- id: "date.month.february"
+  translation: "February"
+
+- id: "date.month.march"
+  translation: "March"
+
+- id: "date.month.april"
+  translation: "April"
+
+- id: "date.month.may"
+  translation: "May"
+
+- id: "date.month.june"
+  translation: "June"
+
+- id: "date.month.july"
+  translation: "July"
+
+- id: "date.month.august"
+  translation: "August"
+
+- id: "date.month.september"
+  translation: "September"
+
+- id: "date.month.october"
+  translation: "October"
+
+- id: "date.month.november"
+  translation: "November"
+
+- id: "date.month.december"
+  translation: "December"

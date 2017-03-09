@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>World on My Blog</title>
+    <title>World on Kosuke Tech Blog</title>
     <link>https://kosukegit.github.io/KosukeBlog/tags/world/index.xml</link>
-    <description>Recent content in World on My Blog</description>
+    <description>Recent content in World on Kosuke Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
+    <language>ja</language>
     <atom:link href="https://kosukegit.github.io/KosukeBlog/tags/world/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

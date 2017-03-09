@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello2 on My Blog</title>
+    <title>Hello2 on Kosuke Tech Blog</title>
     <link>https://kosukegit.github.io/KosukeBlog/tags/hello2/index.xml</link>
-    <description>Recent content in Hello2 on My Blog</description>
+    <description>Recent content in Hello2 on Kosuke Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
+    <language>ja</language>
     <atom:link href="https://kosukegit.github.io/KosukeBlog/tags/hello2/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

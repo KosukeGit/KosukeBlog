@@ -25,7 +25,7 @@
     <meta name="author" content="{{ .Site.Author.name }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon/favicon.ico"><!-- favicon.png を favicon.ico に変更 -->
     {{ with .RSSLink }}
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">
     {{ end }}
@@ -84,7 +84,7 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/css/style-gwlo24d2hxipxk8bi1sxik0zhlpn9t7ebcmgp9kubmmcjfzlavuyhvbqumhn.min.css" />
     <!--STYLES END-->
-    
+
     {{ if .Params.ga.async }}
       {{ template "_internal/google_analytics_async.html" . }}
     {{ else }}
