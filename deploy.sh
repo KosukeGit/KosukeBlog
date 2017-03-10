@@ -10,6 +10,8 @@ fi
 rm -rf docs
 hugo -d docs
 
+echo kosukeblog.com > docs/CNAME
+
 git add .
 git commit -m "$COMMENT"
 git push origin master
