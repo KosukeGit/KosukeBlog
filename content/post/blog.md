@@ -18,6 +18,8 @@ keywords = [
 	"ブログ開設",
 	"自己紹介"
 ]
+coverImage = "https://goo.gl/photos/D3dunwY36egKs3GHA"
+metaAlignment = "center"
 +++
 
 初めまして、[こうすけ](https://twitter.com/gt1028kn)です。
