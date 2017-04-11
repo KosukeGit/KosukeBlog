@@ -2,18 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukeblog.com/2017/04/completion/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/2017/03/blog/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/archives/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/tags/bash/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/categories/bash/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -29,14 +46,26 @@
   </url>
   
   <url>
+    <loc>https://kosukeblog.com/tags/git/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/categories/git/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/post/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -48,6 +77,12 @@
   
   <url>
     <loc>https://kosukeblog.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/tags/terminal/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

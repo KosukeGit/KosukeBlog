@@ -17,23 +17,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>このブログについて</title>
+    <title>bash-completion, git-completionの導入手順</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, ブログ開設, 自己紹介">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, git, bash, ターミナル">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="ブログについてと簡単に自己紹介">
-    <meta property="og:description" content="ブログについてと簡単に自己紹介">
+    <meta name="description" content="bash補完拡張とgit補完">
+    <meta property="og:description" content="bash補完拡張とgit補完">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="このブログについて">
-    <meta property="og:url" content="/2017/03/blog/">
+    <meta property="og:title" content="bash-completion, git-completionの導入手順">
+    <meta property="og:url" content="/2017/04/completion/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="ブログについてと簡単に自己紹介">
+    <meta name="twitter:description" content="bash補完拡張とgit補完">
     
     
 
@@ -44,6 +44,8 @@
       <meta property="og:image" content="https://kosukeblog.com/images/profile/me.jpg">
     
 
+    
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-04-12/terminal.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -222,17 +224,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      このブログについて
+      bash-completion, git-completionの導入手順
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-03-10T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-04-12T00:00:00Z">
     
   
   
   
   
-    2017.03.10
+    2017.04.12
   
 
   </time>
@@ -241,7 +243,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/%e3%83%96%e3%83%ad%e3%82%b0">ブログ</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/bash">Bash</a>, 
+    
+      <a class="category-link" href="https://kosukeblog.com/categories/git">Git</a>
     
   
 
@@ -264,36 +268,70 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<p>初めまして、<a href="https://twitter.com/gt1028kn">こうすけ</a>です。</p>
-
-<p>本日ブログを開設しました。
-これまで技術的なことを主に<a href="http://qiita.com/KosukeQiita">Qiita</a>に投稿してましたが、「〜の設定、手順」や「〜を作ってみた」などは作って終わりという感じでした。
-なので、その過程など自分のブログにまとめてしまえば後から見直す時に楽だし、共有もできると思い、<strong>今更ですが</strong>作りました。（それにこれから先もっと情報量が増えるだろうなと思ったので。）</p>
-
-<p>後は、単に独自ドメインを取得してブログを自分で作って公開するところまでやってみたいというのもあったからです。</p>
-
-<p>このブログは、技術的なことを中心とするつもりですが、それ以外のことも載せていく予定です。
-マイペース更新ですがよろしくお願いします！</p>
+<p>今回は、bash-completion と git-completionの導入の手順を記していきます。</p>
 
 <p><br></p>
 
-<h3 id="自己紹介">自己紹介</h3>
+<h2 id="bash-completion">bash-completion</h2>
 
-<p>こうすけです。名古屋の大学に通っている4年生（17年卒）です。
-今年から東京の企業にエンジニアとして就職します。
-まだまだ未熟ですがアプリ開発が好きです。アプリを0から作ってApp Storeで公開したりしていました<a href="http://applion.jp/iphone/app/1089093474/">。</a>
-趣味はギターで、よく息抜きにアコギを弾いて遊んでます<a href="https://soundcloud.com/guitar_memo/acoustic-ver">。</a></p>
+<p>bash-completionとは、Bashの補完機能を拡張するシェルスクリプトのことです。</p>
 
-<h5 id="この先やってみたいこと">この先やってみたいこと</h5>
+<h5 id="インストール">インストール</h5>
 
-<ul>
-<li>エンターテイメントを通じて、人々の生活を豊かにするサービスやアプリケーションを形にして届けたい</li>
-<li>人をワクワクさせるものを仲間と作っていきたい</li>
-</ul>
+<pre><code>$ brew install bash-completion
+</code></pre>
 
 <p><br></p>
 
-<p>これからよろしくお願いします。:)</p>
+<h5 id="viコマンドで追加する">viコマンドで追加する</h5>
+
+<pre><code>vi ~/.bash_profile
+</code></pre>
+
+<ol>
+<li>i（インサートモードに移行）</li>
+<li>以下を追加（<a href="https://github.com/scop/bash-completion">参考ページ</a>）</li>
+<li>escキー（インサートモードを解除）</li>
+<li>:wq（保存して終了）</li>
+</ol>
+
+<pre><code>if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+</code></pre>
+
+<p><br></p>
+
+<h2 id="git-completion">git-completion</h2>
+
+<p>git-completionとは、Gitコマンドの補完スクリプトのことです。</p>
+
+<h5 id="インストール-1">インストール</h5>
+
+<p><a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">ここ</a>からダウンロード</p>
+
+<ol>
+<li>Rawを開いて中身をコピー</li>
+<li>Viコマンドで貼り付け</li>
+<li>:w 名前（今回は、名前のところを git-completion.bash とする）をつけて終了</li>
+</ol>
+
+<p><br></p>
+
+<h5 id="実行する">実行する</h5>
+
+<p>作成した git-completion.bash をどこかのフォルダにいれる</p>
+
+<p>（例：setting/git-completion.bash）</p>
+
+<p>その後は以下を入力して、指定したスクリプトファイルを実行する</p>
+
+<pre><code>source ~/setting/git-completion.bash
+</code></pre>
+
+<p><br></p>
+
+<p>これでターミナルでGitコマンドなどが入力途中で Tabキー を押すことによって最後まで自動で入力されて楽になります！</p>
 
               
             </div>
@@ -306,9 +344,11 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/blog/">blog</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/bash/">bash</a>
 
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/profile/">profile</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/git/">git</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
 
                   </div>
                 
@@ -320,7 +360,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/completion/" data-tooltip="bash-completion, git-completionの導入手順">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -328,7 +368,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/archives/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/03/blog/" data-tooltip="このブログについて">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -345,17 +385,17 @@ ga('send', 'pageview');
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -401,7 +441,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/completion/" data-tooltip="bash-completion, git-completionの導入手順">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -409,7 +449,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/archives/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/03/blog/" data-tooltip="このブログについて">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -426,17 +466,17 @@ ga('send', 'pageview');
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -463,17 +503,17 @@ ga('send', 'pageview');
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
         <i class="fa fa-google-plus"></i><span>Google Plusで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
         <i class="fa fa-facebook-official"></i><span>Facebookで共有</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f">
         <i class="fa fa-twitter"></i><span>Twitterで共有</span>
       </a>
     </li>
@@ -615,9 +655,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/03\/blog\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/04\/completion\/';
           
-            this.page.identifier = '\/2017\/03\/blog\/'
+            this.page.identifier = '\/2017\/04\/completion\/'
           
         };
         (function() {

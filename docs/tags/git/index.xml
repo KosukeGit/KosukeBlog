@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Kosuke Blog</title>
-    <link>https://kosukeblog.com/post/index.xml</link>
-    <description>Recent content in Posts on Kosuke Blog</description>
+    <title>Git on Kosuke Blog</title>
+    <link>https://kosukeblog.com/tags/git/index.xml</link>
+    <description>Recent content in Git on Kosuke Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 12 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://kosukeblog.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kosukeblog.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>bash-completion, git-completionの導入手順</title>
@@ -81,47 +80,6 @@ fi
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;これでターミナルでGitコマンドなどが入力途中で Tabキー を押すことによって最後まで自動で入力されて楽になります！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>このブログについて</title>
-      <link>https://kosukeblog.com/2017/03/blog/</link>
-      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kosukeblog.com/2017/03/blog/</guid>
-      <description>
-
-&lt;p&gt;初めまして、&lt;a href=&#34;https://twitter.com/gt1028kn&#34;&gt;こうすけ&lt;/a&gt;です。&lt;/p&gt;
-
-&lt;p&gt;本日ブログを開設しました。
-これまで技術的なことを主に&lt;a href=&#34;http://qiita.com/KosukeQiita&#34;&gt;Qiita&lt;/a&gt;に投稿してましたが、「〜の設定、手順」や「〜を作ってみた」などは作って終わりという感じでした。
-なので、その過程など自分のブログにまとめてしまえば後から見直す時に楽だし、共有もできると思い、&lt;strong&gt;今更ですが&lt;/strong&gt;作りました。（それにこれから先もっと情報量が増えるだろうなと思ったので。）&lt;/p&gt;
-
-&lt;p&gt;後は、単に独自ドメインを取得してブログを自分で作って公開するところまでやってみたいというのもあったからです。&lt;/p&gt;
-
-&lt;p&gt;このブログは、技術的なことを中心とするつもりですが、それ以外のことも載せていく予定です。
-マイペース更新ですがよろしくお願いします！&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;自己紹介&#34;&gt;自己紹介&lt;/h3&gt;
-
-&lt;p&gt;こうすけです。名古屋の大学に通っている4年生（17年卒）です。
-今年から東京の企業にエンジニアとして就職します。
-まだまだ未熟ですがアプリ開発が好きです。アプリを0から作ってApp Storeで公開したりしていました&lt;a href=&#34;http://applion.jp/iphone/app/1089093474/&#34;&gt;。&lt;/a&gt;
-趣味はギターで、よく息抜きにアコギを弾いて遊んでます&lt;a href=&#34;https://soundcloud.com/guitar_memo/acoustic-ver&#34;&gt;。&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;この先やってみたいこと&#34;&gt;この先やってみたいこと&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;エンターテイメントを通じて、人々の生活を豊かにするサービスやアプリケーションを形にして届けたい&lt;/li&gt;
-&lt;li&gt;人をワクワクさせるものを仲間と作っていきたい&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;これからよろしくお願いします。:)&lt;/p&gt;
 </description>
     </item>
     
