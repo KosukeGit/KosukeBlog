@@ -35,7 +35,7 @@ publishdir = "docs"
   name = "こうすけ"
   bio = "ギターとアプリ開発が好きです<br><br>**向上心！**"
   job = "Engineer"
-  location = "Nagoya"
+  location = "Tokyo"
   # プロフィール画像
   picture = "images/profile/me.jpg"
   #picture = "https://maxcdn.icons8.com/Color/PNG/96/Users/person_male-96.png"
