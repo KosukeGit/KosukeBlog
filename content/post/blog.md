@@ -18,6 +18,11 @@ keywords = [
 	"ブログ開設",
 	"自己紹介"
 ]
+
+autoThumbnailImage = false
+thumbnailImagePosition = "left"
+thumbnailImage = "images/blog/2017-03-10/favicon_origin.png"
+
 coverImage = "https://goo.gl/photos/D3dunwY36egKs3GHA"
 metaAlignment = "center"
 +++
