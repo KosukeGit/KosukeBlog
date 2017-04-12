@@ -17,8 +17,10 @@ archives = ""
 keywords = [
 	"Kosuke Blog",
 	"こうすけブログ",
-	"git",
 	"bash",
+	"bash-completion",
+	"git",
+	"git-completion",
 	"ターミナル"
 ]
 
@@ -72,7 +74,7 @@ git-completionとは、Gitコマンドの補完スクリプトのことです。
 [ここ](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)からダウンロード
 
 1. Rawを開いて中身をコピー
-2. Viコマンドで貼り付け
+2. viコマンドで貼り付け
 3. :w 名前（今回は、名前のところを git-completion.bash とする）をつけて終了
 
 <br>
