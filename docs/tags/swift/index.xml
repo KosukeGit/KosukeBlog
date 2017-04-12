@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swift on Kosuke Blog</title>
+    <link>https://kosukeblog.com/tags/swift/index.xml</link>
+    <description>Recent content in Swift on Kosuke Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kosukeblog.com/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CocoaPodsについて</title>
+      <link>https://kosukeblog.com/2017/04/cocoapods/</link>
+      <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/04/cocoapods/</guid>
+      <description>
+
+&lt;h2 id=&#34;cocoapods-https-cocoapods-org&#34;&gt;&lt;a href=&#34;https://cocoapods.org/&#34;&gt;CocoaPods&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;オープンソースなどのライブラリを使用した際にバージョン管理を行うことができるiOSライブラリ管理ツール&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;インストール&#34;&gt;インストール&lt;/h5&gt;
+
+&lt;p&gt;CocoaPods をインストールする&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install cocoapods
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;podfileの作成&#34;&gt;Podfileの作成&lt;/h5&gt;
+
+&lt;p&gt;Podfile が入ってない場合は、一番最初に使用したいディレクトリで以下のコマンドを入力するとPodfileが生成される
+（この中にライブラリなどを追加していく）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;workspace等の作成&#34;&gt;Workspace等の作成&lt;/h5&gt;
+
+&lt;p&gt;pod install を行うとその中に以下のファイル等が生成される&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アプリ名.xcworkspace&lt;/li&gt;
+&lt;li&gt;Podfile.lock&lt;/li&gt;
+&lt;li&gt;Podsフォルダ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;pod install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;podのバージョンを更新する&#34;&gt;podのバージョンを更新する&lt;/h5&gt;
+
+&lt;p&gt;podのバージョンをあげる際に以下のコマンドを使用する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;編集&#34;&gt;編集&lt;/h5&gt;
+
+&lt;p&gt;バージョンの書き換えなどを行う際に使用する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vi Podfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert danger &#34;&gt;
+  &lt;p&gt;最後に &lt;strong&gt;pod install&lt;/strong&gt; をしないと反映されないので注意&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;バージョンの確認&#34;&gt;バージョンの確認&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;cat Podfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;古いバージョンの検出&#34;&gt;古いバージョンの検出&lt;/h5&gt;
+
+&lt;p&gt;使用しているライブラリの中から古いバージョンを検出してくれる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod outbated
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;コマンドのヘルプ&#34;&gt;コマンドのヘルプ&lt;/h5&gt;
+
+&lt;p&gt;コマンドを忘れた際に使用する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod --help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;使用する際には アプリ名.xcworkspace を開いて、その中に使うライブラリのインポート行う必要があります。&lt;/p&gt;
+
+&lt;p&gt;また、多数のライブラリ等がまとまった &lt;a href=&#34;https://github.com/matteocrippa/awesome-swift&#34;&gt;Amesome Swift&lt;/a&gt; はおすすめです。ここから使いたいものを探してみるといいかもしれません。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

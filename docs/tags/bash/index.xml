@@ -60,7 +60,7 @@ fi
 
 &lt;ol&gt;
 &lt;li&gt;Rawを開いて中身をコピー&lt;/li&gt;
-&lt;li&gt;Viコマンドで貼り付け&lt;/li&gt;
+&lt;li&gt;viコマンドで貼り付け&lt;/li&gt;
 &lt;li&gt;:w 名前（今回は、名前のところを git-completion.bash とする）をつけて終了&lt;/li&gt;
 &lt;/ol&gt;
 
