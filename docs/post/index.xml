@@ -32,7 +32,7 @@
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;podfileの作成&#34;&gt;Podfileの作成&lt;/h5&gt;
+&lt;h5 id=&#34;podfileの生成&#34;&gt;Podfileの生成&lt;/h5&gt;
 
 &lt;p&gt;Podfile が入ってない場合は、一番最初に使用したいディレクトリで以下のコマンドを入力するとPodfileが生成される
 （この中にライブラリなどを追加していく）&lt;/p&gt;
@@ -42,7 +42,7 @@
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;workspace等の作成&#34;&gt;Workspace等の作成&lt;/h5&gt;
+&lt;h5 id=&#34;workspace等の生成&#34;&gt;Workspace等の生成&lt;/h5&gt;
 
 &lt;p&gt;pod install を行うとその中に以下のファイル等が生成される&lt;/p&gt;
 
@@ -79,7 +79,9 @@
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;バージョンの確認&#34;&gt;バージョンの確認&lt;/h5&gt;
+&lt;h5 id=&#34;ファイル内の確認&#34;&gt;ファイル内の確認&lt;/h5&gt;
+
+&lt;p&gt;podファイルの中を確認する&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;cat Podfile
 &lt;/code&gt;&lt;/pre&gt;

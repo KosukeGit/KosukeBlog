@@ -47,7 +47,7 @@ sudo gem install cocoapods
 
 <br>
 
-##### Podfileの作成
+##### Podfileの生成
 
 Podfile が入ってない場合は、一番最初に使用したいディレクトリで以下のコマンドを入力するとPodfileが生成される
 （この中にライブラリなどを追加していく）
@@ -58,7 +58,7 @@ pod init
 
 <br>
 
-##### Workspace等の作成
+##### Workspace等の生成
 
 pod install を行うとその中に以下のファイル等が生成される
 
@@ -95,7 +95,9 @@ vi Podfile
 
 <br>
 
-##### バージョンの確認
+##### ファイル内の確認
+
+podファイルの中を確認する
 
 ```
 cat Podfile
