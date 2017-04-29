@@ -128,4 +128,4 @@ pod --help
 
 使用する際には アプリ名.xcworkspace を開いて、その中に使うライブラリのインポート行う必要があります。
 
-また、多数のライブラリ等がまとまった [Amesome Swift](https://github.com/matteocrippa/awesome-swift) はおすすめです。ここから使いたいものを探してみるといいかもしれません。
+また、多数のライブラリ等がまとまった [Awesome Swift](https://github.com/matteocrippa/awesome-swift) はおすすめです。ここから使いたいものを探してみるといいかもしれません。
