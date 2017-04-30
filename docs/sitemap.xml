@@ -28,13 +28,13 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/bash/</loc>
+    <loc>https://kosukeblog.com/categories/bash/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/bash/</loc>
+    <loc>https://kosukeblog.com/tags/bash/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -51,25 +51,25 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/cocoapods/</loc>
-    <lastmod>2017-04-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kosukeblog.com/categories/cocoapods/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/git/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <loc>https://kosukeblog.com/tags/cocoapods/</loc>
+    <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/categories/git/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/tags/git/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

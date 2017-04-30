@@ -26,26 +26,28 @@
     </ul>
   </nav>
   <ul class="post-actions post-action-share">
-    {{ if (not (eq .Params.showSocial false)) }}
-      <li class="post-action hide-lg hide-md hide-sm">
-        <!--a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-          <i class="fa fa-share-alt"></i>
-        </a-->
-      </li>
-    {{ end }}
-    {{ if and (not (eq .Params.comments false)) .Site.DisqusShortname }}
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#">
-          <i class="fa fa-arrow-up"></i>
-        </a>
-      </li>
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#disqus_thread">
-          <i class="fa fa-comment-o"></i>
-        </a>
-      </li>
-    {{ end }}
-    <table style="line-height:0; margin-left:-56px; margin-top: 10px; list-style:none;">
+    <li style="list-style: none;">
+      {{ if and (not (eq .Params.comments false)) .Site.DisqusShortname }}
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#">
+            <i class="fa fa-arrow-up"></i>
+          </a>
+        </li>
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      {{ end }}
+      {{ if (not (eq .Params.showSocial false)) }}
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+      {{ end }}
+    </li>
+    <table style="line-height:0; margin-left:-56px; margin-top: 10px; list-style: none;">
       <td>
         <li class="post-action hide-xs">
           <a href="https://twitter.com/share" class="twitter-share-button" data-via="gt1028kn" data-size="large" data-lang="eu"></a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
