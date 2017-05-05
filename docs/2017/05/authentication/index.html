@@ -17,23 +17,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>bash-completion, git-completionの導入手順</title>
+    <title>GitHubの２段階認証後にpushできなくなった時の対処法</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, bash, bash-completion, git, git-completion, ターミナル">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, GitHub, Authentication, ２段階認証, 対処法">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="bash補完拡張とgit補完">
-    <meta property="og:description" content="bash補完拡張とgit補完">
+    <meta name="description" content="GitHubの２段階認証後にpushできなくなった時の対処法">
+    <meta property="og:description" content="GitHubの２段階認証後にpushできなくなった時の対処法">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="bash-completion, git-completionの導入手順">
-    <meta property="og:url" content="/2017/04/completion/">
+    <meta property="og:title" content="GitHubの２段階認証後にpushできなくなった時の対処法">
+    <meta property="og:url" content="/2017/05/authentication/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="bash補完拡張とgit補完">
+    <meta name="twitter:description" content="GitHubの２段階認証後にpushできなくなった時の対処法">
     
     
 
@@ -45,7 +45,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-04-12/terminal.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-05-05/GitHub.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -224,17 +224,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      bash-completion, git-completionの導入手順
+      GitHubの２段階認証後にpushできなくなった時の対処法
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-04-12T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-05-05T00:00:00Z">
     
   
   
   
   
-    2017.04.12
+    2017.05.05
   
 
   </time>
@@ -243,9 +243,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/bash">Bash</a>, 
-    
-      <a class="category-link" href="https://kosukeblog.com/categories/git">Git</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/github">GitHub</a>
     
   
 
@@ -267,72 +265,28 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
+              <p>今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。
+下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると</p>
 
-<p>今回は、bash-completion と git-completionの導入の手順を記していきます。</p>
+<p><code>fatal: Authentication failed for 'https://github.com/~~~'</code></p>
 
-<p><br></p>
-
-<h2 id="bash-completion">bash-completion</h2>
-
-<p>bash-completionとは、Bashの補完機能を拡張するシェルスクリプトのことです。</p>
-
-<h5 id="インストール">インストール</h5>
-
-<pre><code>$ brew install bash-completion
-</code></pre>
+<p>と出力されてしまいました。</p>
 
 <p><br></p>
 
-<h5 id="viコマンドで追加する">viコマンドで追加する</h5>
+<p>この対応方法は、アクセストークンを生成する必要があります。
+公式ページに従って手順通りに行えば解決できます。</p>
 
-<pre><code>vi ~/.bash_profile
-</code></pre>
+<p><a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">Creating a token</a></p>
 
-<ol>
-<li>i（インサートモードに移行）</li>
-<li>以下を追加（<a href="https://github.com/scop/bash-completion">参考ページ</a>）</li>
-<li>escキー（インサートモードを解除）</li>
-<li>:wq（保存して終了）</li>
-</ol>
+<p>まず、上記のURLの手順に従ってアクセストークンを発行します。
+このアクセストークンはどこかにメモをしておきましょう。</p>
 
-<pre><code>if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-</code></pre>
+<p>そして、ユーザ名とパスワードを入力する際のパスワードに先ほどのアクセストークンを入れて進めることでプッシュすることができます。</p>
 
-<p><br></p>
+<p>ちなみに、キーチェーン等の確認をする際はこちらを参考にすると良いです。</p>
 
-<h2 id="git-completion">git-completion</h2>
-
-<p>git-completionとは、Gitコマンドの補完スクリプトのことです。</p>
-
-<h5 id="インストール-1">インストール</h5>
-
-<p><a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">ここ</a>からダウンロード</p>
-
-<ol>
-<li>Rawを開いて中身をコピー</li>
-<li>viコマンドで貼り付け</li>
-<li>:w 名前（今回は、名前のところを git-completion.bash とする）をつけて終了</li>
-</ol>
-
-<p><br></p>
-
-<h5 id="実行する">実行する</h5>
-
-<p>作成した git-completion.bash をどこかのフォルダにいれる</p>
-
-<p>（例：setting/git-completion.bash）</p>
-
-<p>その後は以下を入力して、指定したスクリプトファイルを実行する</p>
-
-<pre><code>source ~/setting/git-completion.bash
-</code></pre>
-
-<p><br></p>
-
-<p>これでターミナルでGitコマンドなどが入力途中で Tabキー を押すことによって最後まで自動で入力されて楽になります！</p>
+<p><a href="https://help.github.com/articles/updating-credentials-from-the-osx-keychain/">Updating your credentials via Keychain Access</a></p>
 
               
 
@@ -346,11 +300,9 @@ fi
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/bash/">bash</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">GitHub</a>
 
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/git/">git</a>
-
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/authentication/">Authentication</a>
 
                   </div>
                 
@@ -362,7 +314,7 @@ fi
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/cocoapods/" data-tooltip="CocoaPodsについて">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -370,7 +322,7 @@ fi
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/03/blog/" data-tooltip="このブログについて">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/cocoapods/" data-tooltip="CocoaPodsについて">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -422,7 +374,7 @@ fi
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fauthentication%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -464,7 +416,7 @@ fi
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/cocoapods/" data-tooltip="CocoaPodsについて">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -472,7 +424,7 @@ fi
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/03/blog/" data-tooltip="このブログについて">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/cocoapods/" data-tooltip="CocoaPodsについて">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -524,7 +476,7 @@ fi
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fauthentication%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -560,7 +512,7 @@ fi
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f04%2fcompletion%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fauthentication%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -743,9 +695,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/04\/completion\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/05\/authentication\/';
           
-            this.page.identifier = '\/2017\/04\/completion\/'
+            this.page.identifier = '\/2017\/05\/authentication\/'
           
         };
         (function() {
