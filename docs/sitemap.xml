@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukeblog.com/2017/05/button/</loc>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/2017/05/authentication/</loc>
     <lastmod>2017-05-05T00:00:00+00:00</lastmod>
   </url>
@@ -23,7 +28,7 @@
   
   <url>
     <loc>https://kosukeblog.com/archives/</loc>
-    <lastmod>2017-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,7 +57,7 @@
   
   <url>
     <loc>https://kosukeblog.com/tags/blog/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,13 +110,13 @@
   
   <url>
     <loc>https://kosukeblog.com/</loc>
-    <lastmod>2017-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/post/</loc>
-    <lastmod>2017-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,7 +145,7 @@
   
   <url>
     <loc>https://kosukeblog.com/categories/%E3%83%96%E3%83%AD%E3%82%B0/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
