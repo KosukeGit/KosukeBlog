@@ -15,8 +15,9 @@
       <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://kosukeblog.com/2017/05/authentication/</guid>
-      <description>&lt;p&gt;今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。
-下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると&lt;/p&gt;
+      <description>&lt;p&gt;今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。&lt;/p&gt;
+
+&lt;p&gt;下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;fatal: Authentication failed for &#39;https://github.com/~~~&#39;&lt;/code&gt;&lt;/p&gt;
 

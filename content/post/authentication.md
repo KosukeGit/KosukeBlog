@@ -30,6 +30,7 @@ metaAlignment = "center"
 +++
 
 今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。
+
 下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると
 
 ```fatal: Authentication failed for 'https://github.com/~~~'```
