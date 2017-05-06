@@ -9,6 +9,111 @@
     <atom:link href="https://kosukeblog.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Gitのコマンド名を自分で設定する</title>
+      <link>https://kosukeblog.com/2017/05/command/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/05/command/</guid>
+      <description>
+
+&lt;p&gt;Gitコマンドが長くて打つのが大変、毎回調べなきゃいけない&amp;hellip; そんなときに以下のような設定をすることによってGitのショートカットコマンドを作成することができます！&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash;global にすることで現在のユーザーを対象にした設定をすることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;エイリアス設定&#34;&gt;エイリアス設定&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global alias.省略したいコマンド &#39;実際のコマンド&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;例：git config --global alias.st &#39;status&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;実行時&#34;&gt;実行時&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git st
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで git status した時と同じ動作をするようになります&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;設定したエイリアス一覧表示&#34;&gt;設定したエイリアス一覧表示&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global --list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;設定したコマンドを削除&#34;&gt;設定したコマンドを削除&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global --unset alias.st
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで  git st コマンドが削除されます&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;ヘルプ表示&#34;&gt;ヘルプ表示&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git config help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;参考URLは&lt;a href=&#34;https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;おまけ&#34;&gt;おまけ&lt;/h3&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;今日何をしたか振り返り-１２時間前からのログ表示&#34;&gt;今日何をしたか振り返り（１２時間前からのログ表示）&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git today
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このコマンドで今日どんなコミットをしたか等振り返ることができます。&lt;/p&gt;
+
+&lt;p&gt;設定する際はこちら↓&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global alias.today &amp;quot;log --oneline --since=&#39;12 hours ago&#39;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;ログをグラフで表示&#34;&gt;ログをグラフで表示&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;git mylog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ターミナルでログをグラフにして確認する際に便利です。&lt;/p&gt;
+
+&lt;p&gt;設定する際はこちら↓&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global alias.mylog log --oneline --graph --decorate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;これでよく使うコマンドや長いコマンドの入力が楽になります。
+何を設定したか確認したい時は、helpコマンドを使いましょう！&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらの記事も合わせてどうぞ！&lt;/p&gt;
+
+&lt;p&gt;→ &lt;a href=&#34;https://kosukeblog.com/2017/04/completion/&#34;&gt;tabキーでGitのコマンドを補完する&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>GitHubの２段階認証後にpushできなくなった時の対処法</title>
       <link>https://kosukeblog.com/2017/05/authentication/</link>
       <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>

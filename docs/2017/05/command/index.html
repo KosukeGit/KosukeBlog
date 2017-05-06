@@ -17,23 +17,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>このブログについて</title>
+    <title>Gitのコマンド名を自分で設定する</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, ブログ開設, 自己紹介">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Git, GitHub, ターミナル, gitコマンド, git config">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="ブログについてと簡単に自己紹介">
-    <meta property="og:description" content="ブログについてと簡単に自己紹介">
+    <meta name="description" content="自分で設定したGitのコマンドを使えるようにする方法">
+    <meta property="og:description" content="自分で設定したGitのコマンドを使えるようにする方法">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="このブログについて">
-    <meta property="og:url" content="/2017/03/blog/">
+    <meta property="og:title" content="Gitのコマンド名を自分で設定する">
+    <meta property="og:url" content="/2017/05/command/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="ブログについてと簡単に自己紹介">
+    <meta name="twitter:description" content="自分で設定したGitのコマンドを使えるようにする方法">
     
     
 
@@ -45,7 +45,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-03-10/favicon_origin.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-05-07/GitCommand.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -224,17 +224,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      このブログについて
+      Gitのコマンド名を自分で設定する
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-03-10T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-05-07T00:00:00Z">
     
   
   
   
   
-    2017.03.10
+    2017.05.07
   
 
   </time>
@@ -243,7 +243,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/%e3%83%96%e3%83%ad%e3%82%b0">ブログ</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/github">GitHub</a>, 
+    
+      <a class="category-link" href="https://kosukeblog.com/categories/git">Git</a>
     
   
 
@@ -267,36 +269,100 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<p>初めまして、<a href="https://twitter.com/gt1028kn">こうすけ</a>です。</p>
+<p>Gitコマンドが長くて打つのが大変、毎回調べなきゃいけない&hellip; そんなときに以下のような設定をすることによってGitのショートカットコマンドを作成することができます！</p>
 
-<p>本日ブログを開設しました。
-これまで技術的なことを主に<a href="http://qiita.com/KosukeQiita">Qiita</a>に投稿してましたが、「〜の設定、手順」や「〜を作ってみた」などは作って終わりという感じでした。
-なので、その過程など自分のブログにまとめてしまえば後から見直す時に楽だし、共有もできると思い、<strong>今更ですが</strong>作りました。（それにこれから先もっと情報量が増えるだろうなと思ったので。）</p>
-
-<p>後は、単に独自ドメインを取得してブログを自分で作って公開するところまでやってみたいというのもあったからです。</p>
-
-<p>このブログは、技術的なことを中心とするつもりですが、それ以外のことも載せていく予定です。
-マイペース更新ですがよろしくお願いします！</p>
+<p>&ndash;global にすることで現在のユーザーを対象にした設定をすることができます。</p>
 
 <p><br></p>
 
-<h3 id="自己紹介">自己紹介</h3>
+<h5 id="エイリアス設定">エイリアス設定</h5>
 
-<p>こうすけです。名古屋の大学に通っている4年生（17年卒）です。
-今年から東京の企業にエンジニアとして就職します。
-まだまだ未熟ですがアプリ開発が好きです。アプリを0から作ってApp Storeで公開したりしていました<a href="http://applion.jp/iphone/app/1089093474/">。</a>
-趣味はギターで、よく息抜きにアコギを弾いて遊んでます<a href="https://soundcloud.com/guitar_memo/acoustic-ver">。</a></p>
+<pre><code>git config --global alias.省略したいコマンド '実際のコマンド'
+</code></pre>
 
-<h5 id="この先やってみたいこと">この先やってみたいこと</h5>
-
-<ul>
-<li>エンターテイメントを通じて、人々の生活を豊かにするサービスやアプリケーションを形にして届けたい</li>
-<li>人をワクワクさせるものを仲間と作っていきたい</li>
-</ul>
+<pre><code>例：git config --global alias.st 'status'
+</code></pre>
 
 <p><br></p>
 
-<p>これからよろしくお願いします。:)</p>
+<h5 id="実行時">実行時</h5>
+
+<pre><code>git st
+</code></pre>
+
+<p>これで git status した時と同じ動作をするようになります</p>
+
+<p><br></p>
+
+<h5 id="設定したエイリアス一覧表示">設定したエイリアス一覧表示</h5>
+
+<pre><code>git config --global --list
+</code></pre>
+
+<p><br></p>
+
+<h5 id="設定したコマンドを削除">設定したコマンドを削除</h5>
+
+<pre><code>git config --global --unset alias.st
+</code></pre>
+
+<p>これで  git st コマンドが削除されます</p>
+
+<p><br></p>
+
+<h5 id="ヘルプ表示">ヘルプ表示</h5>
+
+<pre><code>git config help
+</code></pre>
+
+<p><br></p>
+
+<p>参考URLは<a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">こちら</a></p>
+
+<p><br></p>
+
+<p><br></p>
+
+<h3 id="おまけ">おまけ</h3>
+
+<p><br></p>
+
+<h5 id="今日何をしたか振り返り-１２時間前からのログ表示">今日何をしたか振り返り（１２時間前からのログ表示）</h5>
+
+<pre><code>git today
+</code></pre>
+
+<p>このコマンドで今日どんなコミットをしたか等振り返ることができます。</p>
+
+<p>設定する際はこちら↓</p>
+
+<pre><code>git config --global alias.today &quot;log --oneline --since='12 hours ago'&quot;
+</code></pre>
+
+<p><br></p>
+
+<h5 id="ログをグラフで表示">ログをグラフで表示</h5>
+
+<pre><code>git mylog
+</code></pre>
+
+<p>ターミナルでログをグラフにして確認する際に便利です。</p>
+
+<p>設定する際はこちら↓</p>
+
+<pre><code>git config --global alias.mylog log --oneline --graph --decorate
+</code></pre>
+
+<p><br></p>
+
+<p>これでよく使うコマンドや長いコマンドの入力が楽になります。
+何を設定したか確認したい時は、helpコマンドを使いましょう！</p>
+
+<p><br></p>
+
+<p>こちらの記事も合わせてどうぞ！</p>
+
+<p>→ <a href="https://kosukeblog.com/2017/04/completion/">tabキーでGitのコマンドを補完する</a></p>
 
               
 
@@ -310,9 +376,11 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/blog/">blog</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/git/">git</a>
 
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/profile/">profile</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">github</a>
 
                   </div>
                 
@@ -324,7 +392,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/completion/" data-tooltip="bash-completion, git-completionの導入手順">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -332,7 +400,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/archives/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/button/" data-tooltip="いいねやツイートボタンのURLまとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -384,7 +452,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fcommand%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -426,7 +494,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/completion/" data-tooltip="bash-completion, git-completionの導入手順">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -434,7 +502,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/archives/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/button/" data-tooltip="いいねやツイートボタンのURLまとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -486,7 +554,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fcommand%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -522,7 +590,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fcommand%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -739,9 +807,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/03\/blog\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/05\/command\/';
           
-            this.page.identifier = '\/2017\/03\/blog\/'
+            this.page.identifier = '\/2017\/05\/command\/'
           
         };
         (function() {
