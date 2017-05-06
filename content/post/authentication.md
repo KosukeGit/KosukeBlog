@@ -5,8 +5,8 @@ slug = "authentication"
 description = "GitHubの２段階認証後にpushできなくなった時の対処法"
 
 tags = [
-	"GitHub",
-	"Authentication"
+	"gitHub",
+	"authentication"
 ]
 categories = [
 	"GitHub"

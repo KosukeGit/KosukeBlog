@@ -18,7 +18,7 @@
 
 &lt;p&gt;Gitコマンドが長くて打つのが大変、毎回調べなきゃいけない&amp;hellip; そんなときに以下のような設定をすることによってGitのショートカットコマンドを作成することができます！&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash;global にすることで現在のユーザーを対象にした設定をすることができます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--global&lt;/code&gt; にすることで現在のユーザーを対象にした設定をすることができます。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -103,7 +103,7 @@
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;これでよく使うコマンドや長いコマンドの入力が楽になります。
-何を設定したか確認したい時は、helpコマンドを使いましょう！&lt;/p&gt;
+何を設定したか確認したい時は、&lt;code&gt;--list&lt;/code&gt;を使いましょう！&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

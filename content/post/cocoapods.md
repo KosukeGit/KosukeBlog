@@ -5,9 +5,9 @@ slug = "cocoapods"
 description = "CocoaPodsの概要や導入手順について"
 
 tags = [
-	"CocoaPods",
-	"iOS",
-	"Swift",
+	"cocoapods",
+	"ios",
+	"swift",
 ]
 categories = [
 	"CocoaPods"
