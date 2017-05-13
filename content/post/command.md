@@ -123,7 +123,7 @@ git mylog
 設定する際はこちら↓
 
 ```
-git config --global alias.mylog log --oneline --graph --decorate
+git config --global alias.mylog 'log --oneline --graph --decorate'
 ```
 
 <br>

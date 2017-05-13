@@ -98,7 +98,7 @@
 
 &lt;p&gt;設定する際はこちら↓&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git config --global alias.mylog log --oneline --graph --decorate
+&lt;pre&gt;&lt;code&gt;git config --global alias.mylog &#39;log --oneline --graph --decorate&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
