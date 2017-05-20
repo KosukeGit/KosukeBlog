@@ -9,6 +9,77 @@
     <atom:link href="https://kosukeblog.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>gitignoreについて</title>
+      <link>https://kosukeblog.com/2017/05/gitignore/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/05/gitignore/</guid>
+      <description>
+
+&lt;h2 id=&#34;gitignore-とは&#34;&gt;.gitignore とは&lt;/h2&gt;
+
+&lt;p&gt;&amp;ldquo;ignore = 無視する&amp;rdquo;という意味の通り、Gitのバージョン管理の対象から外すファイル（＝無視するファイル）を .gitignore に書いておき、その設定ファイルをルートディレクトリに置いておくことで git add . などを行ったときでもそのファイルだけ自動で無視をするようになります。そのため、間違えてプッシュしてしまったといったことを回避することができます。&lt;/p&gt;
+
+&lt;h3 id=&#34;生成の仕方&#34;&gt;生成の仕方&lt;/h3&gt;
+
+&lt;p&gt;ターミナルで vim .gitignore を打つことによって .gitignore が生成され、vim が立ち上がります。i コマンドで insertモードに切り替え、中に対象のファイルを書き込んでいきます。（書き方については後述します）その後、escキーを押して :wq で保存&amp;amp;終了を行います。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;書き方&#34;&gt;書き方&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;\#&lt;/code&gt;：&lt;strong&gt;コメント&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;*.ipa&lt;/code&gt;：&lt;strong&gt;その拡張子はすべて無視したいとき&lt;/strong&gt;&lt;br /&gt;
+→ .ipa のつく拡張子はすべて無視する。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;/test&lt;/code&gt;：&lt;strong&gt;このファイルの全てを無視する&lt;/strong&gt;&lt;br /&gt;
+→ 末尾に / がない場合は test と test 以下のファイル or ディレクトリを無視する。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;test/&lt;/code&gt;：&lt;strong&gt;その名前のディレクトリ全て無視される&lt;/strong&gt;&lt;br /&gt;
+→ ルートディレクトリとそのサブディレクトリ内の test というディレクトリ名全てを無視する&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;~~/~~/test/（~~/~~/test）&lt;/code&gt;：&lt;strong&gt;そのファイル or ディレクトリのみ無視する&lt;/strong&gt;&lt;br /&gt;
+→ 最初と最後が / の時はそのファイル or ディレクトリのみを指定して無視する。この場合は test のみを無視する。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;!/~~/~~/test.text&lt;/code&gt;：&lt;strong&gt;無視するのを無効にする&lt;/strong&gt;（＝そのファイルは無視しない）&lt;br /&gt;
+→ 例えば * で書いてあるとき、その中の test.text は無視したくないときに使用する。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;他にも書き方がありますが、とりあえずはこのあたりを押さえておくといいと思います。
+また、実際に使用する際には&lt;strong&gt;&lt;a href=&#34;https://github.com/github/gitignore&#34;&gt;ここ&lt;/a&gt;&lt;/strong&gt;から対象のもの（例えば Swift で書いているのであれば Swift.gitignore ）を見るなどして参考にするとよいと思います。&lt;br /&gt;
+初めは、そのファイル自体をクローンしてリネーム（.gitignore に変更）してルートディレクトリ直下に入れておけばコンフリクトなどの回避をすることができます。
+ちなみにリネームする際はターミナルから行います。（Swift.gitignore  から .gitignore  にリネームする時：&lt;code&gt;mv Swift.gitignore .gitignore&lt;/code&gt;）&lt;/p&gt;
+
+&lt;p&gt;また、隠しフォルダをファインダーで開く際は、&lt;code&gt;command + shift + .&lt;/code&gt; で見ることが可能です！&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;補足&#34;&gt;補足&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;GitHub上から .gitignore の設定を行う場合&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Create a new repository で新しいリポジトリの作成時に下の方に&lt;code&gt;Add  .gitignore: None&lt;/code&gt;となっているところがあるので、そこを押して使用する言語のものを選択すれば自動で生成してくれます。&lt;/p&gt;
+
+&lt;div align=&#34;left&#34;&gt;
+  &lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+  &lt;!-- SimpleAd --&gt;
+  &lt;ins class=&#34;adsbygoogle&#34;
+       style=&#34;display:inline-block;width:728px;height:90px&#34;
+       data-ad-client=&#34;ca-pub-9828180917254396&#34;
+       data-ad-slot=&#34;8642375468&#34;&gt;
+  &lt;/ins&gt;
+  &lt;script&gt;
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  &lt;/script&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Gitのコマンド名を自分で設定する</title>
       <link>https://kosukeblog.com/2017/05/command/</link>
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>

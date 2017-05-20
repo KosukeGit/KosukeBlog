@@ -17,23 +17,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>いいねやツイートボタンのURLまとめ</title>
+    <title>gitignoreについて</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, ブログ, ボタン設置, いいねボタン, ツイートボタン, Twitter, はてブ, Facebook, Google&#43;, Pocket, LINE, feedly, Evernote, Tumblr, mixi">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Git, GitHub, ターミナル, gitignore, gitコマンド">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="自分のブログにいいねボタンやツイートボタンを表示させるURLのまとめ">
-    <meta property="og:description" content="自分のブログにいいねボタンやツイートボタンを表示させるURLのまとめ">
+    <meta name="description" content="自分で設定したGitのコマンドを使えるようにする方法">
+    <meta property="og:description" content="自分で設定したGitのコマンドを使えるようにする方法">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="いいねやツイートボタンのURLまとめ">
-    <meta property="og:url" content="/2017/05/button/">
+    <meta property="og:title" content="gitignoreについて">
+    <meta property="og:url" content="/2017/05/gitignore/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="自分のブログにいいねボタンやツイートボタンを表示させるURLのまとめ">
+    <meta name="twitter:description" content="自分で設定したGitのコマンドを使えるようにする方法">
     
     
 
@@ -45,7 +45,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-05-06/button.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-05-21/github.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -224,17 +224,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      いいねやツイートボタンのURLまとめ
+      gitignoreについて
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-05-06T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-05-21T00:00:00Z">
     
   
   
   
   
-    2017.05.06
+    2017.05.21
   
 
   </time>
@@ -243,7 +243,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/%e3%83%96%e3%83%ad%e3%82%b0">ブログ</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/github">GitHub</a>, 
+    
+      <a class="category-link" href="https://kosukeblog.com/categories/git">Git</a>
     
   
 
@@ -265,37 +267,68 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>自分のブログに、いいねや記事をシェアしてもらうためのボタンのURLをまとめました。</p>
+              
 
-<p><a href="https://about.twitter.com/ja/resources/buttons#tweet">Twitter</a></p>
+<h2 id="gitignore-とは">.gitignore とは</h2>
 
-<p><a href="http://b.hatena.ne.jp/guide/bbutton">はてブ</a></p>
+<p>&ldquo;ignore = 無視する&rdquo;という意味の通り、Gitのバージョン管理の対象から外すファイル（＝無視するファイル）を .gitignore に書いておき、その設定ファイルをルートディレクトリに置いておくことで git add . などを行ったときでもそのファイルだけ自動で無視をするようになります。そのため、間違えてプッシュしてしまったといったことを回避することができます。</p>
 
-<p><a href="https://developers.facebook.com/docs/plugins/like-button?locale=ja_JP#">Facebook</a></p>
+<h3 id="生成の仕方">生成の仕方</h3>
 
-<p><a href="https://developers.google.com/+/web/+1button/">Google+</a></p>
-
-<p><a href="https://getpocket.com/publisher/button">Pocket</a></p>
-
-<p><a href="https://media.line.me/ja/how_to_install#lineitbutton">LINE</a></p>
-
-<p><a href="https://feedly.com/factory.html">feedly</a></p>
-
-<p><a href="https://dev.evernote.com/sitememory/#a_builder">Evernote</a>　※廃止のため、現在は <a href="https://evernote.com/intl/jp/webclipper/">Web Clipper</a> を用いる</p>
-
-<p><a href="https://www.tumblr.com/buttons">Tumblr</a></p>
-
-<p><a href="http://developer.mixi.co.jp/connect/mixi_plugin/mixi_check/spec_mixi_check/">mixi</a></p>
+<p>ターミナルで vim .gitignore を打つことによって .gitignore が生成され、vim が立ち上がります。i コマンドで insertモードに切り替え、中に対象のファイルを書き込んでいきます。（書き方については後述します）その後、escキーを押して :wq で保存&amp;終了を行います。</p>
 
 <p><br></p>
 
-<p>Facebookのいいねボタンは普通に配置しただけでは少し下にずれてしまうことがあるので、htmlで書く場合は</p>
+<h3 id="書き方">書き方</h3>
 
-<p><code>style=&quot;line-height:0;&quot;</code></p>
+<ul>
+<li><p><code>\#</code>：<strong>コメント</strong></p></li>
 
-<p>の記述をタグの中にすると他のボタンと同じ高さになります。</p>
+<li><p><code>*.ipa</code>：<strong>その拡張子はすべて無視したいとき</strong><br />
+→ .ipa のつく拡張子はすべて無視する。</p></li>
 
-<p>また、Google+ や Pocket は右側に空白ができてしまうため、気になる場合は横幅(width)を調節してあげると良いと思います。</p>
+<li><p><code>/test</code>：<strong>このファイルの全てを無視する</strong><br />
+→ 末尾に / がない場合は test と test 以下のファイル or ディレクトリを無視する。</p></li>
+
+<li><p><code>test/</code>：<strong>その名前のディレクトリ全て無視される</strong><br />
+→ ルートディレクトリとそのサブディレクトリ内の test というディレクトリ名全てを無視する</p></li>
+
+<li><p><code>~~/~~/test/（~~/~~/test）</code>：<strong>そのファイル or ディレクトリのみ無視する</strong><br />
+→ 最初と最後が / の時はそのファイル or ディレクトリのみを指定して無視する。この場合は test のみを無視する。</p></li>
+
+<li><p><code>!/~~/~~/test.text</code>：<strong>無視するのを無効にする</strong>（＝そのファイルは無視しない）<br />
+→ 例えば * で書いてあるとき、その中の test.text は無視したくないときに使用する。</p></li>
+</ul>
+
+<p><br></p>
+
+<p>他にも書き方がありますが、とりあえずはこのあたりを押さえておくといいと思います。
+また、実際に使用する際には<strong><a href="https://github.com/github/gitignore">ここ</a></strong>から対象のもの（例えば Swift で書いているのであれば Swift.gitignore ）を見るなどして参考にするとよいと思います。<br />
+初めは、そのファイル自体をクローンしてリネーム（.gitignore に変更）してルートディレクトリ直下に入れておけばコンフリクトなどの回避をすることができます。
+ちなみにリネームする際はターミナルから行います。（Swift.gitignore  から .gitignore  にリネームする時：<code>mv Swift.gitignore .gitignore</code>）</p>
+
+<p>また、隠しフォルダをファインダーで開く際は、<code>command + shift + .</code> で見ることが可能です！</p>
+
+<p><br></p>
+
+<h3 id="補足">補足</h3>
+
+<p><strong>GitHub上から .gitignore の設定を行う場合</strong></p>
+
+<p>Create a new repository で新しいリポジトリの作成時に下の方に<code>Add  .gitignore: None</code>となっているところがあるので、そこを押して使用する言語のものを選択すれば自動で生成してくれます。</p>
+
+<div align="left">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- SimpleAd -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-9828180917254396"
+       data-ad-slot="8642375468">
+  </ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
               
 
@@ -309,7 +342,11 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/blog/">blog</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/git/">git</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">github</a>
 
 
                   </div>
@@ -322,7 +359,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/command/" data-tooltip="Gitのコマンド名を自分で設定する">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -330,7 +367,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/authentication/" data-tooltip="GitHubの２段階認証後にpushできなくなった時の対処法">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/command/" data-tooltip="Gitのコマンド名を自分で設定する">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -382,7 +419,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fbutton%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fgitignore%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -424,7 +461,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/command/" data-tooltip="Gitのコマンド名を自分で設定する">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -432,7 +469,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/authentication/" data-tooltip="GitHubの２段階認証後にpushできなくなった時の対処法">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/command/" data-tooltip="Gitのコマンド名を自分で設定する">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -484,7 +521,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fbutton%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fgitignore%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -520,7 +557,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fbutton%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fgitignore%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -754,9 +791,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/05\/button\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/05\/gitignore\/';
           
-            this.page.identifier = '\/2017\/05\/button\/'
+            this.page.identifier = '\/2017\/05\/gitignore\/'
           
         };
         (function() {
