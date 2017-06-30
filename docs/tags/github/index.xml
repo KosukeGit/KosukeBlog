@@ -9,6 +9,48 @@
     <atom:link href="https://kosukeblog.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Xcode空白の設定 &#43; 小ネタ</title>
+      <link>https://kosukeblog.com/2017/06/whitespace/</link>
+      <pubDate>Thu, 29 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/06/whitespace/</guid>
+      <description>
+
+&lt;h2 id=&#34;xcodeで空白の設定をする-小ネタ&#34;&gt;Xcodeで空白の設定をする + 小ネタ&lt;/h2&gt;
+
+&lt;p&gt;Info.plistをコードの状態にして一部修正を加えた際、空白の種類が異なってしまっていたのでメモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Xcode -&amp;gt; Preferences&amp;hellip; -&amp;gt; Text Editing を選択&lt;br /&gt;
+その中にある項目の Indentation の Prefer indent using を押すと&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spaces&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tabs&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の２種類が選択できる。&lt;/p&gt;
+
+&lt;p&gt;上記の2種類からどちらかで統一し、文字をコピペし直すと自動的に空白を指定した方の設定で補ってくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;空白を目で確認する方法&#34;&gt;空白を目で確認する方法&lt;/h5&gt;
+
+&lt;p&gt;Xcodeの上のメニューから &lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;Show Invisibles&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;小ネタ&#34;&gt;小ネタ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;?w=1&lt;/code&gt;をGitHubのリンクの後ろに付けると空白の差分を除いた状態になるためレビューしやすくなります！試して見てください:)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>gitignoreについて</title>
       <link>https://kosukeblog.com/2017/05/gitignore/</link>
       <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>

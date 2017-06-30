@@ -17,23 +17,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>GitHubの２段階認証後にpushできなくなった時の対処法</title>
+    <title>Xcode空白の設定 &#43; 小ネタ</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, GitHub, Authentication, ２段階認証, 対処法">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, GitHub, Xcode, ios, 小ネタ">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="GitHubの２段階認証後にpushできなくなった時の対処法">
-    <meta property="og:description" content="GitHubの２段階認証後にpushできなくなった時の対処法">
+    <meta name="description" content="Xcodeで空白の設定をする &#43; GitHub小ネタ">
+    <meta property="og:description" content="Xcodeで空白の設定をする &#43; GitHub小ネタ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="GitHubの２段階認証後にpushできなくなった時の対処法">
-    <meta property="og:url" content="/2017/05/authentication/">
+    <meta property="og:title" content="Xcode空白の設定 &#43; 小ネタ">
+    <meta property="og:url" content="/2017/06/whitespace/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="GitHubの２段階認証後にpushできなくなった時の対処法">
+    <meta name="twitter:description" content="Xcodeで空白の設定をする &#43; GitHub小ネタ">
     
     
 
@@ -45,7 +45,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-05-05/GitHub.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-06-29/xcode.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -224,17 +224,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      GitHubの２段階認証後にpushできなくなった時の対処法
+      Xcode空白の設定 &#43; 小ネタ
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-05-05T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-06-29T00:00:00Z">
     
   
   
   
   
-    2017.05.05
+    2017.06.29
   
 
   </time>
@@ -243,7 +243,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/github">GitHub</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/github">GitHub</a>, 
+    
+      <a class="category-link" href="https://kosukeblog.com/categories/xcode">Xcode</a>
     
   
 
@@ -265,29 +267,39 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。</p>
+              
 
-<p>下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると</p>
+<h2 id="xcodeで空白の設定をする-小ネタ">Xcodeで空白の設定をする + 小ネタ</h2>
 
-<p><code>fatal: Authentication failed for 'https://github.com/~~~'</code></p>
-
-<p>と出力されてしまいました。</p>
+<p>Info.plistをコードの状態にして一部修正を加えた際、空白の種類が異なってしまっていたのでメモ。</p>
 
 <p><br></p>
 
-<p>この対応方法は、アクセストークンを生成する必要があります。
-公式ページに従って手順通りに行えば解決できます。</p>
+<p><br></p>
 
-<p><a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">Creating a token</a></p>
+<p>Xcode -&gt; Preferences&hellip; -&gt; Text Editing を選択<br />
+その中にある項目の Indentation の Prefer indent using を押すと</p>
 
-<p>まず、上記のURLの手順に従ってアクセストークンを発行します。
-このアクセストークンはどこかにメモをしておきましょう。</p>
+<ul>
+<li><strong>Spaces</strong></li>
+<li><strong>Tabs</strong></li>
+</ul>
 
-<p>そして、ユーザ名とパスワードを入力する際のパスワードに先ほどのアクセストークンを入れて進めることでプッシュすることができます。</p>
+<p>の２種類が選択できる。</p>
 
-<p>ちなみに、キーチェーン等の確認をする際はこちらを参考にすると良いです。</p>
+<p>上記の2種類からどちらかで統一し、文字をコピペし直すと自動的に空白を指定した方の設定で補ってくれます。</p>
 
-<p><a href="https://help.github.com/articles/updating-credentials-from-the-osx-keychain/">Updating your credentials via Keychain Access</a></p>
+<p><br></p>
+
+<h5 id="空白を目で確認する方法">空白を目で確認する方法</h5>
+
+<p>Xcodeの上のメニューから <code>Editor</code> -&gt; <code>Show Invisibles</code></p>
+
+<p><br></p>
+
+<h3 id="小ネタ">小ネタ</h3>
+
+<p><code>?w=1</code>をGitHubのリンクの後ろに付けると空白の差分を除いた状態になるためレビューしやすくなります！試して見てください:)</p>
 
               
 
@@ -301,9 +313,11 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">gitHub</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">github</a>
 
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/authentication/">authentication</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/ios/">ios</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/editor/">editor</a>
 
 
                   </div>
@@ -316,7 +330,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/button/" data-tooltip="いいねやツイートボタンのURLまとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -324,7 +338,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/cocoapods/" data-tooltip="CocoaPodsについて">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/gitignore/" data-tooltip="gitignoreについて">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -376,7 +390,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fauthentication%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f06%2fwhitespace%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -418,7 +432,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/button/" data-tooltip="いいねやツイートボタンのURLまとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -426,7 +440,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/cocoapods/" data-tooltip="CocoaPodsについて">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/gitignore/" data-tooltip="gitignoreについて">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -478,7 +492,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fauthentication%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f06%2fwhitespace%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -514,7 +528,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fauthentication%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f06%2fwhitespace%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -765,9 +779,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/05\/authentication\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/06\/whitespace\/';
           
-            this.page.identifier = '\/2017\/05\/authentication\/'
+            this.page.identifier = '\/2017\/06\/whitespace\/'
           
         };
         (function() {
