@@ -1,5 +1,5 @@
 +++
-date = "2017-06-29"
+date = "2017-06-30"
 title = "Xcode空白の設定 + 小ネタ"
 slug = "whitespace"
 description = "Xcodeで空白の設定をする + GitHub小ネタ"
