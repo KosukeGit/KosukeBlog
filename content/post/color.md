@@ -26,7 +26,7 @@ keywords = [
 
 autoThumbnailImage = false
 thumbnailImagePosition = "left"
-thumbnailImage = "images/blog/2017-07_31/xcode.png"
+thumbnailImage = "images/blog/2017-07-31/xcode.png"
 
 coverImage = "https://goo.gl/photos/D3dunwY36egKs3GHA"
 metaAlignment = "center"
