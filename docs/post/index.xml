@@ -6,8 +6,46 @@
     <description>Recent content in Posts on Kosuke Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 30 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Jul 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kosukeblog.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Xcodeで色設定をするときの注意点</title>
+      <link>https://kosukeblog.com/2017/07/color/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/07/color/</guid>
+      <description>
+
+&lt;h2 id=&#34;xcodeで色設定をするときの注意点&#34;&gt;Xcodeで色設定をするときの注意点&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;動機&#34;&gt;動機&lt;/h3&gt;
+
+&lt;p&gt;Storyboardで設定した色とコードで書いた色の見た目が&lt;br /&gt;
+Build&amp;amp;Runして確認したときに微妙に違うなあと思い、&lt;br /&gt;
+調べたところ以下の設定が問題でした。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;原因と解決方法&#34;&gt;原因と解決方法&lt;/h3&gt;
+
+&lt;p&gt;Xcode の色選択から &lt;strong&gt;RGB Sliders&lt;/strong&gt; を選択し、&lt;br /&gt;
+右の歯車マークから &lt;strong&gt;Color Profile&lt;/strong&gt; で確認したところ設定が異なっていたのが原因でした。&lt;br /&gt;
+そのため、自分の場合は &lt;code&gt;Generic RGB&lt;/code&gt; -&amp;gt; &lt;code&gt;sRGB&lt;/code&gt;に設定を変えて色を統一させました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;おまけ&#34;&gt;おまけ&lt;/h3&gt;
+
+&lt;p&gt;ちなみに正確な色の値を知りたい場合は&lt;br /&gt;
+こちらを使用すると見ることができます。&lt;br /&gt;
+&lt;code&gt;Spotlight検索&lt;/code&gt; -&amp;gt; &lt;code&gt;Digital Color Meter&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Xcode空白の設定 &#43; 小ネタ</title>
