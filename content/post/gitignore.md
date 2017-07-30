@@ -78,16 +78,3 @@ metaAlignment = "center"
 **GitHub上から .gitignore の設定を行う場合**
 
 Create a new repository で新しいリポジトリの作成時に下の方に`Add  .gitignore: None`となっているところがあるので、そこを押して使用する言語のものを選択すれば自動で生成してくれます。
-
-<div align="left">
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- SimpleAd -->
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-9828180917254396"
-       data-ad-slot="8642375468">
-  </ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>

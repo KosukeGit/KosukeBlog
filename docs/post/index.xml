@@ -106,19 +106,6 @@
 &lt;p&gt;&lt;strong&gt;GitHub上から .gitignore の設定を行う場合&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Create a new repository で新しいリポジトリの作成時に下の方に&lt;code&gt;Add  .gitignore: None&lt;/code&gt;となっているところがあるので、そこを押して使用する言語のものを選択すれば自動で生成してくれます。&lt;/p&gt;
-
-&lt;div align=&#34;left&#34;&gt;
-  &lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
-  &lt;!-- SimpleAd --&gt;
-  &lt;ins class=&#34;adsbygoogle&#34;
-       style=&#34;display:inline-block;width:728px;height:90px&#34;
-       data-ad-client=&#34;ca-pub-9828180917254396&#34;
-       data-ad-slot=&#34;8642375468&#34;&gt;
-  &lt;/ins&gt;
-  &lt;script&gt;
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  &lt;/script&gt;
-&lt;/div&gt;
 </description>
     </item>
     
