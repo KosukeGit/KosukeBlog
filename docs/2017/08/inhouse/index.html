@@ -17,24 +17,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>Xcode空白の設定 &#43; 小ネタ</title>
+    <title>Developer Enterprise Program を使ってアプリ配布したときのまとめ</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, GitHub, Xcode, ios, 小ネタ">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Swift, ios, Xcode, In-House, OTA, Developer Enterprise Program, Apple, アプリ配布">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="Xcodeで空白の設定をする &#43; GitHub小ネタ">
-    <meta property="og:description" content="Xcodeで空白の設定をする &#43; GitHub小ネタ">
+    <meta name="description" content="OTA形式(In-House)でアプリ配布をした際の手順メモ">
+    <meta property="og:description" content="OTA形式(In-House)でアプリ配布をした際の手順メモ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Xcode空白の設定 &#43; 小ネタ">
-    <meta property="og:url" content="/2017/06/whitespace/">
+    <meta property="og:title" content="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
+    <meta property="og:url" content="/2017/08/inhouse/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="Xcodeで空白の設定をする &#43; GitHub小ネタ">
+    <meta name="twitter:description" content="OTA形式(In-House)でアプリ配布をした際の手順メモ">
     
     
 
@@ -46,7 +46,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-06-29/xcode.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-08-13/xcode.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -225,17 +225,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Xcode空白の設定 &#43; 小ネタ
+      Developer Enterprise Program を使ってアプリ配布したときのまとめ
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-06-30T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-08-13T00:00:00Z">
     
   
   
   
   
-    2017.06.30
+    2017.08.13
   
 
   </time>
@@ -243,8 +243,6 @@ ga('send', 'pageview');
   
   
     <span>in</span>
-    
-      <a class="category-link" href="https://kosukeblog.com/categories/github">GitHub</a>, 
     
       <a class="category-link" href="https://kosukeblog.com/categories/xcode">Xcode</a>
     
@@ -270,37 +268,123 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<h2 id="xcodeで空白の設定をする-小ネタ">Xcodeで空白の設定をする + 小ネタ</h2>
+<p>本記事は、In-House形式によるiOSアプリの配布方法です。<br />
+ダウンロードできるデバイスをこちらで登録する必要なく、台数無制限でアプリを入れることが可能です。</p>
 
-<p>Info.plistをコードの状態にして一部修正を加えた際、空白の種類が異なってしまっていたのでメモ。</p>
+<p><br></p>
+
+<h1 id="developer-enterprise-program-配布までの流れ">Developer Enterprise Program 配布までの流れ</h1>
 
 <p><br></p>
 
 <p><br></p>
 
-<p>Xcode -&gt; Preferences&hellip; -&gt; Text Editing を選択<br />
-その中にある項目の Indentation の Prefer indent using を押すと</p>
+<h5 id="①-archives">① Archives</h5>
+
+<p>端末を Generic iOS Device にして <code>Product</code> -&gt; <code>Archives</code></p>
+
+<p><br></p>
+
+<h5 id="②-ipaファイルの生成">② ipaファイルの生成</h5>
+
+<p>Export で ipa ファイルを作る</p>
 
 <ul>
-<li><strong>Spaces</strong></li>
-<li><strong>Tabs</strong></li>
+<li>アプリの名前（Xcode側で設定したアイコン名はアプリをインストールしている時に表示される時に表示される名前）</li>
+<li>ダウンロードページからダウンロードを押した時にダウンロードされるipaファイルのURL<br />
+例: <code>https://ダウンロードページ/アプリ名.ipa</code><br />
+（plistファイルからこのURLを参照してダウンロードさせるのに使用）</li>
+<li>image URL ×2 (大小)</li>
 </ul>
 
-<p>の２種類が選択できる。</p>
+<p><br></p>
 
-<p>上記の2種類からどちらかで統一し、文字をコピペし直すと自動的に空白を指定した方の設定で補ってくれます。</p>
+<p>具体例は下記に記載してある <em>GitHubでダウンロードページを動かす</em> を参照</p>
 
 <p><br></p>
 
-<h5 id="空白を目で確認する方法">空白を目で確認する方法</h5>
-
-<p>Xcodeの上のメニューから <code>Editor</code> -&gt; <code>Show Invisibles</code></p>
+<p><a href="https://developer.apple.com/jp/documentation/IDEs/Conceptual/AppDistributionGuide/DistributingEnterpriseProgramApps/DistributingEnterpriseProgramApps.html">参考URL - Apple公式ページ</a></p>
 
 <p><br></p>
 
-<h3 id="小ネタ">小ネタ</h3>
+<h5 id="③-ダウンロードページを作る">③ ダウンロードページを作る</h5>
 
-<p><code>?w=1</code>をGitHubのリンクの後ろに付けると空白の差分を除いた状態になるためレビューしやすくなります！試して見てください:)</p>
+<p>ダウンロードボタンを押したときに手順2で生成されるplistファイルをここで読みこませる<br />
+例: <code>https://ダウンロードページ/manifest.plist</code></p>
+
+<p><br><br></p>
+
+<p>例: ダウンロードページのHTML</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+
+&lt;head&gt;
+    &lt;title&gt;ダウンロードページ&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;ダウンロード&lt;/h1&gt;
+
+    &lt;img src=&quot;./image/icon512.png&quot; alt=&quot;アプリアイコン&quot;&gt;
+    &lt;p&gt;下のボタンからアプリをダウンロードしてください。&lt;/p&gt;
+
+    &lt;a href=&quot;itms-services://?action=download-manifest&amp;url=manifest.plistが置いてあるURL&quot; target=&quot;_blank&quot;&gt;ダウンロード&lt;/a&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Export時に<code>ipaファイル</code>と<code>plistファイル</code>が生成されるため、<br />
+<code>itms-services://?action=download-manifest&amp;url=</code>の後に<br />
+生成したplistファイルの置いてあるURLを指定します。</p>
+
+<p>例: <code>&lt;a href=&quot;itms-services://?action=download-manifest&amp;url=https://ユーザ名.github.io/アプリ名/download/apps/v1_0_0/manifest.plist&quot; target=&quot;_blank&quot;&gt;ダウンロード&lt;/a&gt;</code></p>
+
+<p><br></p>
+
+<p><br></p>
+
+<h5 id="githubでダウンロードページを動かす">GitHubでダウンロードページを動かす</h5>
+
+<p>ページにアクセスできるようにするための具体例として、<br />
+GitHubでダウンロードする静的ページを作り、
+同一階層にipa, plistファイルを置くという方法があります。</p>
+
+<p><br></p>
+
+<p>例: GitHub構成</p>
+
+<pre><code>アプリ名 - download  / - apps  /  v1_0_0  /  - アプリ名.ipa
+                                           - manifest.plist
+                     - image /  - icon512.png
+                                - icon57.png
+                     - index.html
+                     - style.css
+       - README.md
+       - .gitignore
+       - LICENSE
+</code></pre>
+
+<p>リポジトリ内をこのようなファイル構成にしておき、<br />
+githubで静的サイトを作り、  URLを生成すると<br />
+XcodeでExportする際に必要なURLが以下のようになります。</p>
+
+<ul>
+<li>https://ユーザ名.github.io/アプリ名/download/apps/v1_0_0/アプリ名.ipa</li>
+<li>https://ユーザ名.github.io/アプリ名/download/image/icon57.png</li>
+<li>https://ユーザ名.github.io/アプリ名/download/image/icon512.png</li>
+</ul>
+
+<p><br></p>
+
+<p>これであとは、手持ちの端末からサイトにアクセスして<br />
+<code>ダウンロード完了</code> -&gt; <code>設定</code> -&gt; <code>プロファイルとデバイス管理</code> を選択し、<br />
+エンタープライズAPPにある項目から該当するアプリ開発者を選び、<code>信頼</code>を選択する。<br />
+これで、利用できるようになります。</p>
 
               
 
@@ -314,11 +398,7 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">github</a>
-
   <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/ios/">ios</a>
-
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/editor/">editor</a>
 
 
                   </div>
@@ -331,7 +411,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/07/color/" data-tooltip="Xcodeで色設定をするときの注意点">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -339,7 +419,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/gitignore/" data-tooltip="gitignoreについて">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/07/color/" data-tooltip="Xcodeで色設定をするときの注意点">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -391,7 +471,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f06%2fwhitespace%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f08%2finhouse%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -433,7 +513,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/07/color/" data-tooltip="Xcodeで色設定をするときの注意点">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -441,7 +521,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/gitignore/" data-tooltip="gitignoreについて">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/07/color/" data-tooltip="Xcodeで色設定をするときの注意点">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -493,7 +573,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f06%2fwhitespace%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f08%2finhouse%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -529,7 +609,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f06%2fwhitespace%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f08%2finhouse%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -814,9 +894,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/06\/whitespace\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/08\/inhouse\/';
           
-            this.page.identifier = '\/2017\/06\/whitespace\/'
+            this.page.identifier = '\/2017\/08\/inhouse\/'
           
         };
         (function() {
