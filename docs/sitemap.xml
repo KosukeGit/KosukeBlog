@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukeblog.com/2017/09/abstractfactory/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/2017/08/inhouse/</loc>
     <lastmod>2017-08-13T00:00:00+00:00</lastmod>
   </url>
@@ -53,7 +58,7 @@
   
   <url>
     <loc>https://kosukeblog.com/archives/</loc>
-    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -69,13 +74,13 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/bash/</loc>
+    <loc>https://kosukeblog.com/categories/bash/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/bash/</loc>
+    <loc>https://kosukeblog.com/tags/bash/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -92,13 +97,13 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/cocoapods/</loc>
+    <loc>https://kosukeblog.com/categories/cocoapods/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/cocoapods/</loc>
+    <loc>https://kosukeblog.com/tags/cocoapods/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -110,14 +115,14 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/editor/</loc>
-    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <loc>https://kosukeblog.com/tags/design-patterns/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/git/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+    <loc>https://kosukeblog.com/tags/editor/</loc>
+    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,13 +133,19 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/github/</loc>
-    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
+    <loc>https://kosukeblog.com/tags/git/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/categories/github/</loc>
+    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/tags/github/</loc>
     <lastmod>2017-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -147,13 +158,13 @@
   
   <url>
     <loc>https://kosukeblog.com/</loc>
-    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/post/</loc>
-    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -166,6 +177,12 @@
   <url>
     <loc>https://kosukeblog.com/tags/storyboard/</loc>
     <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/categories/swift/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

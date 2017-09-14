@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Patterns on Kosuke Blog</title>
+    <link>https://kosukeblog.com/tags/design-patterns/index.xml</link>
+    <description>Recent content in Design Patterns on Kosuke Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="https://kosukeblog.com/tags/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Abstract Factory パターンについて</title>
+      <link>https://kosukeblog.com/2017/09/abstractfactory/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/09/abstractfactory/</guid>
+      <description>
+
+&lt;h2 id=&#34;abstract-factory-パターンとは&#34;&gt;Abstract Factory パターンとは&lt;/h2&gt;
+
+&lt;p&gt;デザインパターンの1つで、関連するオブジェクトの生成を行うクラスを抽象的にして、生成を行うためのインターフェースを提供する。&lt;/p&gt;
+
+&lt;p&gt;インスタンスを生成するためのAPIを集約することにより、情報隠蔽や複数のモジュールの再利用を効率よく行うことが可能になる。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;実装例&#34;&gt;実装例&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;import UIKit
+
+
+
+/// Abstract Factory パターン ----------------------------------------
+
+/// Productクラス（製品）
+protocol Doll {
+    func sayHallo()
+}
+
+/// Creatorクラス（工場）
+protocol Factory {
+    func createInstance() -&amp;gt; Doll
+}
+
+/// ConcreteProductクラス（Japanese製品）
+class JapaneseDoll: Doll {
+    func sayHallo() {
+        print(&amp;quot;こんにちは&amp;quot;)
+    }
+}
+
+/// ConcreteProductクラス（America製品）
+class AmericanDoll: Doll {
+    func sayHallo() {
+        print(&amp;quot;Hallo&amp;quot;)
+    }
+}
+
+/// ConcreteCreatorクラス（Chinese製品）
+class ChineseDoll: Doll {
+    func sayHallo() {
+        print(&amp;quot;你好&amp;quot;)
+    }
+}
+
+/// Abstract Factory（XXのConcreteCreatorクラス（XX製品を作るXX工場）を作るFactoryメソッド）
+enum Country {
+    case Japan
+    case America
+    case China
+}
+
+enum DollFactory {
+    static func create(from country: Country) -&amp;gt; Doll {
+        switch country {
+        case .Japan:
+            return JapaneseDoll()
+        case .America:
+            return AmericanDoll()
+        case .China:
+            return ChineseDoll()
+        }
+    }
+}
+
+
+
+/// 呼び出す ------------------------------------------------------------
+
+class ViewController: UIViewController {
+    
+    var doll: Doll { return DollFactory.create(from: .Japan) }  // 例えば .Japan を .America に変えるだけでAmericanDollのインスタンスが生成できる
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        doll.sayHallo()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Abstract FactoryでDollオブジェクトをインスタンス化する役割を持つ。&lt;br /&gt;
+そのため、呼び出し側で生成されるインスタンスのことを意識しなくて済む（状況が変わっても修正箇所は微量且つ呼び出す側のコードに影響がない）&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

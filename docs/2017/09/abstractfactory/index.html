@@ -17,24 +17,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>Xcodeで色設定をするときの注意点</title>
+    <title>Abstract Factory パターンについて</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Xcode, Storyboard, color, RGB, Generic RGB, sRGB">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Swift, Design Patterns, Abstract Factory パターン">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="XcodeでsRGB等の設定を行う方法">
-    <meta property="og:description" content="XcodeでsRGB等の設定を行う方法">
+    <meta name="description" content="SwiftでAbstract Factory パターンを使った簡単な例">
+    <meta property="og:description" content="SwiftでAbstract Factory パターンを使った簡単な例">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Xcodeで色設定をするときの注意点">
-    <meta property="og:url" content="/2017/07/color/">
+    <meta property="og:title" content="Abstract Factory パターンについて">
+    <meta property="og:url" content="/2017/09/abstractfactory/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="XcodeでsRGB等の設定を行う方法">
+    <meta name="twitter:description" content="SwiftでAbstract Factory パターンを使った簡単な例">
     
     
 
@@ -46,7 +46,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-07-31/xcode.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-09-15/swift.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -225,17 +225,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Xcodeで色設定をするときの注意点
+      Abstract Factory パターンについて
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-07-31T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-09-15T00:00:00Z">
     
   
   
   
   
-    2017.07.31
+    2017.09.15
   
 
   </time>
@@ -244,9 +244,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/xcode">Xcode</a>, 
-    
-      <a class="category-link" href="https://kosukeblog.com/categories/design">Design</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/swift">Swift</a>
     
   
 
@@ -270,33 +268,95 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<h2 id="xcodeで色設定をするときの注意点">Xcodeで色設定をするときの注意点</h2>
+<h2 id="abstract-factory-パターンとは">Abstract Factory パターンとは</h2>
+
+<p>デザインパターンの1つで、関連するオブジェクトの生成を行うクラスを抽象的にして、生成を行うためのインターフェースを提供する。</p>
+
+<p>インスタンスを生成するためのAPIを集約することにより、情報隠蔽や複数のモジュールの再利用を効率よく行うことが可能になる。</p>
 
 <p><br></p>
 
 <p><br></p>
 
-<h3 id="動機">動機</h3>
+<h3 id="実装例">実装例</h3>
 
-<p>Storyboardで設定した色とコードで書いた色の見た目が<br />
-Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
-調べたところ以下の設定が問題でした。</p>
+<pre><code>import UIKit
+
+
+
+/// Abstract Factory パターン ----------------------------------------
+
+/// Productクラス（製品）
+protocol Doll {
+    func sayHallo()
+}
+
+/// Creatorクラス（工場）
+protocol Factory {
+    func createInstance() -&gt; Doll
+}
+
+/// ConcreteProductクラス（Japanese製品）
+class JapaneseDoll: Doll {
+    func sayHallo() {
+        print(&quot;こんにちは&quot;)
+    }
+}
+
+/// ConcreteProductクラス（America製品）
+class AmericanDoll: Doll {
+    func sayHallo() {
+        print(&quot;Hallo&quot;)
+    }
+}
+
+/// ConcreteCreatorクラス（Chinese製品）
+class ChineseDoll: Doll {
+    func sayHallo() {
+        print(&quot;你好&quot;)
+    }
+}
+
+/// Abstract Factory（XXのConcreteCreatorクラス（XX製品を作るXX工場）を作るFactoryメソッド）
+enum Country {
+    case Japan
+    case America
+    case China
+}
+
+enum DollFactory {
+    static func create(from country: Country) -&gt; Doll {
+        switch country {
+        case .Japan:
+            return JapaneseDoll()
+        case .America:
+            return AmericanDoll()
+        case .China:
+            return ChineseDoll()
+        }
+    }
+}
+
+
+
+/// 呼び出す ------------------------------------------------------------
+
+class ViewController: UIViewController {
+    
+    var doll: Doll { return DollFactory.create(from: .Japan) }  // 例えば .Japan を .America に変えるだけでAmericanDollのインスタンスが生成できる
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        doll.sayHallo()
+    }
+}
+</code></pre>
 
 <p><br></p>
 
-<h3 id="原因と解決方法">原因と解決方法</h3>
-
-<p>Xcode の色選択から <strong>RGB Sliders</strong> を選択し、<br />
-右の歯車マークから <strong>Color Profile</strong> で確認したところ設定が異なっていたのが原因でした。<br />
-そのため、自分の場合は <code>Generic RGB</code> -&gt; <code>sRGB</code>に設定を変えて色を統一させました。</p>
-
-<p><br></p>
-
-<h3 id="おまけ">おまけ</h3>
-
-<p>ちなみに正確な色の値を知りたい場合は<br />
-こちらを使用すると見ることができます。<br />
-<code>Spotlight検索</code> -&gt; <code>Digital Color Meter</code></p>
+<p>Abstract FactoryでDollオブジェクトをインスタンス化する役割を持つ。<br />
+そのため、呼び出し側で生成されるインスタンスのことを意識しなくて済む（状況が変わっても修正箇所は微量且つ呼び出す側のコードに影響がない）</p>
 
               
 
@@ -310,9 +370,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/editor/">editor</a>
-
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/storyboard/">storyboard</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/design-patterns/">design patterns</a>
 
 
                   </div>
@@ -325,7 +383,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/08/inhouse/" data-tooltip="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -333,7 +391,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/06/whitespace/" data-tooltip="Xcode空白の設定 &#43; 小ネタ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/08/inhouse/" data-tooltip="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -385,7 +443,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f07%2fcolor%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f09%2fabstractfactory%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -427,7 +485,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/08/inhouse/" data-tooltip="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -435,7 +493,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/06/whitespace/" data-tooltip="Xcode空白の設定 &#43; 小ネタ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/08/inhouse/" data-tooltip="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -487,7 +545,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f07%2fcolor%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f09%2fabstractfactory%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -523,7 +581,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f07%2fcolor%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f09%2fabstractfactory%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -808,9 +866,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/07\/color\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/09\/abstractfactory\/';
           
-            this.page.identifier = '\/2017\/07\/color\/'
+            this.page.identifier = '\/2017\/09\/abstractfactory\/'
           
         };
         (function() {
