@@ -108,5 +108,179 @@ class ViewController: UIViewController {
 </description>
     </item>
     
+    <item>
+      <title>Swift プロトコル、デリゲートについて理解する</title>
+      <link>https://kosukeblog.com/2017/09/protocol/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/09/protocol/</guid>
+      <description>
+
+&lt;p&gt;プロトコルやデリゲートの使い方などの基礎を初心にかえって勉強し直してみました。&lt;br /&gt;
+Swiftのプロトコルは、Javaでいうインターフェースのことです。&lt;br /&gt;
+Swiftのプロトコルだけで学ぼうとすると、少々わかりづらいかもしれないので、&lt;br /&gt;
+Javaのインターフェースを先に調べてみてからだと、より理解しやすいかと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;また、本記事ではステップごとに分けて実際のプログラムで解説してきます。&lt;br /&gt;
+&lt;del&gt;決して手抜き解説なわけではありません。&lt;/del&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;step-1-1&#34;&gt;Step 1-1&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;import Foundation
+
+/// クラスがカートを持つ上で、カートに必要な要素をここで定義する
+/// ちなみにプロトコルはただのお約束という意味なので
+/// 必ずしもDelegateと名付ける必要はない
+protocol KartDelegate {
+    func setPerformance()  // 性能
+    func setColor()  // 車の色
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;step-1-2&#34;&gt;Step 1-2&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;import Foundation
+
+/// カートプロトコル
+protocol KartDelegate {
+    func setPerformance()  // 性能
+    func setColor()  // 車の色
+}
+
+/// マリオクラスがカートを持つ
+class Mario: KartDelegate {
+    
+    /// カートを持ったクラスは、そのカートプロトコルの中で定義した抽象メソッドを
+    /// 必ず実装（implements）してあげる必要がある
+    func setPerformance() {
+        print(&amp;quot;☆☆☆☆☆&amp;quot;)
+    }
+    func setColor() {
+        print(&amp;quot;Red&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;step-1-3&#34;&gt;Step 1-3&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;import Foundation
+
+/// クラスがカートを持つ上で、カートに必要な要素をここで定義する
+protocol KartDelegate {
+    func setPerformance()  // 性能
+    func setColor()  // 車の色
+}
+
+/// マリオクラス
+class Mario {
+    /// どんなカートを持つかわからないがKartDelegateのプロパティを持つ
+    var delegate: KartDelegate?
+    
+    func myKart() {
+        /// まだどんなカートを持っているかわからないがここで呼び出してみる
+        delegate?.setPerformance()
+        delegate?.setColor()
+    }
+}
+
+/// ルイージクラス
+class Luigi: KartDelegate {
+    
+    func setPerformance() {
+        print(&amp;quot;☆☆&amp;quot;)
+    }
+    func setColor() {
+        print(&amp;quot;Green&amp;quot;)
+    }
+}
+
+/// クラスのインスタンスを作る
+let mario = Mario()
+let luigi = Luigi()
+/// ここでマリオがdelegateを通じてルイージのカートを持つ
+mario.delegate = luigi
+mario.myKart()  // ☆☆ Green
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;実際に使用する例&#34;&gt;実際に使用する例&lt;/h3&gt;
+
+&lt;p&gt;iOSアプリを開発している方で、tabelViewやtextFieldなどを利用する際に&lt;br /&gt;
+どこかの記事の通り書いて、知らぬ間にクラスに&lt;code&gt;~~~Delegate&lt;/code&gt;を継承して、
+プロトコルの関数を使用していた、、なんて経験があるかもしれません。&lt;/p&gt;
+
+&lt;p&gt;ここまででプロトコル等について理解できてきたなら&lt;br /&gt;
+下記の例を見れば、より理解が深まるかもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;step-2-1&#34;&gt;Step 2-1&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;import UIKit
+
+class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDelegateのプロトコルを継承する
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textField.delegate = self  // command + クリック で delegate の中身を見ると
+                                   // weak open var delegate: UITextFieldDelegate? が定義されているのがわかる。
+                                   // また、このクラス内でプロトコルの関数の中身の実装をしており、
+                                   // その関数を扱いたいため self をデリゲートに指定してある。
+                                   // ちなみに、定義元が optional public func ~~ のように optional が付いているものは
+                                   // 必ずしもプロトコルの関数を実装（implements）する必要はない。
+    }
+    
+    /// デリゲートをselfにしてあるので、この中にUITextFieldDelegateの関数を記述する
+    /// Returnボタン後にキーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -&amp;gt; Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;step-2-2&#34;&gt;Step 2-2&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;/// このように外でUITextFieldDelegateを継承して、実装したプロトコルの関数を
+/// デリゲートで指定してあげればViewControllerで使うこともできる。
+/// しかし、この方法を用いる場合はクラスのインスタンスが破棄されると扱えなくなるので注意が必要です。
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var textField: UITextField!
+    let vc2 = ViewController2()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textField.delegate = vc2
+    }
+}
+
+class ViewController2: UIViewController, UITextFieldDelegate {
+    /// Returnボタン後にキーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -&amp;gt; Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コードを書く際に、まず動かそうと真似て書いて、&lt;br /&gt;
+なんとなく理解した気になっていたことが度々ありましたが、&lt;br /&gt;
+こうして改めてステップごとにわけて書いてみると自分でもより理解を深めることができました。:)&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

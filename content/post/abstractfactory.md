@@ -5,6 +5,7 @@ slug = "abstractfactory"
 description = "SwiftでAbstract Factory パターンを使った簡単な例"
 
 tags = [
+	"ios",
 	"design patterns"
 ]
 categories = [
