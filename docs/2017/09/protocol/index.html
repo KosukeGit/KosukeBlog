@@ -280,7 +280,31 @@ Javaのインターフェースを先に調べてみてからだと、より理�
 
 <h5 id="step-1-1">Step 1-1</h5>
 
-<pre><code>import Foundation
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>Step1_1.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">import Foundation
 
 /// クラスがカートを持つ上で、カートに必要な要素をここで定義する
 /// ちなみにプロトコルはただのお約束という意味なので
@@ -288,12 +312,40 @@ Javaのインターフェースを先に調べてみてからだと、より理�
 protocol KartDelegate {
     func setPerformance()  // 性能
     func setColor()  // 車の色
-}
-</code></pre>
+}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 
 <h5 id="step-1-2">Step 1-2</h5>
 
-<pre><code>import Foundation
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>Step1_2.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">import Foundation
 
 /// カートプロトコル
 protocol KartDelegate {
@@ -307,17 +359,45 @@ class Mario: KartDelegate {
     /// カートを持ったクラスは、そのカートプロトコルの中で定義した抽象メソッドを
     /// 必ず実装（implements）してあげる必要がある
     func setPerformance() {
-        print(&quot;☆☆☆☆☆&quot;)
+        print(&#34;☆☆☆☆☆&#34;)
     }
     func setColor() {
-        print(&quot;Red&quot;)
+        print(&#34;Red&#34;)
     }
-}
-</code></pre>
+}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 
 <h5 id="step-1-3">Step 1-3</h5>
 
-<pre><code>import Foundation
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>Step1_3.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">import Foundation
 
 /// クラスがカートを持つ上で、カートに必要な要素をここで定義する
 protocol KartDelegate {
@@ -341,10 +421,10 @@ class Mario {
 class Luigi: KartDelegate {
     
     func setPerformance() {
-        print(&quot;☆☆&quot;)
+        print(&#34;☆☆&#34;)
     }
     func setColor() {
-        print(&quot;Green&quot;)
+        print(&#34;Green&#34;)
     }
 }
 
@@ -353,8 +433,12 @@ let mario = Mario()
 let luigi = Luigi()
 /// ここでマリオがdelegateを通じてルイージのカートを持つ
 mario.delegate = luigi
-mario.myKart()  // ☆☆ Green
-</code></pre>
+mario.myKart()  // ☆☆ Green</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 
 <p><br></p>
 
@@ -373,7 +457,31 @@ mario.myKart()  // ☆☆ Green
 
 <h5 id="step-2-1">Step 2-1</h5>
 
-<pre><code>import UIKit
+<p>
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>Step2_1.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDelegateのプロトコルを継承する
     
@@ -382,7 +490,7 @@ class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.delegate = self  // command + クリック で delegate の中身を見ると
+        textField.delegate = self  // command &#43; クリック で delegate の中身を見ると
                                    // weak open var delegate: UITextFieldDelegate? が定義されているのがわかる。
                                    // また、このクラス内でプロトコルの関数の中身の実装をしており、
                                    // その関数を扱いたいため self をデリゲートに指定してある。
@@ -396,12 +504,40 @@ class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDel
         textField.resignFirstResponder()
         return true
     }
-}
-</code></pre>
+}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure></p>
 
 <h5 id="step-2-2">Step 2-2</h5>
 
-<pre><code>/// このように外でUITextFieldDelegateを継承して、実装したプロトコルの関数を
+<p>
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>Step2_2.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">/// このように外でUITextFieldDelegateを継承して、実装したプロトコルの関数を
 /// デリゲートで指定してあげればViewControllerで使うこともできる。
 /// しかし、この方法を用いる場合はクラスのインスタンスが破棄されると扱えなくなるので注意が必要です。
 
@@ -425,8 +561,12 @@ class ViewController2: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-}
-</code></pre>
+}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure></p>
 
 <p>コードを書く際に、まず動かそうと真似て書いて、<br />
 なんとなく理解した気になっていたことが度々ありましたが、<br />
@@ -722,6 +862,23 @@ class ViewController2: UIViewController, UITextFieldDelegate {
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://kosukeblog.com/2017/10/travelsinlgk/">
+                <h3 class="media-heading">海外旅行の事前準備まとめ</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">この記事について 先日、シンガポールとマレーシアのランカウイにバックパックで1人旅をしてきました。 今回の海外旅行はツアーとは違い、飛行機や宿泊</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://kosukeblog.com/2017/09/abstractfactory/">
                 <h3 class="media-heading">Abstract Factory パターンについて</h3>
               </a>
@@ -872,23 +1029,6 @@ class ViewController2: UIViewController, UITextFieldDelegate {
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://kosukeblog.com/2017/04/cocoapods/">
-                <h3 class="media-heading">CocoaPodsについて</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">CocoaPods オープンソースなどのライブラリを使用した際にバージョン管理を行うことができるiOSライブラリ管理ツール インストール CocoaPods をインストールする sudo gem</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -896,7 +1036,7 @@ class ViewController2: UIViewController, UITextFieldDelegate {
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         12 posts found
+         13 posts found
       </p>
     </div>
   </div>

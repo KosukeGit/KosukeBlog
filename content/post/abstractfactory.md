@@ -39,7 +39,7 @@ metaAlignment = "center"
 
 ### 実装例
 
-```
+{{< codeblock "AbstractFactoryPattern.swift" "swift" >}}
 import UIKit
 
 
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         doll.sayHallo()
     }
 }
-```
+{{< /codeblock >}}
 
 <br>
 

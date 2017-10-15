@@ -41,7 +41,7 @@ Javaのインターフェースを先に調べてみてからだと、より理�
 
 ##### Step 1-1
 
-```
+{{< codeblock "Step1_1.swift" "swift" >}}
 import Foundation
 
 /// クラスがカートを持つ上で、カートに必要な要素をここで定義する
@@ -51,11 +51,11 @@ protocol KartDelegate {
     func setPerformance()  // 性能
     func setColor()  // 車の色
 }
-```
+{{< /codeblock >}}
 
 ##### Step 1-2
 
-```
+{{< codeblock "Step1_2.swift" "swift" >}}
 import Foundation
 
 /// カートプロトコル
@@ -76,11 +76,11 @@ class Mario: KartDelegate {
         print("Red")
     }
 }
-```
+{{< /codeblock >}}
 
 ##### Step 1-3
 
-```
+{{< codeblock "Step1_3.swift" "swift" >}}
 import Foundation
 
 /// クラスがカートを持つ上で、カートに必要な要素をここで定義する
@@ -118,7 +118,7 @@ let luigi = Luigi()
 /// ここでマリオがdelegateを通じてルイージのカートを持つ
 mario.delegate = luigi
 mario.myKart()  // ☆☆ Green
-```
+{{< /codeblock >}}
 
 <br>
 
@@ -137,7 +137,7 @@ iOSアプリを開発している方で、tabelViewやtextFieldなどを利用�
 
 ##### Step 2-1
 
-```
+{{< codeblock "Step2_1.swift" "swift" >}}
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDelegateのプロトコルを継承する
@@ -162,11 +162,11 @@ class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDel
         return true
     }
 }
-```
+{{< /codeblock >}}
 
 ##### Step 2-2
 
-```
+{{< codeblock "Step2_2.swift" "swift" >}}
 /// このように外でUITextFieldDelegateを継承して、実装したプロトコルの関数を
 /// デリゲートで指定してあげればViewControllerで使うこともできる。
 /// しかし、この方法を用いる場合はクラスのインスタンスが破棄されると扱えなくなるので注意が必要です。
@@ -192,7 +192,7 @@ class ViewController2: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-```
+{{< /codeblock >}}
 
  
 コードを書く際に、まず動かそうと真似て書いて、  
