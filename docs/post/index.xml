@@ -6,8 +6,40 @@
     <description>Recent content in Posts on Kosuke Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kosukeblog.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Xcode9に上げたらまずはやっておきたい設定</title>
+      <link>https://kosukeblog.com/2017/10/xcode9/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/10/xcode9/</guid>
+      <description>
+
+&lt;h3 id=&#34;jumps-to-definition&#34;&gt;Jumps to Definition&lt;/h3&gt;
+
+&lt;p&gt;Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができたが、Xcode9では新しい機能でどんなアクションをするかメニューが開き、から&lt;code&gt;Jump to Definition&lt;/code&gt;を選択しないといけません。&lt;br /&gt;
+そのため、設定を開かずワンクリックで定義元に飛ぶように戻したい際は、下記の手順で設定すればXcode8同様の動作に戻ります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Xcode&lt;/code&gt; -&amp;gt; &lt;code&gt;Preferences...&lt;/code&gt; -&amp;gt; &lt;code&gt;Navigation&lt;/code&gt; -&amp;gt; &lt;code&gt;Command-click on Code&lt;/code&gt; を &lt;code&gt;Jumps to Definition&lt;/code&gt;に設定&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみにPreferencesは&lt;code&gt;Command&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt;で開くことができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;refactor&#34;&gt;Refactor&lt;/h3&gt;
+
+&lt;p&gt;Xcode9では、ようやくリファクタリング機能が実装されました。&lt;br /&gt;
+&lt;code&gt;command&lt;/code&gt; + &lt;code&gt;option&lt;/code&gt; + &lt;code&gt;F&lt;/code&gt; で十分かなとは思っていたのですが、これはこれで便利な機能ですね。ショートカットを設定しておくと便利かもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;Refactor&lt;/code&gt; -&amp;gt; &lt;code&gt;Rename&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>海外旅行の事前準備まとめ</title>

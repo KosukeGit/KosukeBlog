@@ -1,5 +1,9 @@
 
 
+  
+    
+  
+
 
   
 
@@ -13,26 +17,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>ブログ</title>
+    <title>Xcode9に上げたらまずはやっておきたい設定</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Xcode, Xcode9, Jumps to Definition">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://kosukeblog.com/categories/%E3%83%96%E3%83%AD%E3%82%B0/index.xml">
-    
 
     
-    <meta name="description" content="Kosuke&#39;s Blog">
-    <meta property="og:description" content="Kosuke&#39;s Blog">
+    <meta name="description" content="Xcode9に上げた際にしておくとよい設定">
+    <meta property="og:description" content="Xcode9に上げた際にしておくとよい設定">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ブログ">
-    <meta property="og:url" content="/categories/%E3%83%96%E3%83%AD%E3%82%B0/">
+    <meta property="og:title" content="Xcode9に上げたらまずはやっておきたい設定">
+    <meta property="og:url" content="/2017/10/xcode9/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="Kosuke&#39;s Blog">
+    <meta name="twitter:description" content="Xcode9に上げた際にしておくとよい設定">
     
     
 
@@ -44,6 +46,10 @@
     
 
     
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-10-18/xcode.png">
+    
+    
+      <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
     
     
 
@@ -76,7 +82,7 @@ ga('send', 'pageview');
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://kosukeblog.com/">Kosuke Blog</a>
@@ -94,7 +100,7 @@ ga('send', 'pageview');
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -210,141 +216,193 @@ ga('send', 'pageview');
 </nav>
 
       
-        
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('https://goo.gl/photos/D3dunwY36egKs3GHA')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      Xcode9に上げたらまずはやっておきたい設定
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  <time itemprop="datePublished" datetime="2017-10-18T00:00:00Z">
+    
+  
+  
+  
+  
+    2017.10.18
+  
 
-      
-      <div id="main" data-behavior="1"
-        class="
+  </time>
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://kosukeblog.com/categories/xcode">Xcode</a>
+    
+  
+
+
+</div>
+
+</div>
+
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h3 id="jumps-to-definition">Jumps to Definition</h3>
+
+<p>Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができたが、Xcode9では新しい機能でどんなアクションをするかメニューが開き、から<code>Jump to Definition</code>を選択しないといけません。<br />
+そのため、設定を開かずワンクリックで定義元に飛ぶように戻したい際は、下記の手順で設定すればXcode8同様の動作に戻ります。</p>
+
+<p><code>Xcode</code> -&gt; <code>Preferences...</code> -&gt; <code>Navigation</code> -&gt; <code>Command-click on Code</code> を <code>Jumps to Definition</code>に設定</p>
+
+<p><br></p>
+
+<p>ちなみにPreferencesは<code>Command</code> + <code>,</code>で開くことができます。</p>
+
+<p><br></p>
+
+<p><br></p>
+
+<h3 id="refactor">Refactor</h3>
+
+<p>Xcode9では、ようやくリファクタリング機能が実装されました。<br />
+<code>command</code> + <code>option</code> + <code>F</code> で十分かなとは思っていたのですが、これはこれで便利な機能ですね。ショートカットを設定しておくと便利かもしれません。</p>
+
+<p><code>Editor</code> -&gt; <code>Refactor</code> -&gt; <code>Rename</code></p>
+
+              
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
               
-  
-    
-  
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">タグ</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/editor/">editor</a>
 
 
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://kosukeblog.com/2017/05/button/">
-          いいねやツイートボタンのURLまとめ
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-05-06T00:00:00Z">
-    
-  
-  
-  
-  
-    2017.05.06
-  
-
-  </time>
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://kosukeblog.com/categories/%e3%83%96%e3%83%ad%e3%82%b0">ブログ</a>
-    
-  
-
-
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">前</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/10/travelsinlgk/" data-tooltip="海外旅行の事前準備まとめ">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">次</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    <li style="list-style: none;">
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#">
+            <i class="fa fa-arrow-up"></i>
+          </a>
+        </li>
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+      
+    </li>
+    <table style="line-height: 0; margin-left:-56px; margin-top: 10px; list-style: none;">
+      <td>
+        <li class="post-action hide-xs">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="gt1028kn" data-size="large" data-lang="eu"></a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs">
+          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" data-hatena-bookmark-width="60" data-hatena-bookmark-height="30" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs">
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f10%2fxcode9%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs" style="width: 65px;">
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <div class="g-plusone" data-size="standard"></div>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs" style="width: 20px;">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+          <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </li>
+      </td>
+    </table>
+  </ul>
 </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        自分のブログに、いいねや記事をシェアしてもらうためのボタンのURLをまとめました。 Twitter はてブ Facebook Google+ Pocket LINE feedly Evernote ※廃止のため、現在は Web Clipper を用いる Tumblr mixi F
-        <br>
-        <a href="https://kosukeblog.com/2017/05/button/" class="postShorten-excerpt_link link">続きを読む</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://kosukeblog.com/2017/05/button/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://kosukeblog.com/images/blog/2017-05-06/button.png"/>
-      </div>
-    </a>
-  
-</article>
 
             
               
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://kosukeblog.com/2017/03/blog/">
-          このブログについて
-        </a>
-      </h1>
-      <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-03-10T00:00:00Z">
-    
-  
-  
-  
-  
-    2017.03.10
-  
-
-  </time>
-  
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://kosukeblog.com/categories/%e3%83%96%e3%83%ad%e3%82%b0">ブログ</a>
-    
-  
-
-
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      <p>
-        初めまして、こうすけです。 本日ブログを開設しました。 これまで技術的なことを主にQiitaに投稿してましたが、「〜の設定、手順」や「〜を作って
-        <br>
-        <a href="https://kosukeblog.com/2017/03/blog/" class="postShorten-excerpt_link link">続きを読む</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://kosukeblog.com/2017/03/blog/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://kosukeblog.com/images/blog/2017-03-10/favicon_origin.png"/>
-      </div>
-    </a>
-  
-</article>
-
+              
             
-            
-
-          </section>
-        
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2017 Kosuke Nakamura. All Rights Reserved
@@ -352,6 +410,123 @@ ga('send', 'pageview');
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">前</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/10/travelsinlgk/" data-tooltip="海外旅行の事前準備まとめ">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">次</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    <li style="list-style: none;">
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#">
+            <i class="fa fa-arrow-up"></i>
+          </a>
+        </li>
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+      
+    </li>
+    <table style="line-height: 0; margin-left:-56px; margin-top: 10px; list-style: none;">
+      <td>
+        <li class="post-action hide-xs">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="gt1028kn" data-size="large" data-lang="eu"></a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs">
+          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" data-hatena-bookmark-width="60" data-hatena-bookmark-height="30" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs">
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f10%2fxcode9%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs" style="width: 65px;">
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <div class="g-plusone" data-size="standard"></div>
+        </li>
+      </td>
+      <td>
+        <li class="post-action hide-xs" style="width: 20px;">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+          <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </li>
+      </td>
+    </table>
+  </ul>
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="post-action" style="margin-top: 11.5px;">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="gt1028kn" data-size="large" data-lang="eu"></a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" data-hatena-bookmark-width="60" data-hatena-bookmark-height="30" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    <li class="post-action" style="line-height: 0;">
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f10%2fxcode9%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+    </li>
+    <li class="post-action"style="margin-left:31px; margin-top: 10px;">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <div class="g-plusone" data-size="standard"></div>
+    </li>
+    <li class="post-action" style="margin-left:61px;">
+      <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+      <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
     </div>
     
     <div id="about">
@@ -618,6 +793,32 @@ $(document).ready(function() {
   });
 });
 </script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/10\/xcode9\/';
+          
+            this.page.identifier = '\/2017\/10\/xcode9\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'kosuke-tech-blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
     
