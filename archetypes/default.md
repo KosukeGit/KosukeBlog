@@ -4,8 +4,8 @@ title = ""
 slug = ""
 description = ""
 
-tags = []
 categories = []
+tags = []
 archives = ""
 keywords = [
 	"Kosuke Blog",

@@ -172,6 +172,38 @@
     </item>
     
     <item>
+      <title>GitHubの２段階認証後にpushできなくなった時の対処法</title>
+      <link>https://kosukeblog.com/2017/05/authentication/</link>
+      <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/05/authentication/</guid>
+      <description>&lt;p&gt;今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。&lt;/p&gt;
+
+&lt;p&gt;下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;fatal: Authentication failed for &#39;https://github.com/~~~&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;と出力されてしまいました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;この対応方法は、アクセストークンを生成する必要があります。
+公式ページに従って手順通りに行えば解決できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/&#34;&gt;Creating a token&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;まず、上記のURLの手順に従ってアクセストークンを発行します。
+このアクセストークンはどこかにメモをしておきましょう。&lt;/p&gt;
+
+&lt;p&gt;そして、ユーザ名とパスワードを入力する際のパスワードに先ほどのアクセストークンを入れて進めることでプッシュすることができます。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、キーチェーン等の確認をする際はこちらを参考にすると良いです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/updating-credentials-from-the-osx-keychain/&#34;&gt;Updating your credentials via Keychain Access&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>bash-completion, git-completionの導入手順</title>
       <link>https://kosukeblog.com/2017/04/completion/</link>
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>

@@ -4,12 +4,11 @@ title = "このブログについて"
 slug = "blog"
 description = "ブログについてと簡単に自己紹介"
 
-tags = [
-	"blog",
-	"profile"
-]
 categories = [
-	"ブログ"
+	"Blog"
+]
+tags = [
+	"profile"
 ]
 archives = ""
 keywords = [

@@ -4,14 +4,13 @@ title = "bash-completion, git-completionの導入手順"
 slug = "completion"
 description = "bash補完拡張とgit補完"
 
+categories = [
+	"Git"
+]
 tags = [
 	"bash",
 	"git",
 	"terminal"
-]
-categories = [
-	"Bash",
-	"Git"
 ]
 archives = ""
 keywords = [

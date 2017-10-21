@@ -4,12 +4,12 @@ title = "GitHubの２段階認証後にpushできなくなった時の対処法"
 slug = "authentication"
 description = "GitHubの２段階認証後にpushできなくなった時の対処法"
 
+categories = [
+	"Git"
+]
 tags = [
 	"gitHub",
 	"authentication"
-]
-categories = [
-	"GitHub"
 ]
 archives = ""
 keywords = [

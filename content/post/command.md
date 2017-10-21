@@ -4,14 +4,12 @@ title = "Gitのコマンド名を自分で設定する"
 slug = "command"
 description = "自分で設定したGitのコマンドを使えるようにする方法"
 
-tags = [
-	"git",
-	"terminal",
-	"github"
-]
 categories = [
-	"GitHub",
 	"Git"
+]
+tags = [
+	"github",
+	"terminal"
 ]
 archives = ""
 keywords = [

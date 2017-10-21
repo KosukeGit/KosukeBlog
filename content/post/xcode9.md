@@ -4,11 +4,11 @@ title = "Xcode9に上げたらまずはやっておきたい設定"
 slug = "xcode9"
 description = "Xcode9に上げた際にしておくとよい設定"
 
-tags = [
-	"editor"
-]
 categories = [
-	"Xcode"
+	"Editor"
+]
+tags = [
+	"xcode"
 ]
 archives = ""
 keywords = [

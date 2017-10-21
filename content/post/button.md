@@ -4,11 +4,12 @@ title = "いいねやツイートボタンのURLまとめ"
 slug = "button"
 description = "自分のブログにいいねボタンやツイートボタンを表示させるURLのまとめ"
 
-tags = [
-	"blog"
-]
 categories = [
-	"ブログ"
+	"Blog"
+]
+tags = [
+	"profile",
+	"html"
 ]
 archives = ""
 keywords = [

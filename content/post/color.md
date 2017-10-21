@@ -4,13 +4,13 @@ title = "Xcodeで色設定をするときの注意点"
 slug = "color"
 description = "XcodeでsRGB等の設定を行う方法"
 
-tags = [
-	"editor",
-	"storyboard"
-]
 categories = [
-	"Xcode",
+	"Editor",
 	"Design"
+]
+tags = [
+	"xcode",
+	"storyboard"
 ]
 archives = ""
 keywords = [

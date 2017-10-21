@@ -4,11 +4,13 @@ title = "Swift プロトコル、デリゲートについて理解する"
 slug = "protocol"
 description = "Swiftで使用するプロトコルやデリゲートについて解説"
 
-tags = [
-	"ios"
-]
 categories = [
-	"Swift"
+	"Study",
+	"Programming"
+]
+tags = [
+	"ios",
+	"swift"
 ]
 archives = ""
 keywords = [

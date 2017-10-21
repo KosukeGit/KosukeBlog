@@ -4,11 +4,14 @@ title = "Developer Enterprise Program を使ってアプリ配布したときの
 slug = "inhouse"
 description = "OTA形式(In-House)でアプリ配布をした際の手順メモ"
 
-tags = [
-	"ios"
-]
 categories = [
-	"Xcode"
+	"Application"
+]
+tags = [
+	"ios",
+	"xcode",
+	"github",
+	"html"
 ]
 archives = ""
 keywords = [

@@ -4,11 +4,11 @@ title = "海外旅行の事前準備まとめ"
 slug = "travelsinlgk"
 description = "シンガポール、ランカウイに行く前に見ておきたい役立つ情報"
 
-tags = [
-	"travel"
-]
 categories = [
 	"Other"
+]
+tags = [
+	"travel"
 ]
 archives = ""
 keywords = [

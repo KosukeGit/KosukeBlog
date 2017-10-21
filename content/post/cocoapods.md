@@ -4,13 +4,14 @@ title = "CocoaPodsについて"
 slug = "cocoapods"
 description = "CocoaPodsの概要や導入手順について"
 
+categories = [
+	"Library"
+]
 tags = [
-	"cocoapods",
 	"ios",
 	"swift",
-]
-categories = [
-	"CocoaPods"
+	"cocoapods",
+	"terminal"
 ]
 archives = ""
 keywords = [

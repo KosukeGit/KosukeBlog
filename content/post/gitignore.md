@@ -4,14 +4,12 @@ title = "gitignoreについて"
 slug = "gitignore"
 description = "自分で設定したGitのコマンドを使えるようにする方法"
 
+categories = [
+	"Git"
+]
 tags = [
-	"git",
 	"terminal",
 	"github"
-]
-categories = [
-	"GitHub",
-	"Git"
 ]
 archives = ""
 keywords = [

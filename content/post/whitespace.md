@@ -4,14 +4,14 @@ title = "Xcode空白の設定 + 小ネタ"
 slug = "whitespace"
 description = "Xcodeで空白の設定をする + GitHub小ネタ"
 
-tags = [
-	"github",
-	"ios",
-	"editor"
-]
 categories = [
-	"GitHub",
-	"Xcode"
+	"Editor",
+	"Tips"
+]
+tags = [
+	"ios",
+	"xcode",
+	"github"
 ]
 archives = ""
 keywords = [

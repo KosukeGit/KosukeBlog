@@ -78,6 +78,12 @@
   </url>
   
   <url>
+    <loc>https://kosukeblog.com/categories/application/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/archives/</loc>
     <priority>0</priority>
   </url>
@@ -95,13 +101,7 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/bash/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kosukeblog.com/tags/blog/</loc>
+    <loc>https://kosukeblog.com/categories/blog/</loc>
     <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -113,12 +113,6 @@
   
   <url>
     <loc>https://kosukeblog.com/tags/cocoapods/</loc>
-    <lastmod>2017-04-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kosukeblog.com/categories/cocoapods/</loc>
     <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -136,14 +130,14 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/editor/</loc>
+    <loc>https://kosukeblog.com/categories/editor/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/tags/git/</loc>
-    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -155,13 +149,13 @@
   
   <url>
     <loc>https://kosukeblog.com/tags/github/</loc>
-    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/github/</loc>
-    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
+    <loc>https://kosukeblog.com/tags/html/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -174,6 +168,12 @@
   <url>
     <loc>https://kosukeblog.com/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/categories/library/</loc>
+    <lastmod>2017-04-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -191,7 +191,13 @@
   
   <url>
     <loc>https://kosukeblog.com/tags/profile/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/categories/programming/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -202,13 +208,13 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/swift/</loc>
-    <lastmod>2017-04-13T00:00:00+00:00</lastmod>
+    <loc>https://kosukeblog.com/categories/study/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/swift/</loc>
+    <loc>https://kosukeblog.com/tags/swift/</loc>
     <lastmod>2017-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -225,20 +231,20 @@
   </url>
   
   <url>
+    <loc>https://kosukeblog.com/categories/tips/</loc>
+    <lastmod>2017-06-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/tags/travel/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/categories/xcode/</loc>
+    <loc>https://kosukeblog.com/tags/xcode/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kosukeblog.com/categories/%E3%83%96%E3%83%AD%E3%82%B0/</loc>
-    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -9,6 +9,134 @@
     <atom:link href="https://kosukeblog.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Developer Enterprise Program を使ってアプリ配布したときのまとめ</title>
+      <link>https://kosukeblog.com/2017/08/inhouse/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/08/inhouse/</guid>
+      <description>
+
+&lt;p&gt;本記事は、In-House形式によるiOSアプリの配布方法です。&lt;br /&gt;
+ダウンロードできるデバイスをこちらで登録する必要なく、台数無制限でアプリを入れることが可能です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;developer-enterprise-program-配布までの流れ&#34;&gt;Developer Enterprise Program 配布までの流れ&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;①-archives&#34;&gt;① Archives&lt;/h5&gt;
+
+&lt;p&gt;端末を Generic iOS Device にして &lt;code&gt;Product&lt;/code&gt; -&amp;gt; &lt;code&gt;Archives&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;②-ipaファイルの生成&#34;&gt;② ipaファイルの生成&lt;/h5&gt;
+
+&lt;p&gt;Export で ipa ファイルを作る&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アプリの名前（Xcode側で設定したアイコン名はアプリをインストールしている時に表示される時に表示される名前）&lt;/li&gt;
+&lt;li&gt;ダウンロードページからダウンロードを押した時にダウンロードされるipaファイルのURL&lt;br /&gt;
+例: &lt;code&gt;https://ダウンロードページ/アプリ名.ipa&lt;/code&gt;&lt;br /&gt;
+（plistファイルからこのURLを参照してダウンロードさせるのに使用）&lt;/li&gt;
+&lt;li&gt;image URL ×2 (大小)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;具体例は下記に記載してある &lt;em&gt;GitHubでダウンロードページを動かす&lt;/em&gt; を参照&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/jp/documentation/IDEs/Conceptual/AppDistributionGuide/DistributingEnterpriseProgramApps/DistributingEnterpriseProgramApps.html&#34;&gt;参考URL - Apple公式ページ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;③-ダウンロードページを作る&#34;&gt;③ ダウンロードページを作る&lt;/h5&gt;
+
+&lt;p&gt;ダウンロードボタンを押したときに手順2で生成されるplistファイルをここで読みこませる&lt;br /&gt;
+例: &lt;code&gt;https://ダウンロードページ/manifest.plist&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;例: ダウンロードページのHTML&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt;
+
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;ダウンロードページ&amp;lt;/title&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body&amp;gt;
+
+    &amp;lt;h1&amp;gt;ダウンロード&amp;lt;/h1&amp;gt;
+
+    &amp;lt;img src=&amp;quot;./image/icon512.png&amp;quot; alt=&amp;quot;アプリアイコン&amp;quot;&amp;gt;
+    &amp;lt;p&amp;gt;下のボタンからアプリをダウンロードしてください。&amp;lt;/p&amp;gt;
+
+    &amp;lt;a href=&amp;quot;itms-services://?action=download-manifest&amp;amp;url=manifest.plistが置いてあるURL&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ダウンロード&amp;lt;/a&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Export時に&lt;code&gt;ipaファイル&lt;/code&gt;と&lt;code&gt;plistファイル&lt;/code&gt;が生成されるため、&lt;br /&gt;
+&lt;code&gt;itms-services://?action=download-manifest&amp;amp;url=&lt;/code&gt;の後に&lt;br /&gt;
+生成したplistファイルの置いてあるURLを指定します。&lt;/p&gt;
+
+&lt;p&gt;例: &lt;code&gt;&amp;lt;a href=&amp;quot;itms-services://?action=download-manifest&amp;amp;url=https://ユーザ名.github.io/アプリ名/download/apps/v1_0_0/manifest.plist&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ダウンロード&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;githubでダウンロードページを動かす&#34;&gt;GitHubでダウンロードページを動かす&lt;/h5&gt;
+
+&lt;p&gt;ページにアクセスできるようにするための具体例として、&lt;br /&gt;
+GitHubでダウンロードする静的ページを作り、
+同一階層にipa, plistファイルを置くという方法があります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;例: GitHub構成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;アプリ名 - download  / - apps  /  v1_0_0  /  - アプリ名.ipa
+                                           - manifest.plist
+                     - image /  - icon512.png
+                                - icon57.png
+                     - index.html
+                     - style.css
+       - README.md
+       - .gitignore
+       - LICENSE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;リポジトリ内をこのようなファイル構成にしておき、&lt;br /&gt;
+githubで静的サイトを作り、  URLを生成すると&lt;br /&gt;
+XcodeでExportする際に必要なURLが以下のようになります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;https://ユーザ名.github.io/アプリ名/download/apps/v1_0_0/アプリ名.ipa&lt;/li&gt;
+&lt;li&gt;https://ユーザ名.github.io/アプリ名/download/image/icon57.png&lt;/li&gt;
+&lt;li&gt;https://ユーザ名.github.io/アプリ名/download/image/icon512.png&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;これであとは、手持ちの端末からサイトにアクセスして&lt;br /&gt;
+&lt;code&gt;ダウンロード完了&lt;/code&gt; -&amp;gt; &lt;code&gt;設定&lt;/code&gt; -&amp;gt; &lt;code&gt;プロファイルとデバイス管理&lt;/code&gt; を選択し、&lt;br /&gt;
+エンタープライズAPPにある項目から該当するアプリ開発者を選び、&lt;code&gt;信頼&lt;/code&gt;を選択する。&lt;br /&gt;
+これで、利用できるようになります。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Xcode空白の設定 &#43; 小ネタ</title>
       <link>https://kosukeblog.com/2017/06/whitespace/</link>
       <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>

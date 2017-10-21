@@ -4,12 +4,14 @@ title = "Abstract Factory パターンについて"
 slug = "abstractfactory"
 description = "SwiftでAbstract Factory パターンを使った簡単な例"
 
+categories = [
+	"Programming",
+	"Study"
+]
 tags = [
 	"ios",
+	"swift",
 	"design patterns"
-]
-categories = [
-	"Swift"
 ]
 archives = ""
 keywords = [
