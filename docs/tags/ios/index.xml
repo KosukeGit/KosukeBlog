@@ -9,6 +9,235 @@
     <atom:link href="https://kosukeblog.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GCD(Grand Central Dispatch)についてまとめ</title>
+      <link>https://kosukeblog.com/2017/10/gcd/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/10/gcd/</guid>
+      <description>
+
+&lt;h2 id=&#34;gcd&#34;&gt;GCD&lt;/h2&gt;
+
+&lt;p&gt;マルチスレッドを簡単に処理してくれる &lt;strong&gt;GCD&lt;/strong&gt; (Grand Central Dispatch) についてまとめてみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;気をつける点-しないように心がける点&#34;&gt;気をつける点（しないように心がける点）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;データ競合&lt;/strong&gt;&lt;br /&gt;
+複数のスレッドから同じリソースを更新しようとしてデータの不整合が発生する&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;デッドロック&lt;/strong&gt;&lt;br /&gt;
+イベントを待つためのスレッドを停止する仕組みにより複数のスレッドが相互に待ち続ける&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;多数のスレッドを使用しすぎて大量のメモリを消費する&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;キューの種類&#34;&gt;キューの種類&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Serial Dispatch Queue&lt;/code&gt;：1つのスレッドに追加された順番に処理を実装する&lt;br /&gt;
+→ 競合を起こしそうな場合は安全に用いる&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Concurrent Dispatch Queue&lt;/code&gt;：複数のスレッドを使って追加された処理を実行する&lt;br /&gt;
+→ 起こさない処理は平行に用いる&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;例えばDBから値を取得して、それを渡すときは &lt;strong&gt;Serial Dispatch Queue&lt;/strong&gt; を&lt;br /&gt;
+1つのデータにつき1つ複数のスレッドを生成して処理を実行させるとよい。&lt;/p&gt;
+
+&lt;p&gt;ちなみに&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Main Dispatch Queue はメインスレッドが1つしかないので &lt;strong&gt;Serial Dispatch Queue&lt;/strong&gt; になり、&lt;br /&gt;
+Global Dispatch Queue はアプリケーション全体から使用できる &lt;strong&gt;Concurrent Dispatch Queue&lt;/strong&gt; である。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;スレッド処理の順番&#34;&gt;スレッド処理の順番&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Serial&lt;/code&gt;：処理の順番は実行させてからなので順番&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Concurrent&lt;/code&gt;：一度に複数の処理を行うためバラバラ&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;複数のキューからデータを更新する場合は、競合が起きる可能性があるので&lt;strong&gt;serial&lt;/strong&gt;キューを使用すべき。&lt;br /&gt;
+また、いくつもの&lt;strong&gt;serial&lt;/strong&gt;キューを作って平行に処理させるのは良いが、&lt;br /&gt;
+多すぎるとメモリ上の問題に直面してしまうので必要な数だけ作るべき。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;dispatch-group&#34;&gt;Dispatch Group&lt;/h4&gt;
+
+&lt;p&gt;Dispatch Queue に追加した複数の処理が全て終了したときに終了処理を行いたいときに使用する。&lt;br /&gt;
+どんな Dispatch Queue に処理が追加されていても、それら全てが終了するまで監視することができ、&lt;br /&gt;
+全ての処理の実行終了を検知したら &lt;strong&gt;Dispatch Queue&lt;/strong&gt; に終了処理を追加することができるのが一番の利点である。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;同期と非同期&#34;&gt;同期と非同期&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;dispatch_async&lt;/code&gt;：非同期&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;dispatch_sync&lt;/code&gt;：同期（その処理が終わるまで待つ）&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;様々な処理&#34;&gt;様々な処理&lt;/h4&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dispatch_after&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;〜秒後に処理を Dispatch Queue に追加します。&lt;br /&gt;
+〜秒後に処理を実行するではなく Dispatch Queue に Block を追加するという意味なので注意しましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dispatch_barrier_async&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;指定した場所までに Concurrent Dispatch Queue に追加された&lt;br /&gt;
+並列に実行されているすべての処理の実行が終了してから&lt;br /&gt;
+指定された処理をその Concurrent Dispatch Queue に追加する。&lt;br /&gt;
+そして、&lt;strong&gt;dispatch_barrier_async&lt;/strong&gt; 関数によって追加された処理の実行が終了したら&lt;br /&gt;
+通常の Concurrent Dispatch Queue の動作に戻り、&lt;br /&gt;
+その Concurrent Dispatch Queue に追加されていた処理をまた並列に実行し始めることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;例えば、読み込み処理は Concurrent Dispatch Queue で行いたいが、&lt;br /&gt;
+その途中で書き出しをしようとすると、読み込んだ後でないといけない。そんな場合に使用します。&lt;/p&gt;
+
+&lt;p&gt;使い方としては、dispatch_async 関数の代わりに&lt;br /&gt;
+&lt;strong&gt;dispatch_barrier_async&lt;/strong&gt; 関数を使用するだけです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;例
+dispatch_async(queue, reading01)
+dispatch_async(queue, reading02)
+dispatch_async(queue, reading03)
+dispatch_barrier_async(queue, writing)
+dispatch_async(queue, reading04)
+dispatch_async(queue, reading05)
+　　　　　　　　　　・
+　　　　　　　　　　・
+　　　　　　　　　　・
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これによって効率のよいデータベースアクセスやファイルアクセスを実装することができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dispatch_apply&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;dispatch_sync関数やDispatch Groupに関連するAPI。&lt;br /&gt;
+この関数は、指定した回数分、指定したBlockを指定した Dispatch Queue に追加し、&lt;br /&gt;
+それら全ての処理を実行が終了するまで待つAPIである。&lt;br /&gt;
+注意すべき点としては、dispatch_sync 関数と同様に処理の実行終了を待ってしまうので&lt;br /&gt;
+dispatch_async 関数で非同期実行しながら使いましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dispatch_suspend と dispatch_resume&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;dispatch_suspend&lt;/strong&gt; は Dispatch Queue には追加されているが&lt;br /&gt;
+まだ実行されていない処理をこれ以降一切実行させないときに用いる。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dispatch_resume&lt;/strong&gt; は実行させるようにする際に用いる。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dispatch_semaphore&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;並列に実行される処理によってデータ更新をする場合データの不整合やアプリケーションの不正終了が起こるときがあり、&lt;br /&gt;
+それを回避するために Serial Dispatch Queue や dispatch_barrier_async 関数を使うことで回避できるが、&lt;br /&gt;
+より粒度の細かな排他制御を行う際に用いります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dispatch_once&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;指定した処理をアプリケーション実行中に一度だけしか実行されないことを証明するためのAPI。&lt;br /&gt;
+マルチスレッド環境下でも、完全に安全であることが証明される。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dispatch I/O&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;大きなファイルを読み込む際に、Global Dispatch Queue を使ってファイルを適度な大きさに分割して&lt;br /&gt;
+平行に読むことで速く読み込めないかという際に用いる。&lt;br /&gt;
+複数スレッドを使って複数並列に読み込むのが速いときもあり、&lt;br /&gt;
+それを実現するのが &lt;strong&gt;Dispatch I/O&lt;/strong&gt; と &lt;strong&gt;Dispatch Data&lt;/strong&gt; である。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dispatch Source&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;「kqueue」のラッパーで、Foundationフレームワークを使用するだけで使用可能（GCDの恩恵を受けられる）。&lt;/p&gt;
+
+&lt;p&gt;例えば、DISPATCH_SOURCE_TYPE_TIMERなどを用いればネットワークプログラミングでの通信タイムアウトなどに使用できる。&lt;br /&gt;
+また、Dispatch Queue では処理を追加したらキャンセルはできないが、&lt;br /&gt;
+この Dispatch Queue ではキャンセルすることが可能である。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;参考書籍&#34;&gt;参考書籍&lt;/h4&gt;
+
+&lt;p&gt;ちなみに ARCやBlocks、GCD周りはこちらの書籍が大変わかりやすく載っているのでオススメです。&lt;br /&gt;
+今回の記事もこちらを参考にしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=kosukeblog06-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS2=1&amp;detail=1&amp;asins=4844331094&amp;linkId=e4b3d393321b376cead38ec70bfa215a&amp;bc1=000000&amp;lt1=_blank&amp;fc1=4a4a4a&amp;lc1=349ef3&amp;bg1=ffffff&amp;f=ifr&#34;&gt;
+    &lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Swiftメインでコード書いてる方からすれば、今更Objective-Cの書籍？ってなりますが、&lt;br /&gt;
+GCDなどについて理解を深めたい方にはもってこいの一冊なので一度参考にしてみてはいかがでしょうか。&lt;br /&gt;
+今ならAmazonだとロープライス300円くらいで手に入るのでオススメです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Abstract Factory パターンについて</title>
       <link>https://kosukeblog.com/2017/09/abstractfactory/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
