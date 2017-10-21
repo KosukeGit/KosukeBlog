@@ -5,7 +5,6 @@ slug = "protocol"
 description = "Swiftで使用するプロトコルやデリゲートについて解説"
 
 categories = [
-	"Study",
 	"Programming"
 ]
 tags = [
