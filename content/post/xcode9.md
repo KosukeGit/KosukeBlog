@@ -48,3 +48,16 @@ Xcode9では、ようやくリファクタリング機能が実装されまし�
 `command` + `option` + `F` で十分かなとは思っていたのですが、これはこれで便利な機能ですね。ショートカットを設定しておくと便利かもしれません。
 
 `Editor` -> `Refactor` -> `Rename`
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

@@ -70,3 +70,16 @@ Facebookのいいねボタンは普通に配置しただけでは少し下にず
 の記述をタグの中にすると他のボタンと同じ高さになります。
 
 また、Google+ や Pocket は右側に空白ができてしまうため、気になる場合は横幅(width)を調節してあげると良いと思います。
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

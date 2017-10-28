@@ -89,6 +89,17 @@ git config help
 
 <br>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Middle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="2239399852"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <br>
 
 ### おまけ
@@ -134,3 +145,16 @@ git config --global alias.mylog 'log --oneline --graph --decorate'
 こちらの記事も合わせてどうぞ！
 
 → [tabキーでGitのコマンドを補完する](https://kosukeblog.com/2017/04/completion/)
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

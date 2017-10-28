@@ -56,3 +56,16 @@ Xcode の色選択から **RGB Sliders** を選択し、
 ちなみに正確な色の値を知りたい場合は  
 こちらを使用すると見ることができます。  
 `Spotlight検索` -> `Digital Color Meter`
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

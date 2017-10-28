@@ -41,6 +41,19 @@ metaAlignment = "center"
 
 <br>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Middle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="2239399852"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+
 ### 書き方
 
 - `\#`：**コメント**
@@ -76,3 +89,16 @@ metaAlignment = "center"
 **GitHub上から .gitignore の設定を行う場合**
 
 Create a new repository で新しいリポジトリの作成時に下の方に`Add  .gitignore: None`となっているところがあるので、そこを押して使用する言語のものを選択すれば自動で生成してくれます。
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

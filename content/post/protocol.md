@@ -40,6 +40,21 @@ Javaのインターフェースを先に調べてみてからだと、より理�
 また、本記事ではステップごとに分けて実際のプログラムで解説してきます。  
 ~~決して手抜き解説なわけではありません。~~
 
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="2510862598"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+
 ##### Step 1-1
 
 {{< codeblock "Step1_1.swift" "swift" >}}
@@ -199,3 +214,16 @@ class ViewController2: UIViewController, UITextFieldDelegate {
 コードを書く際に、まず動かそうと真似て書いて、  
 なんとなく理解した気になっていたことが度々ありましたが、  
 こうして改めてステップごとにわけて書いてみると自分でもより理解を深めることができました。:)
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

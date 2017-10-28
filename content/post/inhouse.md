@@ -40,6 +40,19 @@ metaAlignment = "center"
 
 <br>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="2510862598"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+
 # Developer Enterprise Program 配布までの流れ
 
 <br>
@@ -146,3 +159,16 @@ XcodeでExportする際に必要なURLが以下のようになります。
 `ダウンロード完了` -> `設定` -> `プロファイルとデバイス管理` を選択し、  
 エンタープライズAPPにある項目から該当するアプリ開発者を選び、`信頼`を選択する。  
 これで、利用できるようになります。
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

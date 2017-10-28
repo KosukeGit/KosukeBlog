@@ -35,6 +35,19 @@ metaAlignment = "center"
 
 <br>
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="2510862598"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br>
+
 ## bash-completion
 
 bash-completionとは、Bashの補完機能を拡張するシェルスクリプトのことです。
@@ -92,3 +105,16 @@ source ~/setting/git-completion.bash
 <br>
 
 これでターミナルでGitコマンドなどが入力途中で Tabキー を押すことによって最後まで自動で入力されて楽になります！
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

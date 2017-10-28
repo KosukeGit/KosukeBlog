@@ -386,6 +386,19 @@ class ViewController: UIViewController {
 
 &lt;p&gt;Abstract FactoryでDollオブジェクトをインスタンス化する役割を持つ。&lt;br /&gt;
 そのため、呼び出し側で生成されるインスタンスのことを意識しなくて済む（状況が変わっても修正箇所は微量且つ呼び出す側のコードに影響がない）&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
 </description>
     </item>
     
@@ -406,6 +419,21 @@ Javaのインターフェースを先に調べてみてからだと、より理�
 
 &lt;p&gt;また、本記事ではステップごとに分けて実際のプログラムで解説してきます。&lt;br /&gt;
 &lt;del&gt;決して手抜き解説なわけではありません。&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Top --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;2510862598&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h5 id=&#34;step-1-1&#34;&gt;Step 1-1&lt;/h5&gt;
 
@@ -642,7 +670,7 @@ class ViewController: UIViewController, UITextFieldDelegate {  // UITextFieldDel
 
 &lt;h5 id=&#34;step-2-2&#34;&gt;Step 2-2&lt;/h5&gt;
 
-&lt;p&gt;
+
   
     
   
@@ -695,11 +723,24 @@ class ViewController2: UIViewController, UITextFieldDelegate {
       &lt;/tr&gt;
     &lt;/tbody&gt;
   &lt;/table&gt;
-&lt;/figure&gt;&lt;/p&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;コードを書く際に、まず動かそうと真似て書いて、&lt;br /&gt;
 なんとなく理解した気になっていたことが度々ありましたが、&lt;br /&gt;
 こうして改めてステップごとにわけて書いてみると自分でもより理解を深めることができました。:)&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
 </description>
     </item>
     
@@ -713,6 +754,19 @@ class ViewController2: UIViewController, UITextFieldDelegate {
 
 &lt;p&gt;本記事は、In-House形式によるiOSアプリの配布方法です。&lt;br /&gt;
 ダウンロードできるデバイスをこちらで登録する必要なく、台数無制限でアプリを入れることが可能です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Top --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;2510862598&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -828,6 +882,19 @@ XcodeでExportする際に必要なURLが以下のようになります。&lt;/p
 &lt;code&gt;ダウンロード完了&lt;/code&gt; -&amp;gt; &lt;code&gt;設定&lt;/code&gt; -&amp;gt; &lt;code&gt;プロファイルとデバイス管理&lt;/code&gt; を選択し、&lt;br /&gt;
 エンタープライズAPPにある項目から該当するアプリ開発者を選び、&lt;code&gt;信頼&lt;/code&gt;を選択する。&lt;br /&gt;
 これで、利用できるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
 </description>
     </item>
     
@@ -870,6 +937,19 @@ XcodeでExportする際に必要なURLが以下のようになります。&lt;/p
 &lt;h3 id=&#34;小ネタ&#34;&gt;小ネタ&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;?w=1&lt;/code&gt;をGitHubのリンクの後ろに付けると空白の差分を除いた状態になるためレビューしやすくなります！試して見てください:)&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
 </description>
     </item>
     
@@ -972,7 +1052,21 @@ XcodeでExportする際に必要なURLが以下のようになります。&lt;/p
 
 &lt;p&gt;使用する際には アプリ名.xcworkspace を開いて、その中に使うライブラリのインポート行う必要があります。&lt;/p&gt;
 
-&lt;p&gt;また、多数のライブラリ等がまとまった &lt;a href=&#34;https://github.com/matteocrippa/awesome-swift&#34;&gt;Awesome Swift&lt;/a&gt; はおすすめです。ここから使いたいものを探してみるといいかもしれません。&lt;/p&gt;
+&lt;p&gt;また、多数のライブラリ等がまとまった &lt;a href=&#34;https://github.com/matteocrippa/awesome-swift&#34;&gt;Awesome Swift&lt;/a&gt; はおすすめです。&lt;br /&gt;
+ここから使いたいものを探してみるといいかもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
 </description>
     </item>
     
