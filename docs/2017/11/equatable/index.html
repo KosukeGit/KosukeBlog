@@ -17,26 +17,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>Xcodeで色設定をするときの注意点</title>
+    <title>Equatableについて</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Xcode, Storyboard, color, RGB, Generic RGB, sRGB">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Swift, Equatable, Equatableとは">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="XcodeでsRGB等の設定を行う方法">
-    <meta property="og:description" content="XcodeでsRGB等の設定を行う方法">
+    <meta name="description" content="SwiftのEquatableの使い方の説明">
+    <meta property="og:description" content="SwiftのEquatableの使い方の説明">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Xcodeで色設定をするときの注意点">
-    <meta property="og:url" content="/2017/07/color/">
+    <meta property="og:title" content="Equatableについて">
+    <meta property="og:url" content="/2017/11/equatable/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="XcodeでsRGB等の設定を行う方法">
+    <meta name="twitter:description" content="SwiftのEquatableの使い方の説明">
     
-      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2017-07-31/xcode.png">
+      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2017-11-06/swift.png">
     
     
     
@@ -49,7 +49,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-07-31/xcode.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-11-06/swift.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -228,17 +228,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Xcodeで色設定をするときの注意点
+      Equatableについて
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-07-31T00:00:00Z">
+  <time itemprop="datePublished" datetime="2017-11-06T00:00:00Z">
     
   
   
   
   
-    2017.07.31
+    2017.11.06
   
 
   </time>
@@ -247,9 +247,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/editor">Editor</a>, 
-    
-      <a class="category-link" href="https://kosukeblog.com/categories/design">Design</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/programming">Programming</a>
     
   
 
@@ -273,33 +271,193 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<h2 id="xcodeで色設定をするときの注意点">Xcodeで色設定をするときの注意点</h2>
+<h2 id="equatable">Equatable</h2>
+
+<p>Equatableプロトコルに準拠したクラスは<br />
+<code>static func ==(lhs: Self, rhs: Self) -&gt; Bool</code> 関数を実装する必要があり、<br />
+何によって等しいかをこの中で定義してあげることで比較ができるようになります。</p>
+
+<p><br></p>
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>EquatableSample.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">class IntegerRef: Equatable {
+    let value: Int
+    init(_ value: Int) {
+        self.value = value
+    }
+
+    static func == (lhs: IntegerRef, rhs: IntegerRef) -&gt; Bool {
+        return lhs.value == rhs.value
+    }
+}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>参考：<a href="https://developer.apple.com/documentation/swift/equatable">https://developer.apple.com/documentation/swift/equatable</a></p>
+
+<p><br></p>
+
+<p>これにより、<code>IntegerRef(10) == IntegerRef(10)</code> は <code>true</code> となります。<br />
+よって、以下のようなテストコードは通るようになります。</p>
+
+<p><br></p>
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>EquatableSample.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">func testEquality() {
+    XCTAssertTrue(IntegerRef(10) == IntegerRef(10))
+    XCTAssertFalse(IntegerRef(10) == IntegerRef(11))
+}</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
 
 <p><br></p>
 
 <p><br></p>
 
-<h3 id="動機">動機</h3>
+<h3 id="どう使うのか">どう使うのか</h3>
 
-<p>Storyboardで設定した色とコードで書いた色の見た目が<br />
-Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
-調べたところ以下の設定が問題でした。</p>
-
-<p><br></p>
-
-<h3 id="原因と解決方法">原因と解決方法</h3>
-
-<p>Xcode の色選択から <strong>RGB Sliders</strong> を選択し、<br />
-右の歯車マークから <strong>Color Profile</strong> で確認したところ設定が異なっていたのが原因でした。<br />
-そのため、自分の場合は <code>Generic RGB</code> -&gt; <code>sRGB</code>に設定を変えて色を統一させました。</p>
+<p>自作クラスのArrayもEquatableプロトコルに準拠していれば<code>contains()</code> を用いた際に、<br />
+配列の中に指定したオブジェクトが存在しているかを確認できます。</p>
 
 <p><br></p>
 
-<h3 id="おまけ">おまけ</h3>
+<p>上記の例を用いて、書くとこのようになります。</p>
 
-<p>ちなみに正確な色の値を知りたい場合は<br />
-こちらを使用すると見ることができます。<br />
-<code>Spotlight検索</code> -&gt; <code>Digital Color Meter</code></p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>EquatableSample.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">let array = [IntegerRef(10), IntegerRef(11), IntegerRef(12)]
+
+array.contains(IntegerRef(10))  // =&gt; true
+array.contains(IntegerRef(13))  // =&gt; false</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p><br></p>
+
+<p><br></p>
+
+<h3 id="さらに便利に使う">さらに便利に使う</h3>
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight swift">
+  <figcaption>
+    
+      <span>EquatableSample.swift</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="swift code-highlight">/// 重複した要素を削除するArray型の拡張
+extension Array where Element: Equatable {
+    var unique: [Element] {
+        return reduce([], {
+            $0.contains($1) ? $0 : $0 &#43; [$1]
+        })
+    }
+}
+
+let array = [IntegerRef(10), IntegerRef(11), IntegerRef(12), IntegerRef(11)]
+print(array)  // [IntegerRef(10), IntegerRef(11), IntegerRef(12), IntegerRef(11)]
+print(array.unique)  // [IntegerRef(10), IntegerRef(11), IntegerRef(12)]</pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>上記のようにArrayを拡張してあげれば、配列の重複を防ぐことが可能になります。</p>
 
 <p><br></p>
 
@@ -326,9 +484,9 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/xcode/">xcode</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/ios/">ios</a>
 
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/storyboard/">storyboard</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/swift/">swift</a>
 
 
                   </div>
@@ -341,7 +499,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/08/inhouse/" data-tooltip="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -349,7 +507,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/06/whitespace/" data-tooltip="Xcode空白の設定 &#43; 小ネタ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/10/gcd/" data-tooltip="GCD(Grand Central Dispatch)についてまとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -401,7 +559,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f07%2fcolor%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f11%2fequatable%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -443,7 +601,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/08/inhouse/" data-tooltip="Developer Enterprise Program を使ってアプリ配布したときのまとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -451,7 +609,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/06/whitespace/" data-tooltip="Xcode空白の設定 &#43; 小ネタ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/10/gcd/" data-tooltip="GCD(Grand Central Dispatch)についてまとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -503,7 +661,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f07%2fcolor%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f11%2fequatable%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -539,7 +697,7 @@ Build&amp;Runして確認したときに微妙に違うなあと思い、<br />
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f07%2fcolor%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f11%2fequatable%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -831,9 +989,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/07\/color\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2017\/11\/equatable\/';
           
-            this.page.identifier = '\/2017\/07\/color\/'
+            this.page.identifier = '\/2017\/11\/equatable\/'
           
         };
         (function() {

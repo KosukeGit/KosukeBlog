@@ -9,6 +9,217 @@
     <atom:link href="https://kosukeblog.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Equatableについて</title>
+      <link>https://kosukeblog.com/2017/11/equatable/</link>
+      <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/11/equatable/</guid>
+      <description>
+
+&lt;h2 id=&#34;equatable&#34;&gt;Equatable&lt;/h2&gt;
+
+&lt;p&gt;Equatableプロトコルに準拠したクラスは&lt;br /&gt;
+&lt;code&gt;static func ==(lhs: Self, rhs: Self) -&amp;gt; Bool&lt;/code&gt; 関数を実装する必要があり、&lt;br /&gt;
+何によって等しいかをこの中で定義してあげることで比較ができるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+&lt;figure class=&#34;highlight swift&#34;&gt;
+  &lt;figcaption&gt;
+    
+      &lt;span&gt;EquatableSample.swift&lt;/span&gt;
+    
+  &lt;/figcaption&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&#34;gutter&#34;&gt;
+          &lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;code&#34;&gt;
+          &lt;pre class=&#34;swift code-highlight&#34;&gt;class IntegerRef: Equatable {
+    let value: Int
+    init(_ value: Int) {
+        self.value = value
+    }
+
+    static func == (lhs: IntegerRef, rhs: IntegerRef) -&amp;gt; Bool {
+        return lhs.value == rhs.value
+    }
+}&lt;/pre&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;参考：&lt;a href=&#34;https://developer.apple.com/documentation/swift/equatable&#34;&gt;https://developer.apple.com/documentation/swift/equatable&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;これにより、&lt;code&gt;IntegerRef(10) == IntegerRef(10)&lt;/code&gt; は &lt;code&gt;true&lt;/code&gt; となります。&lt;br /&gt;
+よって、以下のようなテストコードは通るようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+&lt;figure class=&#34;highlight swift&#34;&gt;
+  &lt;figcaption&gt;
+    
+      &lt;span&gt;EquatableSample.swift&lt;/span&gt;
+    
+  &lt;/figcaption&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&#34;gutter&#34;&gt;
+          &lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;code&#34;&gt;
+          &lt;pre class=&#34;swift code-highlight&#34;&gt;func testEquality() {
+    XCTAssertTrue(IntegerRef(10) == IntegerRef(10))
+    XCTAssertFalse(IntegerRef(10) == IntegerRef(11))
+}&lt;/pre&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;どう使うのか&#34;&gt;どう使うのか&lt;/h3&gt;
+
+&lt;p&gt;自作クラスのArrayもEquatableプロトコルに準拠していれば&lt;code&gt;contains()&lt;/code&gt; を用いた際に、&lt;br /&gt;
+配列の中に指定したオブジェクトが存在しているかを確認できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;上記の例を用いて、書くとこのようになります。&lt;/p&gt;
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+&lt;figure class=&#34;highlight swift&#34;&gt;
+  &lt;figcaption&gt;
+    
+      &lt;span&gt;EquatableSample.swift&lt;/span&gt;
+    
+  &lt;/figcaption&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&#34;gutter&#34;&gt;
+          &lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;code&#34;&gt;
+          &lt;pre class=&#34;swift code-highlight&#34;&gt;let array = [IntegerRef(10), IntegerRef(11), IntegerRef(12)]
+
+array.contains(IntegerRef(10))  // =&amp;gt; true
+array.contains(IntegerRef(13))  // =&amp;gt; false&lt;/pre&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;さらに便利に使う&#34;&gt;さらに便利に使う&lt;/h3&gt;
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+&lt;figure class=&#34;highlight swift&#34;&gt;
+  &lt;figcaption&gt;
+    
+      &lt;span&gt;EquatableSample.swift&lt;/span&gt;
+    
+  &lt;/figcaption&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&#34;gutter&#34;&gt;
+          &lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;code&#34;&gt;
+          &lt;pre class=&#34;swift code-highlight&#34;&gt;/// 重複した要素を削除するArray型の拡張
+extension Array where Element: Equatable {
+    var unique: [Element] {
+        return reduce([], {
+            $0.contains($1) ? $0 : $0 &amp;#43; [$1]
+        })
+    }
+}
+
+let array = [IntegerRef(10), IntegerRef(11), IntegerRef(12), IntegerRef(11)]
+print(array)  // [IntegerRef(10), IntegerRef(11), IntegerRef(12), IntegerRef(11)]
+print(array.unique)  // [IntegerRef(10), IntegerRef(11), IntegerRef(12)]&lt;/pre&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;上記のようにArrayを拡張してあげれば、配列の重複を防ぐことが可能になります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>GCD(Grand Central Dispatch)についてまとめ</title>
       <link>https://kosukeblog.com/2017/10/gcd/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
