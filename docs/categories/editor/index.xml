@@ -18,7 +18,8 @@
 
 &lt;h3 id=&#34;jumps-to-definition&#34;&gt;Jumps to Definition&lt;/h3&gt;
 
-&lt;p&gt;Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができたが、Xcode9では新しい機能でどんなアクションをするかメニューが開き、から&lt;code&gt;Jump to Definition&lt;/code&gt;を選択しないといけません。&lt;br /&gt;
+&lt;p&gt;Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができましたが、&lt;br /&gt;
+Xcode9では新しい機能でどんなアクションをするかメニューが開き、から&lt;code&gt;Jump to Definition&lt;/code&gt;を選択しないといけません。&lt;br /&gt;
 そのため、設定を開かずワンクリックで定義元に飛ぶように戻したい際は、下記の手順で設定すればXcode8同様の動作に戻ります。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;Xcode&lt;/code&gt; -&amp;gt; &lt;code&gt;Preferences...&lt;/code&gt; -&amp;gt; &lt;code&gt;Navigation&lt;/code&gt; -&amp;gt; &lt;code&gt;Command-click on Code&lt;/code&gt; を &lt;code&gt;Jumps to Definition&lt;/code&gt;に設定&lt;/p&gt;
@@ -37,6 +38,49 @@
 &lt;code&gt;command&lt;/code&gt; + &lt;code&gt;option&lt;/code&gt; + &lt;code&gt;F&lt;/code&gt; で十分かなとは思っていたのですが、これはこれで便利な機能ですね。ショートカットを設定しておくと便利かもしれません。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;Refactor&lt;/code&gt; -&amp;gt; &lt;code&gt;Rename&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Middle --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;2239399852&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;new-build-system&#34;&gt;New Build System&lt;/h3&gt;
+
+&lt;p&gt;ライブラリを多用していたりするとビルドに時間がかかり、&lt;br /&gt;
+待ち時間が場合によってはストレスになりますよね。&lt;/p&gt;
+
+&lt;p&gt;そんな中、Xcode9 から &lt;strong&gt;New Build System&lt;/strong&gt; という高速でビルドしてくれる機能が実装されていました。&lt;br /&gt;
+この設定を行うと、ビルドがかなり早くなります。&lt;br /&gt;
+安定感もあるのでビルド待ちのストレスも減少されると思います！&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;設定方法はとても簡単です。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Workspace Settings...&lt;/code&gt; -&amp;gt; &lt;code&gt;Build System&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Workspaceから設定画面を開いて Build System を&lt;br /&gt;
+&lt;code&gt;New Build System (Preview)&lt;/code&gt; に変えるだけ！&lt;br /&gt;
+（初期設定は &lt;code&gt;Standard Build System (Default)&lt;/code&gt; となっています。）&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;オープンソースの &lt;a href=&#34;https://github.com/apple/swift-llbuild&#34;&gt;llbuild&lt;/a&gt; が使われているみたいです。&lt;br /&gt;
+現在はDefault設定にはなっておりませんが、今後のアップデートでデフォルトになるといいですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;今後も快適なコーディングライフを送りたいですね:)&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

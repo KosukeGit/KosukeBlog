@@ -273,7 +273,8 @@ ga('send', 'pageview');
 
 <h3 id="jumps-to-definition">Jumps to Definition</h3>
 
-<p>Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができたが、Xcode9では新しい機能でどんなアクションをするかメニューが開き、から<code>Jump to Definition</code>を選択しないといけません。<br />
+<p>Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができましたが、<br />
+Xcode9では新しい機能でどんなアクションをするかメニューが開き、から<code>Jump to Definition</code>を選択しないといけません。<br />
 そのため、設定を開かずワンクリックで定義元に飛ぶように戻したい際は、下記の手順で設定すればXcode8同様の動作に戻ります。</p>
 
 <p><code>Xcode</code> -&gt; <code>Preferences...</code> -&gt; <code>Navigation</code> -&gt; <code>Command-click on Code</code> を <code>Jumps to Definition</code>に設定</p>
@@ -292,6 +293,49 @@ ga('send', 'pageview');
 <code>command</code> + <code>option</code> + <code>F</code> で十分かなとは思っていたのですが、これはこれで便利な機能ですね。ショートカットを設定しておくと便利かもしれません。</p>
 
 <p><code>Editor</code> -&gt; <code>Refactor</code> -&gt; <code>Rename</code></p>
+
+<p><br></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Middle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="2239399852"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<p><br></p>
+
+<h3 id="new-build-system">New Build System</h3>
+
+<p>ライブラリを多用していたりするとビルドに時間がかかり、<br />
+待ち時間が場合によってはストレスになりますよね。</p>
+
+<p>そんな中、Xcode9 から <strong>New Build System</strong> という高速でビルドしてくれる機能が実装されていました。<br />
+この設定を行うと、ビルドがかなり早くなります。<br />
+安定感もあるのでビルド待ちのストレスも減少されると思います！</p>
+
+<p><br></p>
+
+<p>設定方法はとても簡単です。</p>
+
+<p><code>File</code> -&gt; <code>Workspace Settings...</code> -&gt; <code>Build System</code></p>
+
+<p>Workspaceから設定画面を開いて Build System を<br />
+<code>New Build System (Preview)</code> に変えるだけ！<br />
+（初期設定は <code>Standard Build System (Default)</code> となっています。）</p>
+
+<p><br></p>
+
+<p>オープンソースの <a href="https://github.com/apple/swift-llbuild">llbuild</a> が使われているみたいです。<br />
+現在はDefault設定にはなっておりませんが、今後のアップデートでデフォルトになるといいですね。</p>
+
+<p><br></p>
+
+<p>今後も快適なコーディングライフを送りたいですね:)</p>
 
 <p><br></p>
 
@@ -638,7 +682,7 @@ ga('send', 'pageview');
                   Oct 10, 2017
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">Jumps to Definition Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができたが、Xcode9では新しい機</div>
+              <div class="media-content hide-xs font-merryweather">Jumps to Definition Xcode8ではキーボードのCommandを押しながら定義をクリックすると、定義元に一発で飛ぶことができましたが、 Xcode9では新し</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
