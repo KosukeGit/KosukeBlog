@@ -58,7 +58,7 @@ class IntegerRef: Equatable {
 
 <br>
 
-{{< codeblock "EquatableSample.swift" "swift" >}}
+{{< codeblock "EquatableSampleTests.swift" "swift" >}}
 func testEquality() {
     XCTAssertTrue(IntegerRef(10) == IntegerRef(10))
     XCTAssertFalse(IntegerRef(10) == IntegerRef(11))
