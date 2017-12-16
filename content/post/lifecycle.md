@@ -97,10 +97,10 @@ View1 の上に View2 が重なっている。この時の状態は...
 
 ##### View2 -> View1 戻る (dismiss)
 
-1 `View2`: viewWillDisappear**  
-2 `View1`: viewWillAppear**  
-3 `View2`: viewDidDisappear**  
-4 `View1`: viewDidAppear**
+1 `View2`: **viewWillDisappear**  
+2 `View1`: **viewWillAppear**  
+3 `View2`: **viewDidDisappear**  
+4 `View1`: **viewDidAppear**
 
 <br>
 

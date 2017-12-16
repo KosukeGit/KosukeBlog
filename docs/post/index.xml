@@ -86,10 +86,10 @@ View1 の上に View2 が重なっている。この時の状態は&amp;hellip;&
 
 &lt;h5 id=&#34;view2-view1-戻る-dismiss&#34;&gt;View2 -&amp;gt; View1 戻る (dismiss)&lt;/h5&gt;
 
-&lt;p&gt;1 &lt;code&gt;View2&lt;/code&gt;: viewWillDisappear**&lt;br /&gt;
-2 &lt;code&gt;View1&lt;/code&gt;: viewWillAppear**&lt;br /&gt;
-3 &lt;code&gt;View2&lt;/code&gt;: viewDidDisappear**&lt;br /&gt;
-4 &lt;code&gt;View1&lt;/code&gt;: viewDidAppear**&lt;/p&gt;
+&lt;p&gt;1 &lt;code&gt;View2&lt;/code&gt;: &lt;strong&gt;viewWillDisappear&lt;/strong&gt;&lt;br /&gt;
+2 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewWillAppear&lt;/strong&gt;&lt;br /&gt;
+3 &lt;code&gt;View2&lt;/code&gt;: &lt;strong&gt;viewDidDisappear&lt;/strong&gt;&lt;br /&gt;
+4 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewDidAppear&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
