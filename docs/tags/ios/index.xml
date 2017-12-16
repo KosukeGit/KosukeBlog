@@ -9,6 +9,103 @@
     <atom:link href="https://kosukeblog.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>viewWillAppearやviewDidAppearなどの状態まとめ</title>
+      <link>https://kosukeblog.com/2017/12/lifecycle/</link>
+      <pubDate>Sat, 16 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2017/12/lifecycle/</guid>
+      <description>
+
+&lt;p&gt;viewWillAppearの呼ばれるタイミングなど忘れることが多いので&lt;br /&gt;
+簡易的ですが、覚え方も一緒にまとめてみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;覚え方&#34;&gt;覚え方&lt;/h5&gt;
+
+&lt;p&gt;例えば、View1 -&amp;gt; View2 にプッシュ遷移した場合、&lt;br /&gt;
+View1 の上に View2 が重なっている。この時の状態は&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;View1&lt;/code&gt;: disappearになった&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;View2&lt;/code&gt;: appearになった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;なので以下のように覚えると楽です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;appear&lt;/code&gt;: 画面が見えてる状態&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;disappear&lt;/code&gt;: 画面が見えなくなった状態&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Top --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;2510862598&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;起動時&#34;&gt;起動時&lt;/h5&gt;
+
+&lt;p&gt;1 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewDidLoad&lt;/strong&gt;&lt;br /&gt;
+2 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewWillAppear&lt;/strong&gt;&lt;br /&gt;
+3 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewDidAppear&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;view1-view2-遷移する&#34;&gt;View1 -&amp;gt; View2 遷移する&lt;/h5&gt;
+
+&lt;p&gt;1 &lt;code&gt;View2&lt;/code&gt;: &lt;strong&gt;viewDidLoad&lt;/strong&gt;&lt;br /&gt;
+2 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewWillDisappear&lt;/strong&gt;&lt;br /&gt;
+3 &lt;code&gt;View2&lt;/code&gt;: &lt;strong&gt;viewWillAppear&lt;/strong&gt;&lt;br /&gt;
+4 &lt;code&gt;View1&lt;/code&gt;: &lt;strong&gt;viewDidDisappear&lt;/strong&gt;&lt;br /&gt;
+5 &lt;code&gt;View2&lt;/code&gt;: &lt;strong&gt;viewDidAppear&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;view2-view1-戻る-dismiss&#34;&gt;View2 -&amp;gt; View1 戻る (dismiss)&lt;/h5&gt;
+
+&lt;p&gt;1 &lt;code&gt;View2&lt;/code&gt;: viewWillDisappear**&lt;br /&gt;
+2 &lt;code&gt;View1&lt;/code&gt;: viewWillAppear**&lt;br /&gt;
+3 &lt;code&gt;View2&lt;/code&gt;: viewDidDisappear**&lt;br /&gt;
+4 &lt;code&gt;View1&lt;/code&gt;: viewDidAppear**&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Equatableについて</title>
       <link>https://kosukeblog.com/2017/11/equatable/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
