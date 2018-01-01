@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukeblog.com/2018/01/happynewyear2018/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/2017/12/lifecycle/</loc>
     <lastmod>2017-12-16T00:00:00+00:00</lastmod>
   </url>
@@ -88,7 +93,7 @@
   
   <url>
     <loc>https://kosukeblog.com/archives/</loc>
-    <lastmod>2017-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -151,20 +156,26 @@
   </url>
   
   <url>
-    <loc>https://kosukeblog.com/tags/git/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://kosukeblog.com/categories/git/</loc>
     <lastmod>2017-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://kosukeblog.com/tags/git/</loc>
+    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/tags/github/</loc>
     <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kosukeblog.com/tags/happy-new-year/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -182,7 +193,7 @@
   
   <url>
     <loc>https://kosukeblog.com/</loc>
-    <lastmod>2017-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -200,13 +211,13 @@
   
   <url>
     <loc>https://kosukeblog.com/categories/other/</loc>
-    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kosukeblog.com/post/</loc>
-    <lastmod>2017-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
