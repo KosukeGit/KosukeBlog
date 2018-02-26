@@ -6,8 +6,250 @@
     <description>Recent content on Kosuke Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kosukeblog.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Xcodeデバッグ術まとめ</title>
+      <link>https://kosukeblog.com/2018/02/debug/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/02/debug/</guid>
+      <description>
+
+&lt;p&gt;今回は個人的に便利だと思うデバッグの方法をまとめてみました！&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;xcode-lldbコマンド&#34;&gt;Xcode lldbコマンド&lt;/h2&gt;
+
+&lt;p&gt;ブレークポイントでプログラムを止めた際に、&lt;br /&gt;
+コンソールに表示される (lldb) にコマンドを入力することができます。&lt;br /&gt;
+これから紹介するコマンドを頭に入れておけば&lt;br /&gt;
+素早くデバッグに取りかかることができるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;p または print (プリミティブ型の変数の値を表示)&lt;/li&gt;
+&lt;li&gt;po (オブジェクト型の変数の値の表示)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これを知っておけば、値をちょこっと確認したい時に&lt;br /&gt;
+わざわざコードにprint(~)を埋め込む必要がなくなり、&lt;br /&gt;
+リアルタイムで値を見れます。&lt;/p&gt;
+
+&lt;p&gt;また、以下のように式の評価を行うことが可能です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var a = 1
+var b = 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のようなプロパティがあったとします。&lt;br /&gt;
+この時、aとbは同じ値かどうか知りたい場合にはlldbで以下のように入力してみると&lt;br /&gt;
+デバッグ中に式の評価をすることが可能です。大変便利です。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;p a == b&lt;/code&gt; -&amp;gt; falseが返ってくる&lt;br /&gt;
+&lt;code&gt;p a == 1&lt;/code&gt; -&amp;gt; trueが返ってくる&lt;br /&gt;
+&lt;code&gt;p b == 1&lt;/code&gt; -&amp;gt; falseが返ってくる&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;s (ステップイン)&lt;/li&gt;
+&lt;li&gt;c (次のbreak point まで飛ばす)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一度入力した後は、入力し直さなくても&lt;br /&gt;
+Enterボタンを押せばそのまま続けられるので便利です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;h (ヘルプ)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使いたいコマンドを一覧表示することができます&lt;/p&gt;
+
+&lt;p&gt;また、コマンドの中には&lt;br /&gt;
+&lt;code&gt;br l&lt;/code&gt; でブレークポイントの一覧を表示してくれたりするものや&lt;br /&gt;
+&lt;code&gt;q&lt;/code&gt; で終了させるものもあるので一度見てみるといいと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Top --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;2510862598&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;filter&#34;&gt;Filter&lt;/h2&gt;
+
+&lt;p&gt;デバッグエリアの下にあるFilterというプレースホルダーのところに&lt;br /&gt;
+フィルタリングしたい文字を入力すると、デバッグで表示される全ての実行結果から&lt;br /&gt;
+特定の文字のみで表示させることができるのでピンポイントで結果の値を見たい際に便利です。&lt;/p&gt;
+
+&lt;p&gt;また、実行結果の中で &lt;code&gt;command + F&lt;/code&gt; でキーワード検索を行ってもよいですが、&lt;br /&gt;
+ピンポイントでその部分だけみたい際にはこちらの方が圧倒的に便利です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;breakpoint&#34;&gt;Breakpoint&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Deactivate Breakpoints&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;全てのブレークポイント は &lt;code&gt;command + Y&lt;/code&gt; でオンオフできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Edit Breakpoint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ブレークポイントを貼った部分から右クリックを押して &lt;code&gt;Edit Breakpoint...&lt;/code&gt; を選択します。&lt;br /&gt;
+その後、Conditioinに条件を記入するとそのタイミングでブレークします。&lt;/p&gt;
+
+&lt;p&gt;例えば下記のようなループの中のカウントがn回目になったときブレークしたい時に使えます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;let arr = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
+for i in 0..&amp;lt;arr.count {
+    print(arr[i])  // ここでブレークを貼り、i == 1 と設定すると i が 1 の時だけブレークになります。
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;また、逆にn回目はブレークをスルーしたい場合には、&lt;br /&gt;
+ignore を設定してあげるとn回目にそこを通ったときはブレークをスルーしてくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Exception breakpoint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ナビゲーターエリアの左下にある＋マーク(create a breakpoint) から
+&lt;code&gt;Exception breakpoint...&lt;/code&gt; を選択しておけばクラッシュする直前でブレークしてくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;po $arg1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、&lt;code&gt;Exception breakpoint...&lt;/code&gt; を選択後に表示される設定の中の&lt;br /&gt;
+Action から Debugger Command を選択し、&lt;code&gt;po $arg1&lt;/code&gt; を入力しておきます。&lt;br /&gt;
+すると、ブレークすると同時にブレークの原因となるログを吐き出してくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;debug-view-hierarchy&#34;&gt;Debug View Hierarchy&lt;/h2&gt;
+
+&lt;p&gt;Debug View Hierarchy は、今表示しているViewなどの階層を視覚的に見れる便利な方法です。&lt;/p&gt;
+
+&lt;p&gt;表示の仕方は簡単で、デバッグ中に現れるデバッグエリアの上にあるボタンの中に&lt;br /&gt;
+Debug View Hierarchy があるので、それを押すとXcode上で表示されます。&lt;br /&gt;
+再開する際はブレークポイントで止まったのを再開させる時と同様に&lt;br /&gt;
+Continue program execution を押します。&lt;/p&gt;
+
+&lt;p&gt;階層表示中にクリックしたものがどのクラスのものか確認したり、&lt;br /&gt;
+今の画面で一番上に表示しているViewは何Viewでその下のSubViewが&lt;br /&gt;
+どうなっているのかなど、すぐに知りたい時に知れる便利な方法です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;built-in-identifiers&#34;&gt;Built-In Identifiers&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#file&lt;/code&gt;：ファイル名（String型）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#line&lt;/code&gt;：行数（Int型）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#column&lt;/code&gt;：文字の位置（Int型）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#function&lt;/code&gt;：関数名（String型）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;少しマイナーなデバッグ方法を紹介します。&lt;br /&gt;
+これらを使い、関数などで呼ぶことで&lt;br /&gt;
+その関数の行数やファイル名を表示させることができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/// 使い方
+
+/// 怪しいと思う関数内でresult()を呼び出す
+/// 今回は doSomething関数 が怪しいと思うので
+/// ここでresult()を読んでみる。他にも怪しいと思う部分にresult()を入れる。
+func doSomething() {
+    /*
+    何かしらの処理
+        .
+        .
+        .
+     */
+    var errorMessage = &amp;quot;!!error message!!&amp;quot;
+    result(message: errorMessage)  // 仮にここが50行目だとする
+}
+
+
+/// デバッグ用関数
+/// 呼ばれた関数名がprintで表示される。
+/// 今回は 50行目の doSomething() から呼ばれていることがわかった。
+func result(message: String = &amp;quot;&amp;quot;, file: String = #function, line: Int = #line) {
+    #if DEBUG
+        print(&amp;quot;failed at \(function):\(line): \(message)&amp;quot;)
+        // -&amp;gt; &amp;quot;failed at doSomething():50: !!error message!!&amp;quot;
+    #endif
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考：&lt;a href=&#34;https://developer.apple.com/swift/blog/?id=15&#34;&gt;https://developer.apple.com/swift/blog/?id=15&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;debug-navigator&#34;&gt;Debug Navigator&lt;/h2&gt;
+
+&lt;p&gt;デバッグ中にナビゲーターエリアの &lt;code&gt;Debug Navigator&lt;/code&gt; を押せば、&lt;br /&gt;
+処理の様々な情報を見ることができます。(右から3つ目のアイコン(Xcode9にて))&lt;br /&gt;
+ブレークポイントを貼っておき、ブレークで止まった際に&lt;br /&gt;
+Debug Navigator を押すとその部分までの処理の流れをスレッドごとに&lt;br /&gt;
+見ることができるので、大変便利だと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;よく使うものからマイナーなやり方までまとめてみました。&lt;br /&gt;
+この記事を見つけて読んでくれた方が少しでも参考になったと思ってくれたら満足です :)&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>2017年振り返りと2018年について</title>
@@ -2469,51 +2711,6 @@ Build&amp;amp;Runして確認したときに微妙に違うなあと思い、&lt
 &lt;p&gt;の記述をタグの中にすると他のボタンと同じ高さになります。&lt;/p&gt;
 
 &lt;p&gt;また、Google+ や Pocket は右側に空白ができてしまうため、気になる場合は横幅(width)を調節してあげると良いと思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
-&lt;!-- BlogAdsense_Bottom --&gt;
-&lt;ins class=&#34;adsbygoogle&#34;
-     style=&#34;display:block&#34;
-     data-ad-client=&#34;ca-pub-9828180917254396&#34;
-     data-ad-slot=&#34;9212002313&#34;
-     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GitHubの２段階認証後にpushできなくなった時の対処法</title>
-      <link>https://kosukeblog.com/2017/05/authentication/</link>
-      <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kosukeblog.com/2017/05/authentication/</guid>
-      <description>&lt;p&gt;今回は、GitHubで２段階認証を行ったが、その後のpushができなくなってしまった際の対応方法について書いていきたいと思います。&lt;/p&gt;
-
-&lt;p&gt;下記の様にプッシュ後にユーザ名とパスワードを求められて、入力すると&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;fatal: Authentication failed for &#39;https://github.com/~~~&#39;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;と出力されてしまいました。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;この対応方法は、アクセストークンを生成する必要があります。
-公式ページに従って手順通りに行えば解決できます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/&#34;&gt;Creating a token&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;まず、上記のURLの手順に従ってアクセストークンを発行します。
-このアクセストークンはどこかにメモをしておきましょう。&lt;/p&gt;
-
-&lt;p&gt;そして、ユーザ名とパスワードを入力する際のパスワードに先ほどのアクセストークンを入れて進めることでプッシュすることができます。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、キーチェーン等の確認をする際はこちらを参考にすると良いです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/updating-credentials-from-the-osx-keychain/&#34;&gt;Updating your credentials via Keychain Access&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

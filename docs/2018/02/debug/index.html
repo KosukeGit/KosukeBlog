@@ -17,26 +17,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>Gitのコマンド名を自分で設定する</title>
+    <title>Xcodeデバッグ術まとめ</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Git, GitHub, ターミナル, gitコマンド, git config">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Swift, Xcode, Debug, デバッグ, lldb">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="自分で設定したGitのコマンドを使えるようにする方法">
-    <meta property="og:description" content="自分で設定したGitのコマンドを使えるようにする方法">
+    <meta name="description" content="XcodeやSwiftを使ったデバッグ術のまとめ">
+    <meta property="og:description" content="XcodeやSwiftを使ったデバッグ術のまとめ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Gitのコマンド名を自分で設定する">
-    <meta property="og:url" content="/2017/05/command/">
+    <meta property="og:title" content="Xcodeデバッグ術まとめ">
+    <meta property="og:url" content="/2018/02/debug/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="自分で設定したGitのコマンドを使えるようにする方法">
+    <meta name="twitter:description" content="XcodeやSwiftを使ったデバッグ術のまとめ">
     
-      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2017-05-07/GitCommand.png">
+      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2018-02-27/debug.png">
     
     
     
@@ -49,7 +49,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-05-07/GitCommand.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2018-02-27/debug.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -228,17 +228,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      Gitのコマンド名を自分で設定する
+      Xcodeデバッグ術まとめ
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-05-07T00:00:00Z">
+  <time itemprop="datePublished" datetime="2018-02-27T00:00:00Z">
     
   
   
   
   
-    2017.05.07
+    2018.02.27
   
 
   </time>
@@ -247,7 +247,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/git">Git</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/tips">Tips</a>
     
   
 
@@ -271,64 +271,74 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<p>Gitコマンドが長くて打つのが大変、毎回調べなきゃいけない&hellip; そんなときに以下のような設定をすることによってGitのショートカットコマンドを作成することができます！</p>
-
-<p><code>--global</code> にすることで現在のユーザーを対象にした設定をすることができます。</p>
+<p>今回は個人的に便利だと思うデバッグの方法をまとめてみました！</p>
 
 <p><br></p>
 
-<h5 id="エイリアス設定">エイリアス設定</h5>
+<p><br></p>
 
-<pre><code>git config --global alias.省略したいコマンド '実際のコマンド'
-</code></pre>
+<h2 id="xcode-lldbコマンド">Xcode lldbコマンド</h2>
 
-<pre><code>例：git config --global alias.st 'status'
-</code></pre>
+<p>ブレークポイントでプログラムを止めた際に、<br />
+コンソールに表示される (lldb) にコマンドを入力することができます。<br />
+これから紹介するコマンドを頭に入れておけば<br />
+素早くデバッグに取りかかることができるようになります。</p>
 
 <p><br></p>
 
-<h5 id="実行時">実行時</h5>
+<ul>
+<li>p または print (プリミティブ型の変数の値を表示)</li>
+<li>po (オブジェクト型の変数の値の表示)</li>
+</ul>
 
-<pre><code>git st
+<p>これを知っておけば、値をちょこっと確認したい時に<br />
+わざわざコードにprint(~)を埋め込む必要がなくなり、<br />
+リアルタイムで値を見れます。</p>
+
+<p>また、以下のように式の評価を行うことが可能です。</p>
+
+<pre><code>var a = 1
+var b = 2
 </code></pre>
 
-<p>これで git status した時と同じ動作をするようになります</p>
+<p>上記のようなプロパティがあったとします。<br />
+この時、aとbは同じ値かどうか知りたい場合にはlldbで以下のように入力してみると<br />
+デバッグ中に式の評価をすることが可能です。大変便利です。</p>
+
+<p><code>p a == b</code> -&gt; falseが返ってくる<br />
+<code>p a == 1</code> -&gt; trueが返ってくる<br />
+<code>p b == 1</code> -&gt; falseが返ってくる</p>
 
 <p><br></p>
 
-<h5 id="設定したエイリアス一覧表示">設定したエイリアス一覧表示</h5>
+<ul>
+<li>s (ステップイン)</li>
+<li>c (次のbreak point まで飛ばす)</li>
+</ul>
 
-<pre><code>git config --global --list
-</code></pre>
-
-<p><br></p>
-
-<h5 id="設定したコマンドを削除">設定したコマンドを削除</h5>
-
-<pre><code>git config --global --unset alias.st
-</code></pre>
-
-<p>これで  git st コマンドが削除されます</p>
+<p>一度入力した後は、入力し直さなくても<br />
+Enterボタンを押せばそのまま続けられるので便利です。</p>
 
 <p><br></p>
 
-<h5 id="ヘルプ表示">ヘルプ表示</h5>
+<ul>
+<li>h (ヘルプ)</li>
+</ul>
 
-<pre><code>git config help
-</code></pre>
+<p>使いたいコマンドを一覧表示することができます</p>
 
-<p><br></p>
-
-<p>参考URLは<a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">こちら</a></p>
+<p>また、コマンドの中には<br />
+<code>br l</code> でブレークポイントの一覧を表示してくれたりするものや<br />
+<code>q</code> で終了させるものもあるので一度見てみるといいと思います。</p>
 
 <p><br></p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- BlogAdsense_Middle -->
+<!-- BlogAdsense_Top -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9828180917254396"
-     data-ad-slot="2239399852"
+     data-ad-slot="2510862598"
      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -336,46 +346,149 @@ ga('send', 'pageview');
 
 <p><br></p>
 
-<h3 id="おまけ">おまけ</h3>
+<h2 id="filter">Filter</h2>
+
+<p>デバッグエリアの下にあるFilterというプレースホルダーのところに<br />
+フィルタリングしたい文字を入力すると、デバッグで表示される全ての実行結果から<br />
+特定の文字のみで表示させることができるのでピンポイントで結果の値を見たい際に便利です。</p>
+
+<p>また、実行結果の中で <code>command + F</code> でキーワード検索を行ってもよいですが、<br />
+ピンポイントでその部分だけみたい際にはこちらの方が圧倒的に便利です。</p>
 
 <p><br></p>
 
-<h5 id="今日何をしたか振り返り-１２時間前からのログ表示">今日何をしたか振り返り（１２時間前からのログ表示）</h5>
+<p><br></p>
 
-<pre><code>git today
-</code></pre>
+<h2 id="breakpoint">Breakpoint</h2>
 
-<p>このコマンドで今日どんなコミットをしたか等振り返ることができます。</p>
+<ul>
+<li>Deactivate Breakpoints</li>
+</ul>
 
-<p>設定する際はこちら↓</p>
-
-<pre><code>git config --global alias.today &quot;log --oneline --since='12 hours ago'&quot;
-</code></pre>
+<p>全てのブレークポイント は <code>command + Y</code> でオンオフできます。</p>
 
 <p><br></p>
 
-<h5 id="ログをグラフで表示">ログをグラフで表示</h5>
+<ul>
+<li>Edit Breakpoint</li>
+</ul>
 
-<pre><code>git mylog
+<p>ブレークポイントを貼った部分から右クリックを押して <code>Edit Breakpoint...</code> を選択します。<br />
+その後、Conditioinに条件を記入するとそのタイミングでブレークします。</p>
+
+<p>例えば下記のようなループの中のカウントがn回目になったときブレークしたい時に使えます。</p>
+
+<pre><code>let arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+for i in 0..&lt;arr.count {
+    print(arr[i])  // ここでブレークを貼り、i == 1 と設定すると i が 1 の時だけブレークになります。
+}
 </code></pre>
 
-<p>ターミナルでログをグラフにして確認する際に便利です。</p>
-
-<p>設定する際はこちら↓</p>
-
-<pre><code>git config --global alias.mylog 'log --oneline --graph --decorate'
-</code></pre>
+<p>また、逆にn回目はブレークをスルーしたい場合には、<br />
+ignore を設定してあげるとn回目にそこを通ったときはブレークをスルーしてくれます。</p>
 
 <p><br></p>
 
-<p>これでよく使うコマンドや長いコマンドの入力が楽になります。
-何を設定したか確認したい時は、<code>--list</code>を使いましょう！</p>
+<ul>
+<li>Exception breakpoint</li>
+</ul>
+
+<p>ナビゲーターエリアの左下にある＋マーク(create a breakpoint) から
+<code>Exception breakpoint...</code> を選択しておけばクラッシュする直前でブレークしてくれます。</p>
 
 <p><br></p>
 
-<p>こちらの記事も合わせてどうぞ！</p>
+<ul>
+<li>po $arg1</li>
+</ul>
 
-<p>→ <a href="https://kosukeblog.com/2017/04/completion/">tabキーでGitのコマンドを補完する</a></p>
+<p>また、<code>Exception breakpoint...</code> を選択後に表示される設定の中の<br />
+Action から Debugger Command を選択し、<code>po $arg1</code> を入力しておきます。<br />
+すると、ブレークすると同時にブレークの原因となるログを吐き出してくれます。</p>
+
+<p><br></p>
+
+<p><br></p>
+
+<h2 id="debug-view-hierarchy">Debug View Hierarchy</h2>
+
+<p>Debug View Hierarchy は、今表示しているViewなどの階層を視覚的に見れる便利な方法です。</p>
+
+<p>表示の仕方は簡単で、デバッグ中に現れるデバッグエリアの上にあるボタンの中に<br />
+Debug View Hierarchy があるので、それを押すとXcode上で表示されます。<br />
+再開する際はブレークポイントで止まったのを再開させる時と同様に<br />
+Continue program execution を押します。</p>
+
+<p>階層表示中にクリックしたものがどのクラスのものか確認したり、<br />
+今の画面で一番上に表示しているViewは何Viewでその下のSubViewが<br />
+どうなっているのかなど、すぐに知りたい時に知れる便利な方法です。</p>
+
+<p><br></p>
+
+<p><br></p>
+
+<h2 id="built-in-identifiers">Built-In Identifiers</h2>
+
+<ul>
+<li><code>#file</code>：ファイル名（String型）</li>
+<li><code>#line</code>：行数（Int型）</li>
+<li><code>#column</code>：文字の位置（Int型）</li>
+<li><code>#function</code>：関数名（String型）</li>
+</ul>
+
+<p>少しマイナーなデバッグ方法を紹介します。<br />
+これらを使い、関数などで呼ぶことで<br />
+その関数の行数やファイル名を表示させることができます。</p>
+
+<pre><code>/// 使い方
+
+/// 怪しいと思う関数内でresult()を呼び出す
+/// 今回は doSomething関数 が怪しいと思うので
+/// ここでresult()を読んでみる。他にも怪しいと思う部分にresult()を入れる。
+func doSomething() {
+    /*
+    何かしらの処理
+        .
+        .
+        .
+     */
+    var errorMessage = &quot;!!error message!!&quot;
+    result(message: errorMessage)  // 仮にここが50行目だとする
+}
+
+
+/// デバッグ用関数
+/// 呼ばれた関数名がprintで表示される。
+/// 今回は 50行目の doSomething() から呼ばれていることがわかった。
+func result(message: String = &quot;&quot;, file: String = #function, line: Int = #line) {
+    #if DEBUG
+        print(&quot;failed at \(function):\(line): \(message)&quot;)
+        // -&gt; &quot;failed at doSomething():50: !!error message!!&quot;
+    #endif
+}
+
+</code></pre>
+
+<p>参考：<a href="https://developer.apple.com/swift/blog/?id=15">https://developer.apple.com/swift/blog/?id=15</a></p>
+
+<p><br></p>
+
+<p><br></p>
+
+<h2 id="debug-navigator">Debug Navigator</h2>
+
+<p>デバッグ中にナビゲーターエリアの <code>Debug Navigator</code> を押せば、<br />
+処理の様々な情報を見ることができます。(右から3つ目のアイコン(Xcode9にて))<br />
+ブレークポイントを貼っておき、ブレークで止まった際に<br />
+Debug Navigator を押すとその部分までの処理の流れをスレッドごとに<br />
+見ることができるので、大変便利だと思います。</p>
+
+<p><br></p>
+
+<p><br></p>
+
+<p>よく使うものからマイナーなやり方までまとめてみました。<br />
+この記事を見つけて読んでくれた方が少しでも参考になったと思ってくれたら満足です :)</p>
 
 <p><br></p>
 
@@ -402,9 +515,9 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/github/">github</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/xcode/">xcode</a>
 
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/swift/">swift</a>
 
 
                   </div>
@@ -417,7 +530,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/gitignore/" data-tooltip="gitignoreについて">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -425,7 +538,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/button/" data-tooltip="いいねやツイートボタンのURLまとめ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/01/happynewyear2018/" data-tooltip="2017年振り返りと2018年について">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -477,7 +590,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fcommand%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f02%2fdebug%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -519,7 +632,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/gitignore/" data-tooltip="gitignoreについて">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -527,7 +640,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/05/button/" data-tooltip="いいねやツイートボタンのURLまとめ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/01/happynewyear2018/" data-tooltip="2017年振り返りと2018年について">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -579,7 +692,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fcommand%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f02%2fdebug%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -615,7 +728,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f05%2fcommand%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f02%2fdebug%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -907,9 +1020,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/05\/command\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2018\/02\/debug\/';
           
-            this.page.identifier = '\/2017\/05\/command\/'
+            this.page.identifier = '\/2018\/02\/debug\/'
           
         };
         (function() {
