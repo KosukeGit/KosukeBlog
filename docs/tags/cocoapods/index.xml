@@ -9,6 +9,71 @@
     <atom:link href="https://kosukeblog.com/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GitHubへのアクセスエラーでpod updateできない</title>
+      <link>https://kosukeblog.com/2018/02/podupdate/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/02/podupdate/</guid>
+      <description>
+
+&lt;h3 id=&#34;pod-updateできない&#34;&gt;pod updateできない&lt;/h3&gt;
+
+&lt;p&gt;最近 &lt;code&gt;pod update&lt;/code&gt; コマンドが急に効かなくなったため、&lt;br /&gt;
+とりあえず&lt;code&gt;~/.cocoapods/repos/master&lt;/code&gt;を削除して入れ直してみました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod repo remove master
+pod setup
+pod install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;それでも以下のようなエラーが出る。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pod update
+
+[!] Failed to connect to GitHub to update the CocoaPods/Specs specs repo - Please check if you are offline, or that GitHub is down
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;原因を調べて見たところこのような変更がありました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Earlier today we permanently removed support for the following weak cryptographic standards on github.com and api.github.com&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以下のURLに詳細が載っています。
+&lt;a href=&#34;https://github.com/blog/2507-weak-cryptographic-standards-removed&#34;&gt;Weak cryptographic standards removed&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;これらからわかったことは、デフォルトで入っているOpenSSLのバージョンが&lt;br /&gt;
+今回の変更に対し、対応されていないことがわかりました。&lt;/p&gt;
+
+&lt;p&gt;OpenSSLをアップデート後は参照させるためにRuby、またCocoaPodsも忘れず更新/インストールしましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらも合わせてどうぞ！
+&lt;a href=&#34;https://kosukeblog.com/2018/02/openssl/&#34;&gt;OpenSSLの更新のメモ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>CocoaPodsについて</title>
       <link>https://kosukeblog.com/2017/04/cocoapods/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0000</pubDate>
