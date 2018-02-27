@@ -17,26 +17,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>このブログについて</title>
+    <title>OpenSSLのバージョンを更新する</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, ブログ開設, 自己紹介">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, OpenSSL">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="ブログについてと簡単に自己紹介">
-    <meta property="og:description" content="ブログについてと簡単に自己紹介">
+    <meta name="description" content="OpenSSLのバージョンを更新した時の手順メモ">
+    <meta property="og:description" content="OpenSSLのバージョンを更新した時の手順メモ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="このブログについて">
-    <meta property="og:url" content="/2017/03/blog/">
+    <meta property="og:title" content="OpenSSLのバージョンを更新する">
+    <meta property="og:url" content="/2018/02/openssl/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="ブログについてと簡単に自己紹介">
+    <meta name="twitter:description" content="OpenSSLのバージョンを更新した時の手順メモ">
     
-      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2017-03-10/favicon_origin.png">
+      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2018-02-28/openssl.png">
     
     
     
@@ -49,7 +49,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-03-10/favicon_origin.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2018-02-28/openssl.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -228,17 +228,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      このブログについて
+      OpenSSLのバージョンを更新する
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-03-10T00:00:00Z">
+  <time itemprop="datePublished" datetime="2018-02-28T00:00:00Z">
     
   
   
   
   
-    2017.03.10
+    2018.02.28
   
 
   </time>
@@ -247,7 +247,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/blog">Blog</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/library">Library</a>
     
   
 
@@ -271,36 +271,62 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<p>初めまして、<a href="https://twitter.com/gt1028kn">こうすけ</a>です。</p>
-
-<p>本日ブログを開設しました。
-これまで技術的なことを主に<a href="http://qiita.com/KosukeQiita">Qiita</a>に投稿してましたが、「〜の設定、手順」や「〜を作ってみた」などは作って終わりという感じでした。
-なので、その過程など自分のブログにまとめてしまえば後から見直す時に楽だし、共有もできると思い、<strong>今更ですが</strong>作りました。（それにこれから先もっと情報量が増えるだろうなと思ったので。）</p>
-
-<p>後は、単に独自ドメインを取得してブログを自分で作って公開するところまでやってみたいというのもあったからです。</p>
-
-<p>このブログは、技術的なことを中心とするつもりですが、それ以外のことも載せていく予定です。
-マイペース更新ですがよろしくお願いします！</p>
+<p>OpenSSLのバージョンを更新した際のメモです。</p>
 
 <p><br></p>
 
-<h3 id="自己紹介">自己紹介</h3>
+<p><code>brew upgrade openssl</code> -&gt; openssl 1.0.2n already installed<br />
+<code>openssl version</code> -&gt; OpenSSL 0.9.8zh 14 Jan 2016</p>
 
-<p>こうすけです。名古屋の大学に通っている4年生（17年卒）です。
-今年から東京の企業にエンジニアとして就職します。
-まだまだ未熟ですがアプリ開発が好きです。アプリを0から作ってApp Storeで公開したりしていました<a href="http://applion.jp/iphone/app/1089093474/">。</a>
-趣味はギターで、よく息抜きにアコギを弾いて遊んでます<a href="https://soundcloud.com/guitar_memo/acoustic-ver">。</a></p>
-
-<h5 id="この先やってみたいこと">この先やってみたいこと</h5>
-
-<ul>
-<li>エンターテイメントを通じて、人々の生活を豊かにするサービスやアプリケーションを形にして届けたい</li>
-<li>人をワクワクさせるものを仲間と作っていきたい</li>
-</ul>
+<p>上記からopensslの最新版のインストールはできているのに、最新ではないことがわかる。</p>
 
 <p><br></p>
 
-<p>これからよろしくお願いします。:)</p>
+<h5 id="パスをチェックする">パスをチェックする</h5>
+
+<p><code>which openssl</code> -&gt; /usr/bin/openssl<br />
+<code>brew list openssl</code></p>
+
+<pre><code>/usr/local/Cellar/openssl/1.0.2n/.bottle/etc/ (8 files)
+/usr/local/Cellar/openssl/1.0.2n/bin/c_rehash
+/usr/local/Cellar/openssl/1.0.2n/bin/openssl  -&gt; これ
+/usr/local/Cellar/openssl/1.0.2n/include/openssl/ (75 files)
+/usr/local/Cellar/openssl/1.0.2n/lib/libcrypto.1.0.0.dylib
+/usr/local/Cellar/openssl/1.0.2n/lib/libssl.1.0.0.dylib
+/usr/local/Cellar/openssl/1.0.2n/lib/engines/ (12 files)
+/usr/local/Cellar/openssl/1.0.2n/lib/pkgconfig/ (3 files)
+/usr/local/Cellar/openssl/1.0.2n/lib/ (4 other files)
+/usr/local/Cellar/openssl/1.0.2n/share/man/ (1680 files)
+</code></pre>
+
+<p>リストから表示されている<br />
+<code>/usr/local/Cellar/openssl/1.0.2n/bin/openssl</code> に<br />
+パスを通すために以下を入力する。</p>
+
+<p><code>echo &quot;export PATH=/usr/local/Cellar/openssl/1.0.2n/bin:$PATH&quot; &gt;&gt; ~/.bash_profile</code><br />
+<code>source ~/.bash_profile</code></p>
+
+<p><br></p>
+
+<h5 id="パスとバージョンを確認">パスとバージョンを確認</h5>
+
+<p><code>which openssl</code> -&gt; /usr/local/Cellar/openssl/1.0.2n/bin/openssl<br />
+<code>openssl version</code> -&gt; OpenSSL 1.0.2n  7 Dec 2017</p>
+
+<p>結果から最新になったことが確認できました！</p>
+
+<p><br></p>
+
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- BlogAdsense_Bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9828180917254396"
+     data-ad-slot="9212002313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </p>
 
               
 
@@ -314,7 +340,7 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/profile/">profile</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
 
 
                   </div>
@@ -327,7 +353,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/completion/" data-tooltip="bash-completion, git-completionの導入手順">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -335,7 +361,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/archives/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/02/debug/" data-tooltip="Xcodeデバッグ術まとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -387,7 +413,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f02%2fopenssl%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -429,7 +455,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/04/completion/" data-tooltip="bash-completion, git-completionの導入手順">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -437,7 +463,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/archives/" data-tooltip="">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/02/debug/" data-tooltip="Xcodeデバッグ術まとめ">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -489,7 +515,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f02%2fopenssl%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -525,7 +551,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f03%2fblog%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f02%2fopenssl%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -817,9 +843,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/03\/blog\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2018\/02\/openssl\/';
           
-            this.page.identifier = '\/2017\/03\/blog\/'
+            this.page.identifier = '\/2018\/02\/openssl\/'
           
         };
         (function() {
