@@ -9,6 +9,52 @@
     <atom:link href="https://kosukeblog.com/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>ページの指定した箇所に飛ぶURLの作り方</title>
+      <link>https://kosukeblog.com/2018/03/url/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/03/url/</guid>
+      <description>&lt;p&gt;html上でその部分の name や id タグの名前を&lt;br /&gt;
+URLの後ろに &lt;strong&gt;#&lt;/strong&gt; をつけて記載すればページを開いた際にその部分を表示します。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;例えば、以下のように作られていた場合には&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a name=&amp;quot;hogehoge&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;https://~~~#hogehoge&lt;/code&gt; としてあげると&lt;br /&gt;
+ページを開いた瞬間にhogehoge部分にスクロールします。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみにデベロッパーツールを開く際は&lt;br /&gt;
+&lt;code&gt;command + option + I&lt;/code&gt; で開くことが可能です。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;解説ページの最後に参考URLなど載せる際に&lt;br /&gt;
+こういった気遣いができるとよいですね ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Xcodeデバッグ術まとめ</title>
       <link>https://kosukeblog.com/2018/02/debug/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>

@@ -17,26 +17,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>GCD(Grand Central Dispatch)についてまとめ</title>
+    <title>ページの指定した箇所に飛ぶURLの作り方</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Swift, Objective-C, マルチスレッドプログラミング, GCD">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, URL, ページ指定, html">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="GCD(Grand Central Dispatch)を使ったマルチスレッドについてまとめ">
-    <meta property="og:description" content="GCD(Grand Central Dispatch)を使ったマルチスレッドについてまとめ">
+    <meta name="description" content="ページの指定した箇所を開くためのURLの作り方">
+    <meta property="og:description" content="ページの指定した箇所を開くためのURLの作り方">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="GCD(Grand Central Dispatch)についてまとめ">
-    <meta property="og:url" content="/2017/10/gcd/">
+    <meta property="og:title" content="ページの指定した箇所に飛ぶURLの作り方">
+    <meta property="og:url" content="/2018/03/url/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="GCD(Grand Central Dispatch)を使ったマルチスレッドについてまとめ">
+    <meta name="twitter:description" content="ページの指定した箇所を開くためのURLの作り方">
     
-      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2017-10-22/gcd.png">
+      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2018-03-27/url.png">
     
     
     
@@ -49,7 +49,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2017-10-22/gcd.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2018-03-27/url.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -228,17 +228,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      GCD(Grand Central Dispatch)についてまとめ
+      ページの指定した箇所に飛ぶURLの作り方
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2017-10-22T00:00:00Z">
+  <time itemprop="datePublished" datetime="2018-03-27T00:00:00Z">
     
   
   
   
   
-    2017.10.22
+    2018.03.27
   
 
   </time>
@@ -247,7 +247,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/programming">Programming</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/tips">Tips</a>
     
   
 
@@ -269,237 +269,30 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
-
-<h2 id="gcd">GCD</h2>
-
-<p>マルチスレッドを簡単に処理してくれる <strong>GCD</strong> (Grand Central Dispatch) についてまとめてみました。</p>
+              <p>html上でその部分の name や id タグの名前を<br />
+URLの後ろに <strong>#</strong> をつけて記載すればページを開いた際にその部分を表示します。</p>
 
 <p><br></p>
 
-<p><br></p>
+<p>例えば、以下のように作られていた場合には</p>
 
-<h4 id="気をつける点-しないように心がける点">気をつける点（しないように心がける点）</h4>
-
-<ul>
-<li><p><strong>データ競合</strong><br />
-複数のスレッドから同じリソースを更新しようとしてデータの不整合が発生する</p></li>
-
-<li><p><strong>デッドロック</strong><br />
-イベントを待つためのスレッドを停止する仕組みにより複数のスレッドが相互に待ち続ける</p></li>
-
-<li><p><strong>多数のスレッドを使用しすぎて大量のメモリを消費する</strong></p></li>
-</ul>
-
-<p><br></p>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- BlogAdsense_Top -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9828180917254396"
-     data-ad-slot="2510862598"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<p><br></p>
-
-<h5 id="キューの種類">キューの種類</h5>
-
-<ul>
-<li><p><code>Serial Dispatch Queue</code>：1つのスレッドに追加された順番に処理を実装する<br />
-→ 競合を起こしそうな場合は安全に用いる</p></li>
-
-<li><p><code>Concurrent Dispatch Queue</code>：複数のスレッドを使って追加された処理を実行する<br />
-→ 起こさない処理は平行に用いる</p></li>
-</ul>
-
-<p><br></p>
-
-<p>例えばDBから値を取得して、それを渡すときは <strong>Serial Dispatch Queue</strong> を<br />
-1つのデータにつき1つ複数のスレッドを生成して処理を実行させるとよい。</p>
-
-<p>ちなみに&hellip;</p>
-
-<p>Main Dispatch Queue はメインスレッドが1つしかないので <strong>Serial Dispatch Queue</strong> になり、<br />
-Global Dispatch Queue はアプリケーション全体から使用できる <strong>Concurrent Dispatch Queue</strong> である。</p>
-
-<p><br></p>
-
-<p><br></p>
-
-<h5 id="スレッド処理の順番">スレッド処理の順番</h5>
-
-<ul>
-<li><p><code>Serial</code>：処理の順番は実行させてからなので順番</p></li>
-
-<li><p><code>Concurrent</code>：一度に複数の処理を行うためバラバラ</p></li>
-</ul>
-
-<p><br></p>
-
-<p>複数のキューからデータを更新する場合は、競合が起きる可能性があるので<strong>serial</strong>キューを使用すべき。<br />
-また、いくつもの<strong>serial</strong>キューを作って平行に処理させるのは良いが、<br />
-多すぎるとメモリ上の問題に直面してしまうので必要な数だけ作るべき。</p>
-
-<p><br></p>
-
-<p><br></p>
-
-<h4 id="dispatch-group">Dispatch Group</h4>
-
-<p>Dispatch Queue に追加した複数の処理が全て終了したときに終了処理を行いたいときに使用する。<br />
-どんな Dispatch Queue に処理が追加されていても、それら全てが終了するまで監視することができ、<br />
-全ての処理の実行終了を検知したら <strong>Dispatch Queue</strong> に終了処理を追加することができるのが一番の利点である。</p>
-
-<p><br></p>
-
-<p><br></p>
-
-<h4 id="同期と非同期">同期と非同期</h4>
-
-<ul>
-<li><p><code>dispatch_async</code>：非同期</p></li>
-
-<li><p><code>dispatch_sync</code>：同期（その処理が終わるまで待つ）</p></li>
-</ul>
-
-<p><br></p>
-
-<p><br></p>
-
-<h4 id="様々な処理">様々な処理</h4>
-
-<p><br></p>
-
-<ul>
-<li><strong>dispatch_after</strong></li>
-</ul>
-
-<p>〜秒後に処理を Dispatch Queue に追加します。<br />
-〜秒後に処理を実行するではなく Dispatch Queue に Block を追加するという意味なので注意しましょう。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>dispatch_barrier_async</strong></li>
-</ul>
-
-<p>指定した場所までに Concurrent Dispatch Queue に追加された<br />
-並列に実行されているすべての処理の実行が終了してから<br />
-指定された処理をその Concurrent Dispatch Queue に追加する。<br />
-そして、<strong>dispatch_barrier_async</strong> 関数によって追加された処理の実行が終了したら<br />
-通常の Concurrent Dispatch Queue の動作に戻り、<br />
-その Concurrent Dispatch Queue に追加されていた処理をまた並列に実行し始めることができます。</p>
-
-<p><br></p>
-
-<p>例えば、読み込み処理は Concurrent Dispatch Queue で行いたいが、<br />
-その途中で書き出しをしようとすると、読み込んだ後でないといけない。そんな場合に使用します。</p>
-
-<p>使い方としては、dispatch_async 関数の代わりに<br />
-<strong>dispatch_barrier_async</strong> 関数を使用するだけです。</p>
-
-<pre><code>例
-dispatch_async(queue, reading01)
-dispatch_async(queue, reading02)
-dispatch_async(queue, reading03)
-dispatch_barrier_async(queue, writing)
-dispatch_async(queue, reading04)
-dispatch_async(queue, reading05)
-　　　　　　　　　　・
-　　　　　　　　　　・
-　　　　　　　　　　・
+<pre><code>&lt;a name=&quot;hogehoge&quot;&gt;&lt;/a&gt;
 </code></pre>
 
-<p>これによって効率のよいデータベースアクセスやファイルアクセスを実装することができます。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>dispatch_apply</strong></li>
-</ul>
-
-<p>dispatch_sync関数やDispatch Groupに関連するAPI。<br />
-この関数は、指定した回数分、指定したBlockを指定した Dispatch Queue に追加し、<br />
-それら全ての処理を実行が終了するまで待つAPIである。<br />
-注意すべき点としては、dispatch_sync 関数と同様に処理の実行終了を待ってしまうので<br />
-dispatch_async 関数で非同期実行しながら使いましょう。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>dispatch_suspend と dispatch_resume</strong></li>
-</ul>
-
-<p><strong>dispatch_suspend</strong> は Dispatch Queue には追加されているが<br />
-まだ実行されていない処理をこれ以降一切実行させないときに用いる。</p>
-
-<p><strong>dispatch_resume</strong> は実行させるようにする際に用いる。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>dispatch_semaphore</strong></li>
-</ul>
-
-<p>並列に実行される処理によってデータ更新をする場合データの不整合やアプリケーションの不正終了が起こるときがあり、<br />
-それを回避するために Serial Dispatch Queue や dispatch_barrier_async 関数を使うことで回避できるが、<br />
-より粒度の細かな排他制御を行う際に用いります。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>dispatch_once</strong></li>
-</ul>
-
-<p>指定した処理をアプリケーション実行中に一度だけしか実行されないことを証明するためのAPI。<br />
-マルチスレッド環境下でも、完全に安全であることが証明される。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>Dispatch I/O</strong></li>
-</ul>
-
-<p>大きなファイルを読み込む際に、Global Dispatch Queue を使ってファイルを適度な大きさに分割して<br />
-平行に読むことで速く読み込めないかという際に用いる。<br />
-複数スレッドを使って複数並列に読み込むのが速いときもあり、<br />
-それを実現するのが <strong>Dispatch I/O</strong> と <strong>Dispatch Data</strong> である。</p>
-
-<p><br><br></p>
-
-<ul>
-<li><strong>Dispatch Source</strong></li>
-</ul>
-
-<p>「kqueue」のラッパーで、Foundationフレームワークを使用するだけで使用可能（GCDの恩恵を受けられる）。</p>
-
-<p>例えば、DISPATCH_SOURCE_TYPE_TIMERなどを用いればネットワークプログラミングでの通信タイムアウトなどに使用できる。<br />
-また、Dispatch Queue では処理を追加したらキャンセルはできないが、<br />
-この Dispatch Queue ではキャンセルすることが可能である。</p>
+<p><code>https://~~~#hogehoge</code> としてあげると<br />
+ページを開いた瞬間にhogehoge部分にスクロールします。</p>
 
 <p><br></p>
 
 <p><br></p>
 
-<h4 id="参考書籍">参考書籍</h4>
-
-<p>ちなみに ARCやBlocks、GCD周りはこちらの書籍が大変わかりやすく載っているのでオススメです。<br />
-今回の記事もこちらを参考にしました。</p>
+<p>ちなみにデベロッパーツールを開く際は<br />
+<code>command + option + I</code> で開くことが可能です。</p>
 
 <p><br></p>
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=kosukeblog06-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=4844331094&linkId=e4b3d393321b376cead38ec70bfa215a&bc1=000000&lt1=_blank&fc1=4a4a4a&lc1=349ef3&bg1=ffffff&f=ifr">
-    </iframe>
-
-<p><br></p>
-
-<p>Swiftメインでコード書いてる方からすれば、今更Objective-Cの書籍？ってなりますが、<br />
-GCDなどについて理解を深めたい方にはもってこいの一冊なので一度参考にしてみてはいかがでしょうか。<br />
-今ならAmazonだとロープライス300円くらいで手に入るのでオススメです。</p>
+<p>解説ページの最後に参考URLなど載せる際に<br />
+こういった気遣いができるとよいですね ;)</p>
 
 <p><br></p>
 
@@ -526,11 +319,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/ios/">ios</a>
-
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/objective-c/">objective-c</a>
-
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/swift/">swift</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/html/">html</a>
 
 
                   </div>
@@ -543,7 +332,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/11/equatable/" data-tooltip="Equatableについて">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -551,7 +340,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/10/xcode9/" data-tooltip="Xcode9に上げたらまずはやっておきたい設定">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/02/podupdate/" data-tooltip="GitHubへのアクセスエラーでpod updateできない">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -603,7 +392,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f10%2fgcd%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f03%2furl%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -645,7 +434,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/11/equatable/" data-tooltip="Equatableについて">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -653,7 +442,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/10/xcode9/" data-tooltip="Xcode9に上げたらまずはやっておきたい設定">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/02/podupdate/" data-tooltip="GitHubへのアクセスエラーでpod updateできない">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -705,7 +494,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f10%2fgcd%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f03%2furl%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -741,7 +530,7 @@ GCDなどについて理解を深めたい方にはもってこいの一冊な�
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2017%2f10%2fgcd%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f03%2furl%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -1033,9 +822,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2017\/10\/gcd\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2018\/03\/url\/';
           
-            this.page.identifier = '\/2017\/10\/gcd\/'
+            this.page.identifier = '\/2018\/03\/url\/'
           
         };
         (function() {
