@@ -9,6 +9,88 @@
     <atom:link href="https://kosukeblog.com/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>pod install と pod update の違い</title>
+      <link>https://kosukeblog.com/2018/04/podinstallandupdate/</link>
+      <pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/04/podinstallandupdate/</guid>
+      <description>
+
+&lt;p&gt;pod install と pod update それぞれの役割についてざっくり解説していきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;pod-install&#34;&gt;pod install&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Podfile.lockをみて更新する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;pod-update&#34;&gt;pod update&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;SDKの今出ているバージョン（最新のブランチ）を見て、その差分があったらバージョンを更新する&lt;/li&gt;
+&lt;li&gt;PodfileにSDKのバージョン指定をしているものは無視して、このバージョンから新しいのを使うなどといった指定がある場合には、そのSDKを更新する&lt;/li&gt;
+&lt;li&gt;Podfile.lockが更新される（アップデートしたSDKのバージョンが更新される）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;pod-update-が終わらない方へアドバイス&#34;&gt;pod update が終わらない方へアドバイス&lt;/h4&gt;
+
+&lt;p&gt;容量が大きいため pod update をしてもなかなか終わらない、、という方に&lt;br /&gt;
+オススメなのが&lt;code&gt;outdated&lt;/code&gt; コマンドと &lt;code&gt;--verbose&lt;/code&gt; オプションです。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;outdated&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;outdated&lt;/code&gt; コマンドを使うと、&lt;br /&gt;
+現在使っているライブラリが古いバージョンかどうか分かります。&lt;br /&gt;
+&lt;code&gt;pod update&lt;/code&gt; としてしまうと、全てのライブラリをアップデートしようとして&lt;br /&gt;
+時間がかかるので、&lt;code&gt;outdated&lt;/code&gt; コマンドで古いライブラリがわかったら&lt;br /&gt;
+&lt;code&gt;pod update 対象のLibrary名&lt;/code&gt; というように&lt;br /&gt;
+特定のライブラリのみをアップデートするようにすると時間短縮になります。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;verbose&lt;/strong&gt;&lt;br /&gt;
+アップデートに時間がかかってしまい、本当に動いているのかどうか&lt;br /&gt;
+確認したいときは &lt;code&gt;pod update --verbose&lt;/code&gt; のように&lt;br /&gt;
+&lt;code&gt;--verbose&lt;/code&gt;オプションを使うとアップデート中に更新している際の情報が表示されます。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらの記事も合わせてどうぞ！&lt;br /&gt;
+&lt;a href=&#34;https://kosukeblog.com/2017/04/cocoapods/&#34;&gt;CocoaPodsについて&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Xcodeデバッグ術まとめ</title>
       <link>https://kosukeblog.com/2018/02/debug/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>

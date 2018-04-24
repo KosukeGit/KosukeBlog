@@ -17,26 +17,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.18.1">
-    <title>2017年振り返りと2018年について</title>
+    <title>pod install と pod update の違い</title>
     <meta name="author" content="こうすけ">
-    <meta name="keywords" content="Kosuke Blog, こうすけブログ, Happy New Year, 2017, 2018, 昨年の振り返り, 今年の目標">
+    <meta name="keywords" content="Kosuke Blog, こうすけブログ, pod install, pod update, CocoaPods, iOS, Swift, オープンソース, ライブラリ">
 
     <link rel="icon" href="https://kosukeblog.com/favicon/favicon.ico">
     
 
     
-    <meta name="description" content="2017年を振り返った感想と2018年に向けての宣言">
-    <meta property="og:description" content="2017年を振り返った感想と2018年に向けての宣言">
+    <meta name="description" content="pod install と pod update のそれぞれの役割についてざっくり解説">
+    <meta property="og:description" content="pod install と pod update のそれぞれの役割についてざっくり解説">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="2017年振り返りと2018年について">
-    <meta property="og:url" content="/2018/01/happynewyear2018/">
+    <meta property="og:title" content="pod install と pod update の違い">
+    <meta property="og:url" content="/2018/04/podinstallandupdate/">
     <meta property="og:site_name" content="Kosuke Blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gt1028kn">
     <meta name="twitter:title" content="Kosuke Blog">
-    <meta name="twitter:description" content="2017年を振り返った感想と2018年に向けての宣言">
+    <meta name="twitter:description" content="pod install と pod update のそれぞれの役割についてざっくり解説">
     
-      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2018-01-01/HappyNewYear2018.png">
+      <meta name="twitter:image" content="https://kosukeblog.com/images/blog/2018-04-25/podinstallandupdate.png">
     
     
     
@@ -49,7 +49,7 @@
     
 
     
-      <meta property="og:image" content="https://kosukeblog.com/images/blog/2018-01-01/HappyNewYear2018.png">
+      <meta property="og:image" content="https://kosukeblog.com/images/blog/2018-04-25/podinstallandupdate.png">
     
     
       <meta property="og:image" content="https://goo.gl/photos/D3dunwY36egKs3GHA">
@@ -228,17 +228,17 @@ ga('send', 'pageview');
       <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      2017年振り返りと2018年について
+      pod install と pod update の違い
     </h1>
   
   <div class="postShorten-meta post-meta">
-  <time itemprop="datePublished" datetime="2018-01-01T00:00:00Z">
+  <time itemprop="datePublished" datetime="2018-04-25T00:00:00Z">
     
   
   
   
   
-    2018.01.01
+    2018.04.25
   
 
   </time>
@@ -247,7 +247,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://kosukeblog.com/categories/other">Other</a>
+      <a class="category-link" href="https://kosukeblog.com/categories/library">Library</a>
     
   
 
@@ -271,48 +271,64 @@ ga('send', 'pageview');
             <div class="main-content-wrap">
               
 
-<p><strong>あけましておめでとうございます!! :)</strong></p>
+<p>pod install と pod update それぞれの役割についてざっくり解説していきます。</p>
 
 <p><br></p>
 
-<h5 id="2017">2017</h5>
+<h3 id="pod-install">pod install</h3>
 
-<p>昨年は環境ががらりと変わり、仕事もプライベートも両立させようと<br />
-いろんなことに対して必死でした。<br />
-仕事や一人暮らし、海外一人旅など<br />
-初めての◯◯が増え（一人◯◯が多い気がする&hellip;(笑)）、<br />
-刺激的な1年間だったと思います。<br />
-新しいことをやってみることに対して、好奇心で動けた1年だったので<br />
-あの時にこれをやっていれば、、、といった後悔がほとんど無かったのが<br />
-昨年の良いところだったと個人的には思います。</p>
-
-<p>でもそんな中感じたのは、時間の大切さでした。<br />
-学生時代よりも自由に使える時間が足りないなと思いました。<br />
-でも周りの先輩を見ていると時間は足りないんじゃなくて<br />
-自分で見つけて、それに割く時間を作ることが重要だと感じました。<br />
-今日は仕事終わりにみんなで飲みに行くぞ！となれば自然とどこかで<br />
-スイッチが入り、仕事を終わらせ、さあ飲みに行こうといったあの感覚です。</p>
-
-<p>人に恵まれて大切なことに気づけ、自分が知らないことを学び、<br />
-新しいことに挑戦し、非常に充実した2017年でした。</p>
+<ol>
+<li>Podfile.lockをみて更新する</li>
+</ol>
 
 <p><br></p>
 
 <p><br></p>
 
-<h5 id="2018">2018</h5>
+<h3 id="pod-update">pod update</h3>
 
-<p>2018年は<strong>時間を意識</strong>し、<strong>有言実行</strong>の年にしたいと思います！<br />
-今年もやってみたいことがいくつかあって、<br />
-とりあえずはまた何かアプリを作ってリリースでもしようかなと<br />
-考えていたり、個人的には英語力をもっと伸ばしたいなあと思っていたり、<br />
-ブログを継続させてもっと記事数を増やしたいなあ&hellip;などと<br />
-考えていることがたくさんあるので優先順位は決めつつも<br />
-時間を見つけては 1つずつ実現していけるよう頑張ります。</p>
-
-<p>今年もよろしくお願いします！</p>
+<ol>
+<li>SDKの今出ているバージョン（最新のブランチ）を見て、その差分があったらバージョンを更新する</li>
+<li>PodfileにSDKのバージョン指定をしているものは無視して、このバージョンから新しいのを使うなどといった指定がある場合には、そのSDKを更新する</li>
+<li>Podfile.lockが更新される（アップデートしたSDKのバージョンが更新される）</li>
+</ol>
 
 <p><br></p>
+
+<p><br></p>
+
+<h4 id="pod-update-が終わらない方へアドバイス">pod update が終わらない方へアドバイス</h4>
+
+<p>容量が大きいため pod update をしてもなかなか終わらない、、という方に<br />
+オススメなのが<code>outdated</code> コマンドと <code>--verbose</code> オプションです。</p>
+
+<p><br></p>
+
+<ul>
+<li><strong>outdated</strong><br />
+<code>outdated</code> コマンドを使うと、<br />
+現在使っているライブラリが古いバージョンかどうか分かります。<br />
+<code>pod update</code> としてしまうと、全てのライブラリをアップデートしようとして<br />
+時間がかかるので、<code>outdated</code> コマンドで古いライブラリがわかったら<br />
+<code>pod update 対象のLibrary名</code> というように<br />
+特定のライブラリのみをアップデートするようにすると時間短縮になります。</li>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li><strong>&ndash;verbose</strong><br />
+アップデートに時間がかかってしまい、本当に動いているのかどうか<br />
+確認したいときは <code>pod update --verbose</code> のように<br />
+<code>--verbose</code>オプションを使うとアップデート中に更新している際の情報が表示されます。</li>
+</ul>
+
+<p><br></p>
+
+<p><br></p>
+
+<p>こちらの記事も合わせてどうぞ！<br />
+<a href="https://kosukeblog.com/2017/04/cocoapods/">CocoaPodsについて</a></p>
 
 <p><br></p>
 
@@ -339,7 +355,13 @@ ga('send', 'pageview');
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">タグ</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/happy-new-year/">happy new year</a>
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/ios/">ios</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/swift/">swift</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/cocoapods/">cocoapods</a>
+
+  <a class="tag tag--primary tag--small" href="https://kosukeblog.com/tags/terminal/">terminal</a>
 
 
                   </div>
@@ -352,7 +374,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/02/debug/" data-tooltip="Xcodeデバッグ術まとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -360,7 +382,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/12/lifecycle/" data-tooltip="viewWillAppearやviewDidAppearなどの状態まとめ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/03/url/" data-tooltip="ページの指定した箇所に飛ぶURLの作り方">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -412,7 +434,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f01%2fhappynewyear2018%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f04%2fpodinstallandupdate%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -454,7 +476,7 @@ ga('send', 'pageview');
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/02/debug/" data-tooltip="Xcodeデバッグ術まとめ">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">前</span>
@@ -462,7 +484,7 @@ ga('send', 'pageview');
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2017/12/lifecycle/" data-tooltip="viewWillAppearやviewDidAppearなどの状態まとめ">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://kosukeblog.com/2018/03/url/" data-tooltip="ページの指定した箇所に飛ぶURLの作り方">
           
             <span class="hide-xs hide-sm text-small icon-mr">次</span>
             <i class="fa fa-angle-right"></i>
@@ -514,7 +536,7 @@ ga('send', 'pageview');
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));</script>
-          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f01%2fhappynewyear2018%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+          <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f04%2fpodinstallandupdate%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
         </li>
       </td>
       <td>
@@ -550,7 +572,7 @@ ga('send', 'pageview');
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f01%2fhappynewyear2018%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+      <div class="fb-like" data-href="https://twitter.com/intent/tweet?text=https%3a%2f%2fkosukeblog.com%2f2018%2f04%2fpodinstallandupdate%2f" data-width="500" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
     </li>
     <li class="post-action"style="margin-left:31px; margin-top: 10px;">
       <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -842,9 +864,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/kosukeblog.com\/2018\/01\/happynewyear2018\/';
+          this.page.url = 'https:\/\/kosukeblog.com\/2018\/04\/podinstallandupdate\/';
           
-            this.page.identifier = '\/2018\/01\/happynewyear2018\/'
+            this.page.identifier = '\/2018\/04\/podinstallandupdate\/'
           
         };
         (function() {
