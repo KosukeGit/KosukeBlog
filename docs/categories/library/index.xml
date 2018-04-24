@@ -62,7 +62,7 @@
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ndash;verbose&lt;/strong&gt;&lt;br /&gt;
+&lt;li&gt;&lt;strong&gt;verbose&lt;/strong&gt;&lt;br /&gt;
 アップデートに時間がかかってしまい、本当に動いているのかどうか&lt;br /&gt;
 確認したいときは &lt;code&gt;pod update --verbose&lt;/code&gt; のように&lt;br /&gt;
 &lt;code&gt;--verbose&lt;/code&gt;オプションを使うとアップデート中に更新している際の情報が表示されます。&lt;/li&gt;

@@ -73,7 +73,7 @@ pod install と pod update それぞれの役割についてざっくり解説�
 
 <br>
 
-- **--verbose**  
+- **verbose**  
 アップデートに時間がかかってしまい、本当に動いているのかどうか  
 確認したいときは `pod update --verbose` のように  
 `--verbose`オプションを使うとアップデート中に更新している際の情報が表示されます。
