@@ -6,8 +6,61 @@
     <description>Recent content in Posts on Kosuke Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 25 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 May 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kosukeblog.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Swift】for と forEach の書き方メモ</title>
+      <link>https://kosukeblog.com/2018/05/forforeach/</link>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/05/forforeach/</guid>
+      <description>&lt;p&gt;forEachばかり使っていたらforの書き方を忘れてしまったので簡単にメモしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for i in 0..&amp;lt;10 {
+    print(i)  // 0~9
+}
+
+for i in (0..&amp;lt;10).reversed() {
+    print(i)  // 9~0
+}
+
+
+let arr = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
+
+for i in 0..&amp;lt;arr.count {
+    print(arr[i])  // a, b, c
+}
+
+for i in arr {
+    print(i)  // a, b, c
+}
+
+arr.forEach {
+    print($0)  // a, b, c
+}
+
+Array(0..&amp;lt;arr.count).forEach {
+    print(arr[$0])  // a, b, c
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>pod install と pod update の違い</title>
@@ -2599,57 +2652,6 @@ XcodeでExportする際に必要なURLが以下のようになります。&lt;/p
 &lt;code&gt;ダウンロード完了&lt;/code&gt; -&amp;gt; &lt;code&gt;設定&lt;/code&gt; -&amp;gt; &lt;code&gt;プロファイルとデバイス管理&lt;/code&gt; を選択し、&lt;br /&gt;
 エンタープライズAPPにある項目から該当するアプリ開発者を選び、&lt;code&gt;信頼&lt;/code&gt;を選択する。&lt;br /&gt;
 これで、利用できるようになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
-&lt;!-- BlogAdsense_Bottom --&gt;
-&lt;ins class=&#34;adsbygoogle&#34;
-     style=&#34;display:block&#34;
-     data-ad-client=&#34;ca-pub-9828180917254396&#34;
-     data-ad-slot=&#34;9212002313&#34;
-     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Xcodeで色設定をするときの注意点</title>
-      <link>https://kosukeblog.com/2017/07/color/</link>
-      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kosukeblog.com/2017/07/color/</guid>
-      <description>
-
-&lt;h2 id=&#34;xcodeで色設定をするときの注意点&#34;&gt;Xcodeで色設定をするときの注意点&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;動機&#34;&gt;動機&lt;/h3&gt;
-
-&lt;p&gt;Storyboardで設定した色とコードで書いた色の見た目が&lt;br /&gt;
-Build&amp;amp;Runして確認したときに微妙に違うなあと思い、&lt;br /&gt;
-調べたところ以下の設定が問題でした。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;原因と解決方法&#34;&gt;原因と解決方法&lt;/h3&gt;
-
-&lt;p&gt;Xcode の色選択から &lt;strong&gt;RGB Sliders&lt;/strong&gt; を選択し、&lt;br /&gt;
-右の歯車マークから &lt;strong&gt;Color Profile&lt;/strong&gt; で確認したところ設定が異なっていたのが原因でした。&lt;br /&gt;
-そのため、自分の場合は &lt;code&gt;Generic RGB&lt;/code&gt; -&amp;gt; &lt;code&gt;sRGB&lt;/code&gt;に設定を変えて色を統一させました。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;おまけ&#34;&gt;おまけ&lt;/h3&gt;
-
-&lt;p&gt;ちなみに正確な色の値を知りたい場合は&lt;br /&gt;
-こちらを使用すると見ることができます。&lt;br /&gt;
-&lt;code&gt;Spotlight検索&lt;/code&gt; -&amp;gt; &lt;code&gt;Digital Color Meter&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
