@@ -368,6 +368,18 @@ ga('send', 'pageview');
 
 <p><br></p>
 
+<p>また、リモートにあるブランチも全て表示したい場合は以下のような設定もしておくと便利です。</p>
+
+<pre><code>git allmylog
+</code></pre>
+
+<p>設定する際はこちら↓</p>
+
+<pre><code>git config --global alias.allmylog 'log --oneline --decorate --graph --branches --tags --remotes'
+</code></pre>
+
+<p><br></p>
+
 <p>これでよく使うコマンドや長いコマンドの入力が楽になります。
 何を設定したか確認したい時は、<code>--list</code>を使いましょう！</p>
 

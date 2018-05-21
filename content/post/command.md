@@ -137,6 +137,20 @@ git config --global alias.mylog 'log --oneline --graph --decorate'
 
 <br>
 
+また、リモートにあるブランチも全て表示したい場合は以下のような設定もしておくと便利です。
+
+```
+git allmylog
+```
+
+設定する際はこちら↓
+
+```
+git config --global alias.allmylog 'log --oneline --decorate --graph --branches --tags --remotes'
+```
+
+<br>
+
 これでよく使うコマンドや長いコマンドの入力が楽になります。
 何を設定したか確認したい時は、`--list`を使いましょう！
 

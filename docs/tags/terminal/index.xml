@@ -411,6 +411,18 @@ pod install
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
+&lt;p&gt;また、リモートにあるブランチも全て表示したい場合は以下のような設定もしておくと便利です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git allmylog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;設定する際はこちら↓&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global alias.allmylog &#39;log --oneline --decorate --graph --branches --tags --remotes&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
 &lt;p&gt;これでよく使うコマンドや長いコマンドの入力が楽になります。
 何を設定したか確認したい時は、&lt;code&gt;--list&lt;/code&gt;を使いましょう！&lt;/p&gt;
 
