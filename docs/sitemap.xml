@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kosukeblog.com/2018/06/naming/</loc>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kosukeblog.com/2018/05/forforeach/</loc>
     <lastmod>2018-05-22T00:00:00+00:00</lastmod>
   </url>
@@ -123,7 +128,7 @@
   
   <url>
     <loc>https://kosukeblog.com/archives/</loc>
-    <lastmod>2018-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -223,7 +228,7 @@
   
   <url>
     <loc>https://kosukeblog.com/</loc>
-    <lastmod>2018-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -247,7 +252,7 @@
   
   <url>
     <loc>https://kosukeblog.com/post/</loc>
-    <lastmod>2018-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -259,7 +264,7 @@
   
   <url>
     <loc>https://kosukeblog.com/categories/programming/</loc>
-    <lastmod>2018-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -271,7 +276,7 @@
   
   <url>
     <loc>https://kosukeblog.com/tags/swift/</loc>
-    <lastmod>2018-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

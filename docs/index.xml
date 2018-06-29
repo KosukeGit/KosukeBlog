@@ -6,8 +6,62 @@
     <description>Recent content on Kosuke Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 22 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Jun 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://kosukeblog.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>コーディング等で命名に迷ったとき</title>
+      <link>https://kosukeblog.com/2018/06/naming/</link>
+      <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/06/naming/</guid>
+      <description>
+
+&lt;h3 id=&#34;コーディング等で命名に迷ったとき&#34;&gt;コーディング等で命名に迷ったとき&lt;/h3&gt;
+
+&lt;p&gt;変数名や関数名の名前で詰まることがあったので、&lt;br /&gt;
+個人的によく参考にしていたURLをまとめました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;参考にさせていただいた方々に感謝です m(_ _)m&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[Apple デザインガイドライン]&lt;br /&gt;
+&lt;a href=&#34;https://swift.org/documentation/api-design-guidelines/&#34;&gt;https://swift.org/documentation/api-design-guidelines/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[関数名によく使用される英語のニュアンス]&lt;br /&gt;
+&lt;a href=&#34;http://php-archive.net/php/words-in-function-names/&#34;&gt;http://php-archive.net/php/words-in-function-names/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[Qiita メソッド名]&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/KeithYokoma/items/2193cf79ba76563e3db6&#34;&gt;http://qiita.com/KeithYokoma/items/2193cf79ba76563e3db6&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[コーディング スタイル]&lt;br /&gt;
+&lt;a href=&#34;https://qiita.com/taketomato/items/d5630fe5df45f4093720&#34;&gt;https://qiita.com/taketomato/items/d5630fe5df45f4093720&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>【Swift】for と forEach の書き方メモ</title>
@@ -2498,160 +2552,6 @@ class ViewController2: UIViewController, UITextFieldDelegate {
 &lt;p&gt;コードを書く際に、まず動かそうと真似て書いて、&lt;br /&gt;
 なんとなく理解した気になっていたことが度々ありましたが、&lt;br /&gt;
 こうして改めてステップごとにわけて書いてみると自分でもより理解を深めることができました。:)&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
-&lt;!-- BlogAdsense_Bottom --&gt;
-&lt;ins class=&#34;adsbygoogle&#34;
-     style=&#34;display:block&#34;
-     data-ad-client=&#34;ca-pub-9828180917254396&#34;
-     data-ad-slot=&#34;9212002313&#34;
-     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Developer Enterprise Program を使ってアプリ配布したときのまとめ</title>
-      <link>https://kosukeblog.com/2017/08/inhouse/</link>
-      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kosukeblog.com/2017/08/inhouse/</guid>
-      <description>
-
-&lt;p&gt;本記事は、In-House形式によるiOSアプリの配布方法です。&lt;br /&gt;
-ダウンロードできるデバイスをこちらで登録する必要なく、台数無制限でアプリを入れることが可能です。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
-&lt;!-- BlogAdsense_Top --&gt;
-&lt;ins class=&#34;adsbygoogle&#34;
-     style=&#34;display:block&#34;
-     data-ad-client=&#34;ca-pub-9828180917254396&#34;
-     data-ad-slot=&#34;2510862598&#34;
-     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;developer-enterprise-program-配布までの流れ&#34;&gt;Developer Enterprise Program 配布までの流れ&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;①-archives&#34;&gt;① Archives&lt;/h5&gt;
-
-&lt;p&gt;端末を Generic iOS Device にして &lt;code&gt;Product&lt;/code&gt; -&amp;gt; &lt;code&gt;Archives&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;②-ipaファイルの生成&#34;&gt;② ipaファイルの生成&lt;/h5&gt;
-
-&lt;p&gt;Export で ipa ファイルを作る&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;アプリの名前（Xcode側で設定したアイコン名はアプリをインストールしている時に表示される時に表示される名前）&lt;/li&gt;
-&lt;li&gt;ダウンロードページからダウンロードを押した時にダウンロードされるipaファイルのURL&lt;br /&gt;
-例: &lt;code&gt;https://ダウンロードページ/アプリ名.ipa&lt;/code&gt;&lt;br /&gt;
-（plistファイルからこのURLを参照してダウンロードさせるのに使用）&lt;/li&gt;
-&lt;li&gt;image URL ×2 (大小)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;具体例は下記に記載してある &lt;em&gt;GitHubでダウンロードページを動かす&lt;/em&gt; を参照&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/jp/documentation/IDEs/Conceptual/AppDistributionGuide/DistributingEnterpriseProgramApps/DistributingEnterpriseProgramApps.html&#34;&gt;参考URL - Apple公式ページ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;③-ダウンロードページを作る&#34;&gt;③ ダウンロードページを作る&lt;/h5&gt;
-
-&lt;p&gt;ダウンロードボタンを押したときに手順2で生成されるplistファイルをここで読みこませる&lt;br /&gt;
-例: &lt;code&gt;https://ダウンロードページ/manifest.plist&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;例: ダウンロードページのHTML&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;quot;ja&amp;quot;&amp;gt;
-
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;ダウンロードページ&amp;lt;/title&amp;gt;
-    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;
-&amp;lt;/head&amp;gt;
-
-&amp;lt;body&amp;gt;
-
-    &amp;lt;h1&amp;gt;ダウンロード&amp;lt;/h1&amp;gt;
-
-    &amp;lt;img src=&amp;quot;./image/icon512.png&amp;quot; alt=&amp;quot;アプリアイコン&amp;quot;&amp;gt;
-    &amp;lt;p&amp;gt;下のボタンからアプリをダウンロードしてください。&amp;lt;/p&amp;gt;
-
-    &amp;lt;a href=&amp;quot;itms-services://?action=download-manifest&amp;amp;url=manifest.plistが置いてあるURL&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ダウンロード&amp;lt;/a&amp;gt;
-
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Export時に&lt;code&gt;ipaファイル&lt;/code&gt;と&lt;code&gt;plistファイル&lt;/code&gt;が生成されるため、&lt;br /&gt;
-&lt;code&gt;itms-services://?action=download-manifest&amp;amp;url=&lt;/code&gt;の後に&lt;br /&gt;
-生成したplistファイルの置いてあるURLを指定します。&lt;/p&gt;
-
-&lt;p&gt;例: &lt;code&gt;&amp;lt;a href=&amp;quot;itms-services://?action=download-manifest&amp;amp;url=https://ユーザ名.github.io/アプリ名/download/apps/v1_0_0/manifest.plist&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;ダウンロード&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;githubでダウンロードページを動かす&#34;&gt;GitHubでダウンロードページを動かす&lt;/h5&gt;
-
-&lt;p&gt;ページにアクセスできるようにするための具体例として、&lt;br /&gt;
-GitHubでダウンロードする静的ページを作り、
-同一階層にipa, plistファイルを置くという方法があります。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;例: GitHub構成&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;アプリ名 - download  / - apps  /  v1_0_0  /  - アプリ名.ipa
-                                           - manifest.plist
-                     - image /  - icon512.png
-                                - icon57.png
-                     - index.html
-                     - style.css
-       - README.md
-       - .gitignore
-       - LICENSE
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;リポジトリ内をこのようなファイル構成にしておき、&lt;br /&gt;
-githubで静的サイトを作り、  URLを生成すると&lt;br /&gt;
-XcodeでExportする際に必要なURLが以下のようになります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;https://ユーザ名.github.io/アプリ名/download/apps/v1_0_0/アプリ名.ipa&lt;/li&gt;
-&lt;li&gt;https://ユーザ名.github.io/アプリ名/download/image/icon57.png&lt;/li&gt;
-&lt;li&gt;https://ユーザ名.github.io/アプリ名/download/image/icon512.png&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;これであとは、手持ちの端末からサイトにアクセスして&lt;br /&gt;
-&lt;code&gt;ダウンロード完了&lt;/code&gt; -&amp;gt; &lt;code&gt;設定&lt;/code&gt; -&amp;gt; &lt;code&gt;プロファイルとデバイス管理&lt;/code&gt; を選択し、&lt;br /&gt;
-エンタープライズAPPにある項目から該当するアプリ開発者を選び、&lt;code&gt;信頼&lt;/code&gt;を選択する。&lt;br /&gt;
-これで、利用できるようになります。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

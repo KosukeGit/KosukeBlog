@@ -9,6 +9,60 @@
     <atom:link href="https://kosukeblog.com/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>コーディング等で命名に迷ったとき</title>
+      <link>https://kosukeblog.com/2018/06/naming/</link>
+      <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kosukeblog.com/2018/06/naming/</guid>
+      <description>
+
+&lt;h3 id=&#34;コーディング等で命名に迷ったとき&#34;&gt;コーディング等で命名に迷ったとき&lt;/h3&gt;
+
+&lt;p&gt;変数名や関数名の名前で詰まることがあったので、&lt;br /&gt;
+個人的によく参考にしていたURLをまとめました。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;参考にさせていただいた方々に感謝です m(_ _)m&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[Apple デザインガイドライン]&lt;br /&gt;
+&lt;a href=&#34;https://swift.org/documentation/api-design-guidelines/&#34;&gt;https://swift.org/documentation/api-design-guidelines/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[関数名によく使用される英語のニュアンス]&lt;br /&gt;
+&lt;a href=&#34;http://php-archive.net/php/words-in-function-names/&#34;&gt;http://php-archive.net/php/words-in-function-names/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[Qiita メソッド名]&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/KeithYokoma/items/2193cf79ba76563e3db6&#34;&gt;http://qiita.com/KeithYokoma/items/2193cf79ba76563e3db6&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[コーディング スタイル]&lt;br /&gt;
+&lt;a href=&#34;https://qiita.com/taketomato/items/d5630fe5df45f4093720&#34;&gt;https://qiita.com/taketomato/items/d5630fe5df45f4093720&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;!-- BlogAdsense_Bottom --&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-9828180917254396&#34;
+     data-ad-slot=&#34;9212002313&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【Swift】for と forEach の書き方メモ</title>
       <link>https://kosukeblog.com/2018/05/forforeach/</link>
       <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
